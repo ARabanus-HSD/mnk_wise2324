@@ -236,9 +236,9 @@ class MainMenu(QMainWindow):
 
         # Create MNK game instance and start the game with the chosen options
         current_game = Game(m, n, k)
-        player1 = current_game.choose_player(1, player1_name, player1_type)
-        player2 = current_game.choose_player(2, player2_name, player2_type)
-        current_game.start(player1, player2)
+        # player1 = current_game.choose_player(1, player1_name, player1_type)
+        # player2 = current_game.choose_player(2, player2_name, player2_type)
+        current_game.start(player1_type, player1_name, player2_type, player2_name)
         current_game.game_loop()
         
         # Show the game board window

@@ -11,6 +11,7 @@ class Board():
         self.m = m
         self.n = n
         self.k = k
+
         # check if zielgerade is larger than gameboard
         if self.m < self.k:
             raise ValueError("k can't be larger than n or m")
@@ -58,34 +59,34 @@ class Board():
                     count = 0
                     
         #check for diagonals (rechts nach links) saaaaaaffeeee ist das falsch
-        for col in range(self.n):
-            count = 0
-            for row in self.board:
-                if row[col] == current_player:
-                    count += 1
-                    while count >= 1 == True:
-                        for something in range(k):
-                            if self.board[row+1][col+1] == current_player:
-                                count += 1
-                    if count == k:
-                        return True
-                    else:
-                        count = 0
+        # for col in range(self.n):
+        #     count = 0
+        #     for row in self.board:
+        #         if row[col] == current_player:
+        #             count += 1
+        #             while count >= 1 == True:
+        #                 for something in range(k):
+        #                     if self.board[row+1][col+1] == current_player:
+        #                         count += 1
+        #             if count == k:
+        #                 return True
+        #             else:
+        #                 count = 0
                     
-        #check for diagonals (links nach rechts) same here
-        for col in range(self.n):
-            count = 0
-            for row in self.board:
-                if row[col] == current_player:
-                    count += 1
-                    while count >= 1 == True:
-                        for something in range(k):
-                            if self.board[row-1][col-1] == current_player:
-                                count += 1
-                    if count == k:
-                        return True
-                    else:
-                        count = 0
+        # #check for diagonals (links nach rechts) same here
+        # for col in range(self.n):
+        #     count = 0
+        #     for row in self.board:
+        #         if row[col] == current_player:
+        #             count += 1
+        #             while count >= 1 == True:
+        #                 for something in range(k):
+        #                     if self.board[row-1][col-1] == current_player:
+        #                         count += 1
+        #             if count == k:
+        #                 return True
+        #             else:
+        #                 count = 0
                         
         return False
 
@@ -290,7 +291,7 @@ class Game():
 #>>>>>>> Stashed changes
 
 
-    def choose_player(self, p_number:int, p_name:str, choice:int):
+    def player_choice(self, p_number:int, p_name:str, choice:int):
         valid_choices = [1, 2, 3, 4]
 
         if choice in valid_choices:
@@ -318,26 +319,25 @@ class Game():
                 raise ValueError("input number out of range, please retry!")
 #<<<<<<< Updated upstream
 
-    # def start(self):
-    #     now = datetime.now()
-    #     self.unique_game_id = now.strftime("%y%m%d_%H-%M-%S")
+    def log_moves(self):
+        now = datetime.now()
+        self.unique_game_id = now.strftime("%y%m%d_%H-%M-%S")
 
 #=======
     
     
-    def start(self, player1_type, player2_type):
+    def start(self, player1_type, player1_name, player2_type, player2_name):
 #>>>>>>> Stashed changes
-        # "Menü abfrage"
-        # > choose board size
-        # self.m = int(input("gameboard height: "))
-        # self.n = int(input("gameboard width: "))
-        # self.k = int(input("winning length: "))
+    
         self.board = Board(self.m, self.n, self.k)
 
         print(20*"-")
         
-        self.player1 = self.choose_player(1, "Player 1", player1_type)
-        self.player2 = self.choose_player(2, "Player 2", player2_type)
+        self.player1 = player1_name
+        self.player2 = player2_name
+
+        self.player1 = self.player_choice(1, player1_name, player1_type)
+        self.player2 = self.player_choice(2, player2_name, player2_type)
 
         # > choose player 1 -> player, bot_random, bot_not_random, bot_complex
         # print("player 1:")
@@ -404,13 +404,12 @@ class Game():
 
         self.board.display()
 
-# if __name__ == "__main__":
-#     # game_m = int(input())
-#     # game_n = int(input())
-#     # game_k = int(input())
-#     # current_game = Game(game_m, game_n, game_k)
-    
-#     current_game = Game()
+if __name__ == "__main__":
+    # for testing the script w/o gui and user input:
+    m = 6
+    n = 5
+    k = 4
 
-#     current_game.start(player1_type, player2_type)
-#     current_game.game_loop()
+    current_game = Game(m, n, k)
+    current_game.start(player1_type=2, player2_type=2)
+    current_game.game_loop()
