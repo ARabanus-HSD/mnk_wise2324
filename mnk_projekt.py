@@ -125,7 +125,7 @@ class Bot_random(Player):
             move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
             if self.is_valid(move):
                 realitycheck = False
-               # move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
+                # move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
                 self.board.board[move[0]][move[1]] = self.player_number
                 return move
             else:
@@ -157,11 +157,8 @@ class Bot_simple(Player):
                 distance_from_edge = math.floor(self.board.k/2) # halves wining length, rounds down if k/2 is a float
                 move = (random.randint(0 + distance_from_edge, self.board.m - 1 - distance_from_edge),
                         random.randint(0 + distance_from_edge, self.board.n - 1 - distance_from_edge))
-                # print(move)
             #stage two
             elif self.player_number in self.board.board[:, :] and np.argwhere(self.board.board == self.player_number).shape[0] == 1: # goes here if theres 1 or more atm, should only go here if theres 1!
-                # print("in loop for second placement")
-                # print("\n", np.argwhere(self.board.board == self.player_number), "\n")
 
                 first_move = (np.argwhere(self.board.board == self.player_number)[0, 0],
                               np.argwhere(self.board.board == self.player_number)[0, 1])
@@ -289,8 +286,6 @@ class Game():
     def start(self, player1_type, player1_name, player2_type, player2_name):    
         self.board = Board(self.m, self.n, self.k)
 
-        print(20*"-")
-
 
         self.player1 = self.player_choice(1, player1_name, player1_type)
         self.player2 = self.player_choice(2, player2_name, player2_type)
@@ -355,4 +350,4 @@ if __name__ == "__main__":
         current_game.start(player1_type=3, player1_name="simple",
                            player2_type=2, player2_name="random")
         current_game.game_loop()
-        current_game.game_log()
+        current_game.game_log() # pretty please pretty dalia add this to the gui :*.... or else >:(
