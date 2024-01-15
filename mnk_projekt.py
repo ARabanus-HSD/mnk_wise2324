@@ -246,7 +246,7 @@ class Game():
         """ # Main Game Log:
         adds entry to dp (.csv) looking like this:
 
-        | player1_type | player2_type | starting_player | winning_player |   |
+        | player1_type | player2_type | starting_player | winning_player |
         |--------------|--------------|-----------------|----------------|
         | player       | player       | 1               | 0              |
         | bot_random   | bot_random   | 2               | 1              |
