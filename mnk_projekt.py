@@ -290,9 +290,7 @@ class Game():
         self.board = Board(self.m, self.n, self.k)
 
         print(20*"-")
-        
-        # self.player1 = player1_name
-        # self.player2 = player2_name
+
 
         self.player1 = self.player_choice(1, player1_name, player1_type)
         self.player2 = self.player_choice(2, player2_name, player2_type)
