@@ -408,8 +408,13 @@ if __name__ == "__main__":
     # for testing the script w/o gui and user input:
     m = 6
     n = 5
-    k = 4
+    k = 4   
 
+    # human : 1
+    # bot random: 2
+    # bot simple: 3
+    # bot complex: 4
     current_game = Game(m, n, k)
-    current_game.start(player1_type=2, player2_type=2)
+    current_game.start(player1_type=3, player1_name="simple",
+                       player2_type=2, player2_name="random")
     current_game.game_loop()
