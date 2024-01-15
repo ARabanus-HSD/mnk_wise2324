@@ -57,37 +57,7 @@ class Board():
                         return True
                 else:
                     count = 0
-                    
-        #check for diagonals (rechts nach links) saaaaaaffeeee ist das falsch
-        # for col in range(self.n):
-        #     count = 0
-        #     for row in self.board:
-        #         if row[col] == current_player:
-        #             count += 1
-        #             while count >= 1 == True:
-        #                 for something in range(k):
-        #                     if self.board[row+1][col+1] == current_player:
-        #                         count += 1
-        #             if count == k:
-        #                 return True
-        #             else:
-        #                 count = 0
-                    
-        # #check for diagonals (links nach rechts) same here
-        # for col in range(self.n):
-        #     count = 0
-        #     for row in self.board:
-        #         if row[col] == current_player:
-        #             count += 1
-        #             while count >= 1 == True:
-        #                 for something in range(k):
-        #                     if self.board[row-1][col-1] == current_player:
-        #                         count += 1
-        #             if count == k:
-        #                 return True
-        #             else:
-        #                 count = 0
-                        
+                         
         return False
 
 
@@ -207,56 +177,40 @@ class Bot_simple(Player):
                 # using np.argwhere gets the coord for each placed entry
                 # finds line checking if one of the four sum funcs above would apply.
 
-                # print("in loop for third placement")
                 past_moves = np.argwhere(self.board.board == self.player_number)
-                # print(past_moves)
                 # find h_line
                 if np.all(past_moves[:, 0] == past_moves[0, 0]):
-                    # print(past_moves[:, 0])
-                    # print("found h line")
                     x_next_move = past_moves[0, 0]
-                    # print(x_next_move)
-                    # print(np.min(past_moves[:, 1]) - 1, np.max(past_moves[:, 1]) + 1)
-
                     y_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
                                                  np.max(past_moves[:, 1]) + 1])
                     move = (x_next_move, y_next_move)
-                    # print(move)
                 # find v_line
                 elif np.all(past_moves[:, 1] == past_moves[0, 1]):
-                    # print(past_moves[:, 1])
-                    # print("found v line")
                     y_next_move = past_moves[0, 1]
-                    # print(y_next_move)
-                    # print(np.min(past_moves[:, 1]) - 1, np.max(past_moves[:, 1]) + 1)
                     x_next_move = random.choice([np.min(past_moves[:, 0]) - 1,
                                                  np.max(past_moves[:, 0]) + 1])
                     move = (x_next_move, y_next_move)
                     print(move)
+                # if no move is found, place random move
                 elif valid_counter > 5:
                     move = (random.randint(0, self.board.m - 1),
                             random.randint(0, self.board.n - 1))
-                    # print(move)
             
                 else:
-                    # print("must be diagonal line!")
                     x_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
                                                  np.max(past_moves[:, 1]) + 1])
                     y_next_move = random.choice([np.min(past_moves[:, 0]) - 1,
                                                  np.max(past_moves[:, 0]) + 1])
                     move = (x_next_move, y_next_move)
-                    # print(move)
 
             if self.is_valid(move):
                 valid_move = False
-                    #self.board.board[move[0]][move[1]] = self.player_number
+                #self.board.board[move[0]][move[1]] = self.player_number
                 print(move)
                 valid_counter = 0
                 return move
             else:
                 valid_counter += 1
-                # print("invalid move")
-                # print(valid_counter)
 
         pass
 
@@ -267,29 +221,17 @@ class Bot_complex(Player):
         super().__init__(player_number, name, board)
 
     def make_move(self): # -> (row, col)
-
-        #### REMOVE THIS! ####
-        move = (1, 1)# (x, y) tuple where move is placed
-        return move
-
-
-# if __name__ == "__main__":
-#     # hier kommt zeug zum testen hin
-#     pass
-
+        pass
 class Game():
 
 
     def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
-#
         self.m = m
         self.n = n
         self.k = k
         self.player1 = player1
         self.player2 = player2   
         self.board = None
-#>>>>>>> Stashed changes
-
 
     def player_choice(self, p_number:int, p_name:str, choice:int):
         valid_choices = [1, 2, 3, 4]
@@ -297,38 +239,33 @@ class Game():
         if choice in valid_choices:
             if choice == 1:
                 player = Player(p_number, p_name, self.board)
-                print("player is human")
-                print(20*"-")
+                # print("player is human")
+                # print(20*"-")
                 return player
             elif choice == 2:
                 player = Bot_random(p_number, p_name, self.board)
-                print("player is a random bot")
-                print(20*"-")
+                # print("player is a random bot")
+                # print(20*"-")
                 return player
             elif choice == 3:
                 player = Bot_simple(p_number, p_name, self.board)
-                print("player is a simple bot")
-                print(20*"-")
+                # print("player is a simple bot")
+                # print(20*"-")
                 return player
             elif choice == 4:
                 player = Bot_complex(p_number, p_name, self.board)
-                print("player is a complex bot")
-                print(20*"-")
+                # print("player is a complex bot")
+                # print(20*"-")
                 return player
             else:
                 raise ValueError("input number out of range, please retry!")
-#<<<<<<< Updated upstream
 
     def log_moves(self):
         now = datetime.now()
         self.unique_game_id = now.strftime("%y%m%d_%H-%M-%S")
 
-#=======
     
-    
-    def start(self, player1_type, player1_name, player2_type, player2_name):
-#>>>>>>> Stashed changes
-    
+    def start(self, player1_type, player1_name, player2_type, player2_name):    
         self.board = Board(self.m, self.n, self.k)
 
         print(20*"-")
@@ -339,25 +276,8 @@ class Game():
         self.player1 = self.player_choice(1, player1_name, player1_type)
         self.player2 = self.player_choice(2, player2_name, player2_type)
 
-        # > choose player 1 -> player, bot_random, bot_not_random, bot_complex
-        # print("player 1:")
-        # p1_name = str(input("input name: "))
-        # p1_choice = int(input("1 for human player | 2, 3, 4 for increasing bot difficulty: "))
-        # self.player1 = Game.choose_player(self, 1, p1_name, p1_choice)
-
-#<<<<<<< Updated upstream
-        # p2_name = str(input("input name: "))
-        # p2_choice = int(input("1 for human player | 2, 3, 4 for increasing bot difficulty: "))
-        # self.player2 = Game.choose_player(self, 2, p2_name, p2_choice)
-
-#=======
-        # p2_name = str(input("input name: "))
-        # p2_choice = int(input("1 for human player | 2, 3, 4 for increasing bot difficulty: "))
-        # self.player2 = Game.choose_player(self, 2, p2_name, p2_choice)   
-#>>>>>>> Stashed changes
-
     def full_board(self):
-        #made by Dalia
+        # made by Dalia
         # goes through row and checks if value of every cell is 0
         for row in self.board.board:
             for value in row:
@@ -373,18 +293,9 @@ class Game():
             print(f"Player {current_player.name}'s turn")
             # gets the current move the player inputed
             current_move = current_player.make_move()
-            # print(current_move)
             
             # puts the move on the board
             self.board.board[current_move] = current_player.player_number
-            
-            # f = open(f"gamelog_{self.unique_game_id}.txt", "a")
-            # as_string = str(current_move)
-            # line_4_log = f"{current_player.player_number}, {as_string}"
-            # print(line_4_log)
-            # f.write(line_4_log)
-            # f.write("\n")
-            # f.close()
             
             # checks if someone has won and if the board is full
             if self.board.has_won(current_player.player_number, self.k):
@@ -415,6 +326,8 @@ if __name__ == "__main__":
     # bot simple: 3
     # bot complex: 4
     current_game = Game(m, n, k)
+    # human : 1, bot random: 2, bot simple: 3, bot complex: 4
     current_game.start(player1_type=3, player1_name="simple",
                        player2_type=2, player2_name="random")
+    # human : 1, bot random: 2, bot simple: 3, bot complex: 4
     current_game.game_loop()
