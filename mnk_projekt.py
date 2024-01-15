@@ -253,7 +253,7 @@ class Game():
         | bot_simple   | bot_simple   | 1               | 2              |
         | bot_complex  | bot_complex  | 2               | 0              |
         """
-        with open("/home/arabanus/Documents/HSD/Prog DSKI/mnk_wise2324/game_log.csv", mode='a', newline="") as f:
+        with open("game_log.csv", mode='a', newline="") as f:
             fieldnames = ["player1_type", "player2_type", "starting_player", "winning_player"]
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             if f.tell() == 0:
@@ -346,7 +346,7 @@ class Game():
         self.board.display()
 
 if __name__ == "__main__":
-    for i in range(20):
+    for i in range(2):
         # for testing the script w/o gui and user input:
         m = 6
         n = 5
