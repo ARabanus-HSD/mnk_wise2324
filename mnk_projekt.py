@@ -346,7 +346,7 @@ class Game():
         self.board.display()
 
 if __name__ == "__main__":
-    for i in range(2):
+    for i in range(10):
         # for testing the script w/o gui and user input:
         m = 6
         n = 5
