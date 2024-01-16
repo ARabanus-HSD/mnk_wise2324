@@ -183,7 +183,7 @@ class Bot_simple(Player):
                 # finds line checking if one of the four sum funcs above would apply.
 
                 past_moves = np.argwhere(self.board.board == self.player_number)
-                
+
                 # when valid counter is too high place a random move
                 if valid_counter > 5:
                     move = (random.randint(0, self.board.m - 1),
@@ -346,7 +346,7 @@ class Game():
         self.board.display()
 
 if __name__ == "__main__":
-    for i in range(10):
+    for i in range(100):
         # for testing the script w/o gui and user input:
         m = 6
         n = 5
