@@ -19,6 +19,7 @@ print(df)
 def sort_winners(df):
     win_counter_bot_random = 0
     win_counter_bot_simple = 0
+    draw_count = 0
 
     for index, row in df.iterrows():
         if row['player1_type'] == "bot_simple" and row['winning_player'] == 1:
@@ -29,15 +30,17 @@ def sort_winners(df):
             win_counter_bot_simple += 1
         elif row['player2_type'] == "bot_random" and row['winning_player'] == 2:
             win_counter_bot_random += 1
+        if row["winning_player"] == 0:
+            draw_count += 1
 
-        counter_dict = [{"bot_random": win_counter_bot_random, "bot_simple": win_counter_bot_simple}]
+        counter_dict = [{"bot_random": win_counter_bot_random, "bot_simple": win_counter_bot_simple, "draw": draw_count}]
         df_counter = pd.DataFrame.from_dict(counter_dict)
     return df_counter
 
 sorted_dataframe = sort_winners(df)
 print(sorted_dataframe)
 sorted_dataframe.plot(kind='bar')
-plt.title('Bar Chart')
+plt.title('W/L/D rate of games')
 plt.xlabel('Bot Types')
-plt.ylabel('Values')
+plt.ylabel('Games')
 plt.show()
