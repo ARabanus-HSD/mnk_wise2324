@@ -183,12 +183,21 @@ class Bot_simple(Player):
                 # finds line checking if one of the four sum funcs above would apply.
 
                 past_moves = np.argwhere(self.board.board == self.player_number)
+                
+                # when valid counter is too high place a random move
+                if valid_counter > 5:
+                    move = (random.randint(0, self.board.m - 1),
+                            random.randint(0, self.board.n - 1))
+                    print("stuck in random after valid_counter overflow")
+                
                 # find h_line
-                if np.all(past_moves[:, 0] == past_moves[0, 0]):
+                elif np.all(past_moves[:, 0] == past_moves[0, 0]):
                     x_next_move = past_moves[0, 0]
                     y_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
                                                  np.max(past_moves[:, 1]) + 1])
                     move = (x_next_move, y_next_move)
+                    print("stuck in find_hline")
+
                 # find v_line
                 elif np.all(past_moves[:, 1] == past_moves[0, 1]):
                     y_next_move = past_moves[0, 1]
@@ -196,17 +205,15 @@ class Bot_simple(Player):
                                                  np.max(past_moves[:, 0]) + 1])
                     move = (x_next_move, y_next_move)
                     print(move)
-                # if no move is found, place random move
-                elif valid_counter > 5:
-                    move = (random.randint(0, self.board.m - 1),
-                            random.randint(0, self.board.n - 1))
-            
+                    print("stuck in find_vline")
+                
                 else:
                     x_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
                                                  np.max(past_moves[:, 1]) + 1])
                     y_next_move = random.choice([np.min(past_moves[:, 0]) - 1,
                                                  np.max(past_moves[:, 0]) + 1])
                     move = (x_next_move, y_next_move)
+                    print("stuck in diagonal move")
 
             if self.is_valid(move):
                 valid_move = False
