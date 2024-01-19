@@ -65,9 +65,6 @@ class Board():
         # starting point kann nur im bereich [m, m-k][n, n-k]
 
 
-        
-                
-
         return False
 
 class Player():
