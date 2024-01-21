@@ -68,7 +68,6 @@ for i in range(len(start_positions)):
 # has to be done for \ and / lines!
 
 def d_line_rd(start_position, k): # \
-    
     placements = []
     for i in range(k):
         placement = [start_position[0] + i, start_position[1] + i]
@@ -80,18 +79,19 @@ def d_line_ld(start_position, k): # /
     for i in range(k):
         placement = [start_position[0] + i, start_position[1] - i]
         placements.append(placement)
-        print(f"{i}: {placement}")
+        # print(f"{i}: {placement}")
     return placements
 
 def place_line_rd(arr, m, n, k, var, bg, line_var):
     """input, array, m, n, k, and the variable that we're searching for
     makes a mask in the top right, k away form the far edge and bottom because only there are possible starting points
     """
-    print(arr)
-    arr[:, -(k-1):] = 0
-    arr[-(k-1):, :] = 0
-    print(arr)
-    past_moves = np.argwhere(arr == var)
+    # print(arr)
+    mod_arr = np.copy(arr)
+    mod_arr[:, -(k-1):] = 0
+    mod_arr[-(k-1):, :] = 0
+    # print(arr)
+    past_moves = np.argwhere(mod_arr == var)
     
     # place \ line
     # only relevant starting positions are in the top left corner
@@ -101,18 +101,43 @@ def place_line_rd(arr, m, n, k, var, bg, line_var):
         line_rd = d_line_rd(past_moves[i], k)
         zero_mask = np.full((arr.shape[0], arr.shape[1]), bg, dtype=int)
         for coord in line_rd:
-            print(coord[0], coord[1])
+            # print(coord[0], coord[1])
+            zero_mask[(coord[0], coord[1])] = line_var
+        possible_lines.append(zero_mask)
+    return possible_lines
+
+def place_line_ld(arr, m, n, k, var, bg, line_var):
+    """input, array, m, n, k, and the variable that we're searching for
+    makes a mask in the top right, k away form the far edge and bottom because only there are possible starting points
+    """
+    print(arr)
+
+    mod_arr = np.copy(arr)
+    mod_arr[:, :(k-1)] = 0
+    mod_arr[-(k-1):, :] = 0
+    print(arr)
+    past_moves = np.argwhere(mod_arr == var)
+    
+    # place \ line
+    # only relevant starting positions are in the top left corner
+    # k distance from the right side, and the bottom
+    possible_lines = []
+    for i in range(len(past_moves)):
+        line_rd = d_line_ld(past_moves[i], k)
+        zero_mask = np.full((arr.shape[0], arr.shape[1]), bg, dtype=int)
+        for coord in line_rd:
+            # print(coord[0], coord[1])
             zero_mask[(coord[0], coord[1])] = line_var
         possible_lines.append(zero_mask)
     return possible_lines
 
 def has_won(game_board, list_of_lines, list_of_inverse_lines_w_player_number, player_number):
     for i in range(len(list_of_lines)):
-        print(game_board)
+        # print(game_board)
         comparison_step_1 = list_of_lines[i] * game_board
-        print(comparison_step_1)
+        # print(comparison_step_1)
         comparison_step_2 = comparison_step_1 + list_of_inverse_lines_w_player_number[i]
-        print(comparison_step_2)
+        # print(comparison_step_2)
         all_same = np.all(comparison_step_2==player_number)
         return all_same
     
@@ -120,16 +145,19 @@ def has_won(game_board, list_of_lines, list_of_inverse_lines_w_player_number, pl
 m, n ,k = (6, 5, 4)
 var = 1
 
-possible_lines = place_line_rd(array, m, n, k, var, 0, line_var=1)
-inverse_possible_lines_w_player_number = place_line_rd(array, m, n, k, var, var, line_var=0)
-print(possible_lines)
-print(inverse_possible_lines_w_player_number)
+possible_lines_rd = place_line_rd(array, m, n, k, var, 0, line_var=1)
+inverse_possible_lines_w_player_number_rd = place_line_rd(array, m, n, k, var, var, line_var=0)
 
-array = np.array([[0, 1, 0, 0, 0],
-                  [0, 2, 0, 0, 0],
-                  [1, 0, 2, 1, 0],
-                  [0, 0, 1, 2, 1],
-                  [0, 1, 0, 0, 2],
-                  [1, 2, 2, 0, 0]])
 
-print(has_won(array, possible_lines, inverse_possible_lines_w_player_number, player_number=var))
+
+possible_lines_ld = place_line_ld(array, m, n, k, var, 0, line_var=1)
+inverse_possible_lines_w_player_number_ld = place_line_ld(array, m, n, k, var, var, line_var=0)
+
+
+
+print(array)
+right_diagonal = has_won(array, possible_lines_rd, inverse_possible_lines_w_player_number_rd, player_number=var)
+left_diagonal = has_won(array, possible_lines_ld, inverse_possible_lines_w_player_number_ld, player_number=var)
+
+print(f"player {var} won with left diagonal: {left_diagonal}")
+print(f"player {var} won with right diagonal: {right_diagonal}")
