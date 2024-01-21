@@ -349,7 +349,7 @@ class Game():
         | bot_simple   | bot_simple   | 1               | 2              |
         | bot_complex  | bot_complex  | 2               | 0              |
         """
-        with open("game_log.csv", mode='a', newline="") as f:
+        with open("game_log_simple_vs_simple.csv", mode='a', newline="") as f:
             fieldnames = ["player1_type", "player2_type", "starting_player", "winning_player"]
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             if f.tell() == 0:
@@ -440,7 +440,7 @@ class Game():
         self.board.display()
 
 if __name__ == "__main__":
-    for i in range(10):
+    for i in range(5000):
         # for testing the script w/o gui and user input:
         m = 6
         n = 5
@@ -448,7 +448,7 @@ if __name__ == "__main__":
 
         current_game = Game(m, n, k)
         # human : 1, bot random: 2, bot simple: 3, bot complex: 4
-        current_game.start(player1_type=2, player1_name="bot_random",
-                           player2_type=3, player2_name="bot_simple")
+        current_game.start(player1_type=3, player1_name="simple_1",
+                           player2_type=3, player2_name="simple_2")
         current_game.game_loop()
         current_game.game_log() # pretty please pretty dalia add this to the gui :*.... or else >:(
