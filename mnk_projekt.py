@@ -317,66 +317,7 @@ class Bot_simple(Player):
 
         pass
 
-class diagonal_testing(Player):
-    """this "bot" onyl places a diagonal line starting at (0, 0)
-    for testing purposes only!
 
-    Args:
-        Player (_type_): _description_
-    """
-
-    def __init__(self, player_number, name, board) -> None:
-        super().__init__(player_number, name, board)
-        self.player_type = "diagonal_testing"
-    
-    def make_move(self): # -> (row, col)
-        move = (1, 1)
-        generate_moves = True
-        while generate_moves:
-            move_list = []
-            for i in range(self.board.k):
-                move = (self.board.n-i, i)
-                move_list.append(move)
-            generate_moves = False
-            print(move_list)
-        print(np.count_nonzero(self.board.board == self.player_number))
-        return move_list[np.count_nonzero(self.board.board == self.player_number)]
-        
-class vertical_testing(Player):
-    def __init__(self, player_number, name, board) -> None:
-        super().__init__(player_number, name, board)
-        self.player_type = "vertical_testing"
-    
-    def make_move(self):
-        move = (1, 1)
-        generate_moves = True
-        while generate_moves:
-            move_list = []
-            for i in range(self.board.k):
-                move = (i, self.board.n-1)
-                move_list.append(move)
-            generate_moves = False
-            print(move_list)
-        print(np.count_nonzero(self.board.board == self.player_number))
-        return move_list[np.count_nonzero(self.board.board == self.player_number)]
-
-class horizontal_testing(Player):
-    def __init__(self, player_number, name, board) -> None:
-        super().__init__(player_number, name, board)
-        self.player_type = "vertical_testing"
-    
-    def make_move(self):
-        move = (1, 1)
-        generate_moves = True
-        while generate_moves:
-            move_list = []
-            for i in range(self.board.k):
-                move = (self.board.m-1, i)
-                move_list.append(move)
-            generate_moves = False
-            print(move_list)
-        print(np.count_nonzero(self.board.board == self.player_number))
-        return move_list[np.count_nonzero(self.board.board == self.player_number)]
 class Bot_complex(Player):
 
     def __init__(self, player_number, name, board) -> None:
@@ -422,7 +363,7 @@ class Game():
 
 
     def player_choice(self, p_number:int, p_name:str, choice:int):
-        valid_choices = [1, 2, 3, 4, 5, 6, 7] # ANTON added 5 and 6 for testing purposes, diagonal bot and vertical bot!
+        valid_choices = [1, 2, 3, 4] 
 
         if choice in valid_choices:
             if choice == 1:
@@ -436,15 +377,6 @@ class Game():
                 return player
             elif choice == 4:
                 player = Bot_complex(p_number, p_name, self.board)
-                return player
-            elif choice == 5:
-                player = diagonal_testing(p_number, p_name, self.board)
-                return player
-            elif choice == 6:
-                player = horizontal_testing(p_number, p_name, self.board)
-                return player
-            elif choice == 7:
-                player = vertical_testing(p_number, p_name, self.board)
                 return player
             else:
                 raise ValueError("input number out of range, please retry!")
@@ -503,12 +435,12 @@ class Game():
             else:
                 current_player = self.player1
 
-            time.sleep(0.5)
+            # time.sleep(0.5)
 
         self.board.display()
 
 if __name__ == "__main__":
-    for i in range(1):
+    for i in range(10):
         # for testing the script w/o gui and user input:
         m = 6
         n = 5
@@ -516,7 +448,7 @@ if __name__ == "__main__":
 
         current_game = Game(m, n, k)
         # human : 1, bot random: 2, bot simple: 3, bot complex: 4
-        current_game.start(player1_type=5, player1_name="diagonal",
-                           player2_type=7, player2_name="vertical")
+        current_game.start(player1_type=2, player1_name="bot_random",
+                           player2_type=3, player2_name="bot_simple")
         current_game.game_loop()
         current_game.game_log() # pretty please pretty dalia add this to the gui :*.... or else >:(

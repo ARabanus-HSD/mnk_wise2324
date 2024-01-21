@@ -2435,3 +2435,6 @@ diagonal_testing,vertical_testing,,2
 diagonal_testing,vertical_testing,,2
 diagonal_testing,vertical_testing,,1
 diagonal_testing,vertical_testing,,2
+bot_random,bot_simple,,1
+bot_random,bot_simple,,0
+bot_random,bot_simple,,2
