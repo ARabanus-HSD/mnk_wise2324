@@ -1,37 +1,58 @@
 import numpy as np
 
-array = ([0, 1, 0, 3, 0],
-         [0, 0, 3, 0, 0],
-         [0, 3, 0, 1, 0],
-         [3, 0, 1, 0, 1],
-         [0, 1, 0, 0, 0],
-         [1, 2, 2, 0, 0])
+array = np.array([[0, 1, 0, 0, 0],
+                  [0, 2, 0, 0, 0],
+                  [0, 0, 2, 1, 0],
+                  [0, 0, 1, 2, 1],
+                  [0, 1, 0, 0, 2],
+                  [1, 2, 2, 0, 0]])
+
+# the approach below works?? but is doesn't???
+"""
+def diagonal_line_TF(arr, start_position, k):
+    placement_list = []
+    for i in range(k): # replace with winning length
+        if start_position > 15: # need to find a formula that scales this variable dynamically to the game board
+            break
+        else:
+            x = np.take(arr, i+start_position)
+            start_position += 3 # self.board.m -2 num cols on board /
+            # start_position += 5 # self.board.m num cols on board \
+            placement_list.append(x)
+        
+    for i in range(k): # replace with winning length
+        if start_position > 12: # need to find a formula that scales this variable dynamically to the game board
+            break
+        else:
+            x = np.take(arr, i+start_position)
+            # start_position += 3 # self.board.m -2 num cols on board /
+            start_position += 5 # self.board.m num cols on board \
+            placement_list.append(x)
+    
+    all_same = all(x==placement_list[0] for x in placement_list)
+    return all_same
+
+def past_move_cords_to_position(past_moves, m, n):
+    start_positions = []
+    num_moves = past_moves.shape[0]
+    for i in range(num_moves):
+        one_position = n * past_moves[i][0] + past_moves[i][1] + 1
+        start_positions.append(one_position)
+    return start_positions
 
 
-def find_var(arr, var):
-    past_moves = np.argwhere(arr == var)
-    print(past_moves)
-    pass
-    # return list_of_ones # list of all ones on the board, prepared for np.take
 
-search_position = 3 # first player number on board
-placement_list = []
-# find first player number
-    # extreact index (?) 
-for i in range(4): # replace with winning length
-    x = np.take(array, i+ search_position)
-    # search_position += 3 # self.board.m -2 num cols on board /
-    search_position += 5 # self.board.m num cols on board \
-    placement_list.append(x)
-print(placement_list)
+m, n = (6, 5)
+var = 4
+past_moves = np.argwhere(array == var)
 
+start_positions = past_move_cords_to_position(past_moves, m, n)
 
-all_same = all(x==placement_list[0] for x in placement_list)
-print(all_same)
-
-# for i in range(len(placement_list)):
-#     if placement_list[i] == 3:
-#         print("all moves are same!")
-
-find_var(array, 3)
-print(np.where(array==1)[0])
+for i in range(len(start_positions)):
+    true_false = diagonal_line_TF(array, start_positions[i], 4)
+    if true_false:
+        print("found diagonal line!")
+        break
+    else:
+        print("didnt find a line :(")
+"""

@@ -172,7 +172,7 @@ class Bot_simple(Player):
                     # print(move)
                     if not move == first_move:
                         original_move = True
-
+            # stage 3
             else:
                 # what is a line in an array
                 # v_line: (m_i, n_i) ... (m_i, n_i+k)
@@ -196,7 +196,6 @@ class Bot_simple(Player):
                     y_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
                                                  np.max(past_moves[:, 1]) + 1])
                     move = (x_next_move, y_next_move)
-                    print("stuck in find_hline")
 
                 # find v_line
                 elif np.all(past_moves[:, 1] == past_moves[0, 1]):
@@ -205,15 +204,17 @@ class Bot_simple(Player):
                                                  np.max(past_moves[:, 0]) + 1])
                     move = (x_next_move, y_next_move)
                     print(move)
-                    print("stuck in find_vline")
-                
+                # find / line and \ line
+                # causes problem, because the bot can choose 4 positions...
+                # 
                 else:
                     x_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
                                                  np.max(past_moves[:, 1]) + 1])
                     y_next_move = random.choice([np.min(past_moves[:, 0]) - 1,
                                                  np.max(past_moves[:, 0]) + 1])
                     move = (x_next_move, y_next_move)
-                    print("stuck in diagonal move")
+
+                
 
             if self.is_valid(move):
                 valid_move = False
@@ -331,7 +332,7 @@ class Game():
 
 
     def player_choice(self, p_number:int, p_name:str, choice:int):
-        valid_choices = [1, 2, 3, 4, 5, 6] # ANTON added 5 and 6 for testing purposes, diagonal bot and vertical bot!
+        valid_choices = [1, 2, 3, 4, 5, 6, 7] # ANTON added 5 and 6 for testing purposes, diagonal bot and vertical bot!
 
         if choice in valid_choices:
             if choice == 1:
@@ -351,6 +352,9 @@ class Game():
                 return player
             elif choice == 6:
                 player = horizontal_testing(p_number, p_name, self.board)
+                return player
+            elif choice == 7:
+                player = vertical_testing(p_number, p_name, self.board)
                 return player
             else:
                 raise ValueError("input number out of range, please retry!")
@@ -423,6 +427,6 @@ if __name__ == "__main__":
         current_game = Game(m, n, k)
         # human : 1, bot random: 2, bot simple: 3, bot complex: 4
         current_game.start(player1_type=5, player1_name="diagonal",
-                           player2_type=6, player2_name="vertical")
+                           player2_type=7, player2_name="vertical")
         current_game.game_loop()
         current_game.game_log() # pretty please pretty dalia add this to the gui :*.... or else >:(
