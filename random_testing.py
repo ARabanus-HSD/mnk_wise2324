@@ -56,3 +56,13 @@ for i in range(len(start_positions)):
     else:
         print("didnt find a line :(")
 """
+
+
+# new apporach:
+# make an array filled with 0 and a k long diagonal line of ones..
+# add multiply the game board with this mask
+# add this mask to an array filled with the player number and 0 where the diagonal line is
+# if all entries in the array are the same, the diagonal line was a winning line
+# if not, shift array mask and try again
+
+# has to be done for \ and / lines!
