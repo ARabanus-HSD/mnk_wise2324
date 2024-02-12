@@ -1,0 +1,555 @@
+MNK Game ToDo:
+
+- Doku in Latex mit plots etc
+- complex bot
+chatgpt output
+"""
+I have this MNK game code in python: 
+
+import numpy as np
+import random
+import time
+import math
+from datetime import datetime
+import csv
+
+
+class Board():
+
+    def __init__(self, m, n, k) -> None:
+        self.m = m
+        self.n = n
+        self.k = k
+
+        # check if zielgerade is larger than gameboard
+        if self.m < self.k:
+            raise ValueError("k can't be larger than n or m")
+        elif self.n < self.k:
+            raise ValueError("k can't be larger than n or m")
+        else:
+            self.board = np.zeros(shape=(self.m, self.n), dtype=int)
+
+        return
+
+    def display(self):
+        print(self.board)
+
+    def has_won(self, current_player, k):
+        """_summary_
+        playerX has won when there is a k-long Pattern on the m x n board
+        start checking for winning pattern after k moves
+
+        !! checking diagonally misses
+              made by Dalia
+        """
+
+        self.current_player = current_player
+
+        # check for rows
+        for col in range(self.n):
+            count = 0
+            for row in self.board.T:
+                if row[col] == current_player:
+                    count += 1
+                    if count == k:
+                        return True
+                else:
+                    count = 0
+
+        # check the columns
+        for col in range(self.n):
+            count = 0
+            for row in self.board:
+                if row[col] == current_player:
+                    count += 1
+                    if count == k:
+                        return True
+                else:
+                    count = 0
+        
+        # check for diagonal k long lines - Anton
+        # diagonal nach links
+        # wie beschreibt man eine linie die k lang ist und diagonal?
+        # starting point kann nur im bereich [m, m-k][n, n-k]
+
+
+        return False
+
+class Player():
+
+    def __init__(self, player_number, name, board) -> None: # player number 1 or 2
+        self.name = name
+        self.player_number = player_number
+        self.board = board
+        self.player_type = "human"
+
+
+    def is_valid(self, move:tuple):
+        '''
+        erhält ein tuple von moves
+        prüft ob moves in valid raum ist
+        gibt true or false wieder
+
+        '''
+
+        # checks if move is in range of the size of the board
+        if move[0] < self.board.m and move[1] < self.board.n:
+            print(self.board)
+            # checks the cell that is to be changed is == 0
+            if self.board.board[move[0]][move[1]] == 0:
+                return True
+        else:
+            return False
+
+    # !! man kann nur einen value error causen, bevor das Spiel abbricht :(
+    def make_move(self): # -> (row, col)
+        print(f"make move between 0 and {self.board.m-1} \nand 0 and {self.board.n-1}")
+        try: move = (int(input("Please make a move: ")), int(input("")))
+        except ValueError:
+            print("Sorry please put an integer")
+        move = (int(input("Please make a move: ")), int(input("")))
+        while not self.is_valid(move):
+            print('Invalid move. Please try again')
+            move = (int(input("Please make a move: ")), int(input("")))
+        return move    
+
+class Bot_random(Player):
+
+    def __init__(self, player_number, name, board) -> None:
+        super().__init__(player_number, name, board)
+        self.player_type = "bot_random"
+
+    def make_move(self): # -> (row, col)
+        """
+        geht in eine schleife und wiederholt die erzeugung vom random move so lange bis es valid ist
+        made by Dalia
+        """
+
+        realitycheck = True
+        while realitycheck:
+            move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
+            if self.is_valid(move):
+                realitycheck = False
+                # move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
+                self.board.board[move[0]][move[1]] = self.player_number
+                return move
+            else:
+                print('Invalid move. Please try again')
+
+class Bot_simple(Player):
+
+    def __init__(self, player_number, name, board) -> None:
+        super().__init__(player_number, name, board)
+        self.player_type = "bot_simple"
+        pass
+
+
+    def make_move(self): # -> (row, col)
+        """
+        goal of this bot: only try and win (be better than random bot)
+        if the board is empty, place an entry k/2 away from the edges
+            placed @ (m_i, n_i)
+        if there is one placed entry, pick a random neighboring entry to fill
+            placed @ (m_i+-1, n_i+-1)
+        if there are two in line, continue along that line
+        """
+        valid_move = True
+        valid_counter = 1
+        while valid_move:
+            # stage one
+            if self.player_number not in self.board.board[:, :]:#not np.any(self.board.board[:, :] == self.player_number):
+                # print("in for loop for first placement")
+                distance_from_edge = math.floor(self.board.k/2) # halves wining length, rounds down if k/2 is a float
+                move = (random.randint(0 + distance_from_edge, self.board.m - 1 - distance_from_edge),
+                        random.randint(0 + distance_from_edge, self.board.n - 1 - distance_from_edge))
+            #stage two
+            elif self.player_number in self.board.board[:, :] and np.argwhere(self.board.board == self.player_number).shape[0] == 1: # goes here if theres 1 or more atm, should only go here if theres 1!
+
+                first_move = (np.argwhere(self.board.board == self.player_number)[0, 0],
+                              np.argwhere(self.board.board == self.player_number)[0, 1])
+
+                # print(first_move)
+
+                original_move = False
+                while not original_move:
+                    move = (random.randint(first_move[0] - 1, first_move[0] + 1),
+                            random.randint(first_move[1] - 1, first_move[1] + 1))
+                    # print(move)
+                    if not move == first_move:
+                        original_move = True
+
+            else:
+                # what is a line in an array
+                # v_line: (m_i, n_i) ... (m_i, n_i+k)
+                # h_line: (m_i, n_i) ... (m_i+k, n_i)
+                # d_line_1: (m_i, n_i) ... (m_i+k, n_i+k)
+                # d_line_2: (m_i, n_i) ... (m_i+k, n_i-k)
+                # using np.argwhere gets the coord for each placed entry
+                # finds line checking if one of the four sum funcs above would apply.
+
+                past_moves = np.argwhere(self.board.board == self.player_number)
+
+                # when valid counter is too high place a random move
+                if valid_counter > 5:
+                    move = (random.randint(0, self.board.m - 1),
+                            random.randint(0, self.board.n - 1))
+                    print("stuck in random after valid_counter overflow")
+                
+                # find h_line
+                elif np.all(past_moves[:, 0] == past_moves[0, 0]):
+                    x_next_move = past_moves[0, 0]
+                    y_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
+                                                 np.max(past_moves[:, 1]) + 1])
+                    move = (x_next_move, y_next_move)
+                    print("stuck in find_hline")
+
+                # find v_line
+                elif np.all(past_moves[:, 1] == past_moves[0, 1]):
+                    y_next_move = past_moves[0, 1]
+                    x_next_move = random.choice([np.min(past_moves[:, 0]) - 1,
+                                                 np.max(past_moves[:, 0]) + 1])
+                    move = (x_next_move, y_next_move)
+                    print(move)
+                    print("stuck in find_vline")
+                
+                else:
+                    x_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
+                                                 np.max(past_moves[:, 1]) + 1])
+                    y_next_move = random.choice([np.min(past_moves[:, 0]) - 1,
+                                                 np.max(past_moves[:, 0]) + 1])
+                    move = (x_next_move, y_next_move)
+                    print("stuck in diagonal move")
+
+            if self.is_valid(move):
+                valid_move = False
+                #self.board.board[move[0]][move[1]] = self.player_number
+                print(move)
+                valid_counter = 0
+                return move
+            else:
+                valid_counter += 1
+
+        pass
+
+class Bot_complex(Player):
+
+    def __init__(self, player_number, name, board) -> None:
+        super().__init__(player_number, name, board)
+        self.player_type = "bot_complex"
+
+    def make_move(self): # -> (row, col)
+        pass
+class Game():
+
+
+    def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
+        self.m = m
+        self.n = n
+        self.k = k
+        self.player1 = player1
+        self.player2 = player2   
+        self.board = None
+        self.starting_player = None
+
+    def game_log(self):
+        """ # Main Game Log:
+        adds entry to dp (.csv) looking like this:
+
+        | player1_type | player2_type | starting_player | winning_player |
+        |--------------|--------------|-----------------|----------------|
+        | player       | player       | 1               | 0              |
+        | bot_random   | bot_random   | 2               | 1              |
+        | bot_simple   | bot_simple   | 1               | 2              |
+        | bot_complex  | bot_complex  | 2               | 0              |
+        """
+        with open("game_log.csv", mode='a', newline="") as f:
+            fieldnames = ["player1_type", "player2_type", "starting_player", "winning_player"]
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            if f.tell() == 0:
+                writer.writeheader()
+            
+            writer.writerow({"player1_type": self.player1.player_type,
+                             "player2_type": self.player2.player_type,
+                             "starting_player": self.starting_player,
+                             "winning_player": self.winning_player})
+            f.close()
+
+
+    def player_choice(self, p_number:int, p_name:str, choice:int):
+        valid_choices = [1, 2, 3, 4]
+
+        if choice in valid_choices:
+            if choice == 1:
+                player = Player(p_number, p_name, self.board)
+                return player
+            elif choice == 2:
+                player = Bot_random(p_number, p_name, self.board)
+                return player
+            elif choice == 3:
+                player = Bot_simple(p_number, p_name, self.board)
+                return player
+            elif choice == 4:
+                player = Bot_complex(p_number, p_name, self.board)
+                return player
+            else:
+                raise ValueError("input number out of range, please retry!")
+
+    
+    def start(self, player1_type, player1_name, player2_type, player2_name):    
+        self.board = Board(self.m, self.n, self.k)
+
+
+        self.player1 = self.player_choice(1, player1_name, player1_type)
+        self.player2 = self.player_choice(2, player2_name, player2_type)
+
+    def full_board(self):
+        # made by Dalia
+        # goes through row and checks if value of every cell is 0
+        for row in self.board.board:
+            for value in row:
+                if value == 0:
+                    return False
+        return True
+
+    def game_loop(self):
+        #made by Dalia
+        current_player = random.choice([self.player1, self.player2])
+        
+        # only for log file: - Anton
+        if np.all(self.board == 0):
+            print("uyoasildgjkfbhvagluihsdkjf")
+            self.starting_player = current_player
+        
+
+        while not self.full_board() and not self.board.has_won(current_player, self.k):
+            self.board.display()
+            print(f"Player {current_player.name}'s turn")
+            # gets the current move the player inputed
+            current_move = current_player.make_move()
+            
+            # puts the move on the board
+            self.board.board[current_move] = current_player.player_number
+            
+            # checks if someone has won and if the board is full
+            if self.board.has_won(current_player.player_number, self.k):
+                print(f"Player {current_player.name} wins!")
+                self.winning_player = current_player.player_number
+                break
+            elif self.full_board():
+                print('The board is full. Nobody won!')
+                self.winning_player = 0
+                break
+
+            # changes player
+            if current_player == self.player1:
+                current_player = self.player2
+            else:
+                current_player = self.player1
+
+            # time.sleep(0.5)
+
+        self.board.display()
+
+if __name__ == "__main__":
+    for i in range(1000):
+        # for testing the script w/o gui and user input:
+        m = 6
+        n = 5
+        k = 4   
+
+        current_game = Game(m, n, k)
+        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+        current_game.start(player1_type=3, player1_name="simple",
+                           player2_type=2, player2_name="random")
+        current_game.game_loop()
+        current_game.game_log() # pretty please pretty dalia add this to the gui :*.... or else >:(
+
+Please write a bot that hands over a tuple as a move that is more sophiosticated than the simple bot in this programm:
+
+
+To create a more sophisticated bot than the simple bot in the provided program, we can implement a bot that uses a basic heuristic approach for its moves. This approach will consider both offensive and defensive strategies. The bot will:
+
+Try to win: If it has a chance to complete a line of length k, it will do so.
+Block the opponent: If the opponent is about to win in the next move, it will block that move.
+Center Preference: If neither of the above conditions are met, it will try to play in the center of the board, as moves in the center give more opportunities for creating a line of length k.
+Random: If none of the above conditions are met, it will make a random valid move.
+Let's implement this bot as Bot_heuristic:
+
+python
+Copy code
+
+class Bot_heuristic(Player):
+    def __init__(self, player_number, name, board) -> None:
+        super().__init__(player_number, name, board)
+        self.player_type = "bot_heuristic"
+
+    def check_potential_win(self, player_number):
+        # Check rows, columns, and diagonals for potential win
+        # Returns the move that would either win the game or block the opponent from winning
+        # This function is a simplified version, further optimization and checks can be added
+
+        # Check rows and columns
+        for i in range(self.board.m):
+            for j in range(self.board.n):
+                if self.board.board[i][j] == 0:
+                    # Check if placing here wins for either player
+                    self.board.board[i][j] = player_number
+                    if self.board.has_won(player_number, self.board.k):
+                        self.board.board[i][j] = 0  # Reset
+                        return (i, j)
+                    self.board.board[i][j] = 0  # Reset
+
+        # Check diagonals and other patterns if necessary
+
+        return None
+
+    def make_move(self):
+        # Check if we can win in the next move
+        win_move = self.check_potential_win(self.player_number)
+        if win_move:
+            self.board.board[win_move[0]][win_move[1]] = self.player_number
+            return win_move
+
+        # Check if we need to block the opponent from winning
+        opponent_number = 1 if self.player_number == 2 else 2
+        block_move = self.check_potential_win(opponent_number)
+        if block_move:
+            self.board.board[block_move[0]][block_move[1]] = self.player_number
+            return block_move
+
+        # Try to play in the center of the board
+        center = (self.board.m // 2, self.board.n // 2)
+        if self.is_valid(center):
+            self.board.board[center[0]][center[1]] = self.player_number
+            return center
+
+        # Make a random valid move
+        return super().make_move()  # Fallback to random move if no strategic move is found
+This Bot_heuristic class extends the Player class and overrides the make_move method to implement the heuristic strategy. The check_potential_win method is a simplified version and needs to be fleshed out with actual logic to check rows, columns, and diagonals for a potential win or block.
+
+This approach provides a basic strategic layer on top of random moves, making the bot's gameplay more sophisticated compared to the simple bot. Further improvements could involve more advanced game theory strategies, pattern recognition, and predictive modeling based on the current state of the game board.
+
+now add a bot that will try to force the opponent into a quandry 
+To create a bot that aims to force the opponent into a quandary, we need a strategy that not only looks for immediate wins or blocks but also sets up traps that could lead to a win in subsequent moves. This bot, named Bot_trap, will focus on creating situations where it has multiple potential wins, forcing the opponent to block one and allowing the bot to win with the other.
+
+The strategy involves:
+
+Creating Forks: A "fork" is a position that allows for two or more opportunities to win in the next move. By creating a fork, the bot forces the opponent to block in one place, while the bot wins in another.
+Blocking Opponent's Forks: If the opponent is about to create a fork, block it.
+Center and Symmetry: Playing in the center or making symmetric moves when possible, as these tend to lead to more opportunities for forks.
+Fallback to Heuristic or Random: If none of the above conditions are met, fallback to the heuristic strategy or make a random valid move.
+Here is an implementation of Bot_trap:
+
+python
+Copy code
+
+class Bot_trap(Bot_heuristic):  # Inherits from Bot_heuristic for fallback strategies
+    def __init__(self, player_number, name, board) -> None:
+        super().__init__(player_number, name, board)
+        self.player_type = "bot_trap"
+
+    def find_fork_opportunities(self, player_number):
+        # This method should identify potential fork opportunities for the bot
+        # and return a move that would create a fork. This is a placeholder for
+        # the actual logic, which would involve checking the board for patterns
+        # that could lead to forks.
+        # Placeholder implementation:
+        return None
+
+    def make_move(self):
+        # First, check if we can create a fork
+        fork_move = self.find_fork_opportunities(self.player_number)
+        if fork_move and self.is_valid(fork_move):
+            self.board.board[fork_move[0]][fork_move[1]] = self.player_number
+            return fork_move
+
+        # Check if we need to block the opponent's fork
+        opponent_number = 1 if self.player_number == 2 else 2
+        block_fork_move = self.find_fork_opportunities(opponent_number)
+        if block_fork_move and self.is_valid(block_fork_move):
+            self.board.board[block_fork_move[0]][block_fork_move[1]] = self.player_number
+            return block_fork_move
+
+        # Fallback to heuristic strategy if no forks are found
+        return super().make_move()
+In this implementation, Bot_trap inherits from Bot_heuristic to utilize its more basic strategic moves as a fallback. The find_fork_opportunities method is where the logic to identify fork opportunities should be implemented. This method is a placeholder and needs to be developed based on the specific rules and patterns of the game.
+
+Creating and blocking forks requires analyzing the board for patterns where the bot or the opponent could potentially win in multiple ways in the next few moves. This involves a more complex understanding of the game's mechanics and potential future states, making it a challenging task that often requires a deep search of the game tree and pattern recognition.
+
+Note: Implementing an effective find_fork_opportunities method can be quite complex, as it involves foreseeing multiple moves ahead and understanding various board configurations that could lead to a win.
+
+try and implement two versions of how the  find_fork_opportunities method could look. be creative
+Implementing a find_fork_opportunities method requires a strategic look at the board to identify positions where creating a fork is possible. This involves finding spots where placing a marker would enable multiple paths to victory. Below are two creative approaches to implementing this method, each with its unique strategy.
+
+Version 1: Direct Fork Identification
+This version directly scans the board to identify potential forks by looking for patterns that could lead to a fork if the bot places its marker in a specific spot. It's a more straightforward and less computationally intensive approach.
+
+python
+Copy code
+
+def find_fork_opportunities_v1(self, player_number):
+    potential_forks = []
+    for i in range(self.board.m):
+        for j in range(self.board.n):
+            if self.board.board[i][j] == 0:  # Empty spot
+                self.board.board[i][j] = player_number
+                win_paths = 0
+                # Check horizontal, vertical, and diagonal paths for potential wins
+                if self.check_potential_win(player_number, position=(i, j)):
+                    win_paths += 1
+                # Revert the move after checking
+                self.board.board[i][j] = 0
+                
+                # If this move leads to multiple win paths, it's a potential fork
+                if win_paths >= 2:
+                    potential_forks.append((i, j))
+    
+    # Return the first potential fork found, or None if there are no forks
+    return potential_forks[0] if potential_forks else None
+Version 2: Simulated Move and Response
+This version simulates placing a marker in each empty spot and then simulates the opponent's response. If a move leads to a position where the bot has multiple winning responses to the opponent's move, it's considered a potential fork. This approach is more computationally intensive but can identify more complex forks.
+
+python
+Copy code
+
+def find_fork_opportunities_v2(self, player_number):
+    opponent_number = 1 if player_number == 2 else 2
+    for i in range(self.board.m):
+        for j in range(self.board.n):
+            if self.board.board[i][j] == 0:  # Empty spot
+                self.board.board[i][j] = player_number
+                opponent_responses = []
+                for x in range(self.board.m):
+                    for y in range(self.board.n):
+                        if self.board.board[x][y] == 0:  # Potential opponent move
+                            self.board.board[x][y] = opponent_number
+                            if not self.check_potential_win(opponent_number, position=(x, y)):
+                                opponent_responses.append((x, y))
+                            self.board.board[x][y] = 0  # Revert opponent's simulated move
+                
+                # For each opponent response, check if we have multiple wins
+                fork_found = False
+                for response in opponent_responses:
+                    win_options = 0
+                    self.board.board[response[0]][response[1]] = player_number  # Simulate blocking the response
+                    for check_x in range(self.board.m):
+                        for check_y in range(self.board.n):
+                            if self.board.board[check_x][check_y] == 0:  # Check our potential win after blocking
+                                self.board.board[check_x][check_y] = player_number
+                                if self.check_potential_win(player_number, position=(check_x, check_y)):
+                                    win_options += 1
+                                self.board.board[check_x][check_y] = 0  # Revert check
+                    self.board.board[response[0]][response[1]] = 0  # Revert block simulation
+                    
+                    if win_options >= 2:
+                        fork_found = True
+                        break
+                
+                self.board.board[i][j] = 0  # Revert initial move
+                if fork_found:
+                    return (i, j)
+    return None
+In both versions, check_potential_win is a hypothetical method that should be implemented to check if a potential win exists when placing a marker at a given position. The actual implementation of this method would depend on the game's rules and logic for winning.
+
+These methods offer a starting point for creating strategic bots capable of identifying and creating forks. The effectiveness and efficiency of these methods can vary based on the game's complexity and the board size.
+"""
