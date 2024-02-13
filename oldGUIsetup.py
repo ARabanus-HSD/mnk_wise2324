@@ -1,12 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Feb 13 16:58:43 2024
+
+@author: Dalia Salih
+
+GUI - how it was
+"""
+
 import sys
-from PyQt6.QtWidgets import QApplication, QMessageBox, QMainWindow, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QGraphicsScene, QGraphicsView, QGraphicsRectItem, QGraphicsTextItem, QGraphicsLineItem
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QGraphicsScene, QGraphicsView, QGraphicsRectItem, QGraphicsTextItem, QGraphicsLineItem
 from PyQt6.QtGui import QPixmap, QFontDatabase, QFont, QColor, QPainter
 from PyQt6.QtCore import Qt
-from mnkforGUI import Game, Board, Player, Bot_random, Bot_simple, Bot_complex
-
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QGridLayout, QLabel
-from PyQt6.QtGui import QPixmap, QFont, QColor, QFontDatabase
-from PyQt6.QtCore import Qt, QSize
+from mnkforGUI import Game, Player, Bot_random, Bot_simple, Bot_complex
 
 
 class ChalkboardButton(QPushButton):
@@ -76,7 +81,6 @@ class MainMenu(QMainWindow):
         k_input.setStyleSheet("color: white; margin-bottom: 5px;")
         input_layout.addWidget(k_input)
         
-
         
         
         #Player 1
@@ -254,113 +258,81 @@ class MainMenu(QMainWindow):
         
 class GameBoardWindow(QMainWindow):
     # def __init__(self, m, n):
-
-    def __init__(self, game):
+        
+    def __init__(self, m, n, player1_name, player2_name, game):
         super().__init__()
         self.game = game
-        self.initUI()
+        self.last_move = None
 
-    def initUI(self):
-        # Setup window
-        self.setWindowTitle("MNK Game")
-        self.setGeometry(100, 100, 800, 600)
-        
-        # Load and set up font and background
-        self.setStyleSheet("background-image: url('chalkboard4.jpg');")
-        QFontDatabase.addApplicationFont("EraserRegular.ttf")
-        chalk_font = QFont("Eraser", 20)
-        
-        # Set up central widget and main layout
+        # Font
+        font_path = "EraserRegular.ttf"  
+        chalk_font_id = QFontDatabase.addApplicationFont(font_path)
+        chalk_font_family = QFontDatabase.applicationFontFamilies(chalk_font_id)[0]
+        chalk_font = QFont(chalk_font_family, 20)
+
+        # Background
+        chalkboard_image_path = "chalkboard4.jpg"
+        self.setStyleSheet(f"background-image: url({chalkboard_image_path});")
+
         central_widget = QWidget(self)
         self.setCentralWidget(central_widget)
+
         main_layout = QVBoxLayout(central_widget)
+        main_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         
-        central_widget.setStyleSheet("background-color: white;")  # Choose a color that simulates the spaces (grid lines) effect
+        players_layout = QHBoxLayout()
+        players_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
 
-        # Game Name Heading
-        game_name_label = QLabel("MNHURE")
-        game_name_label.setFont(QFont("Eraser", 48, QFont.Weight.Bold))
-        game_name_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-       # game_name_label.setStyleSheet("color: white;")
-        game_name_label.setStyleSheet("""
-                    color: white; 
-                    text-shadow: 2px 2px 4px #000000; 
-                    letter-spacing: 2px;
-                    """)
-        main_layout.addWidget(game_name_label)
-
-        # Setup players layout
-        self.players_layout = QHBoxLayout()
-        self.player1_label = QLabel(f"Player 1: {self.game.player1.name}")
-        self.player1_label.setFont(chalk_font)
-        self.player1_label.setStyleSheet("color: white;")
-        self.player2_label = QLabel(f"Player 2: {self.game.player2.name}")
-        self.player2_label.setFont(chalk_font)
-        self.player2_label.setStyleSheet("color: white;")
-        self.players_layout.addWidget(self.player1_label)
-        #players_layout.addStretch()
-        self.players_layout.addWidget(self.player2_label)
-        main_layout.addLayout(self.players_layout)
+        # Player 1
+        player1_name_label = QLabel(f"Player 1: {player1_name}", self)
+        player1_name_label.setFont(chalk_font)
+        player1_name_label.setStyleSheet("color: white;")
         
-        # Setup game board layout
-      #  board_layout = QGridLayout()
+        player1_piece_label = QLabel("X", self)
+        player1_piece_label.setFont(chalk_font)
+        player1_piece_label.setStyleSheet("color: white;")
         
-        grid_layout = QGridLayout()
-        grid_layout.setHorizontalSpacing(1)  # Adjust spacing as needed
-        grid_layout.setVerticalSpacing(1)  
-        main_layout.addLayout(grid_layout)
-        self.buttons = []
-        for i in range(self.game.board.m):
-            row_buttons = []
-            for j in range(self.game.board.n):
-                button = QPushButton()
-                button.setFont(chalk_font)
-                button.setStyleSheet("color: white; background-color: transparent;")
-                button.setFixedSize(QSize(60, 60))
-                button.clicked.connect(lambda checked, x=i, y=j: self.on_button_clicked(x, y))
-                grid_layout.addWidget(button, i, j)
-                row_buttons.append(button)
-            self.buttons.append(row_buttons)
-
-    def on_button_clicked(self, i, j):
-        currentPlayer = self.game.get_current_player()
-        if self.game.place_move((i, j)):
-            self.update_ui()
-
-            # This block simulates the 'game loop' logic for each move
-            if self.game.board.has_won(currentPlayer):
-                self.display_winner(currentPlayer)
-                self.disable_board()
-            elif self.game.full_board():
-                self.display_winner(None)
-                self.disable_board()
-            else:
-                self.game.switch_player()
-                self.update_player_ui()
-        else:
-            print("Invalid move.")
+        # Player 2 
+        player2_name_label = QLabel(f"Player 2: {player2_name}", self)
+        player2_name_label.setFont(chalk_font)
+        player2_name_label.setStyleSheet("color: white;")
         
-    def update_ui(self):
-        for i in range(self.game.board.m):
-            for j in range(self.game.board.n):
-                if self.game.board.board[i, j] == 1:
-                    self.buttons[i][j].setText("X")
-                elif self.game.board.board[i, j] == 2:
-                    self.buttons[i][j].setText("O")
-                    
-    def update_player_ui(self):
-        # Reset label styles to default
-        self.player1_label.setStyleSheet("")
-        self.player2_label.setStyleSheet("")
-        if self.game.current_player == 1:
-            self.player1_label.setStyleSheet("color: red;")  # Highlight current player
-        else:
-            self.player2_label.setStyleSheet("color: red;")
-            
-    def disable_board(self):
-        for row_buttons in self.buttons:
-            for button in row_buttons:
-                button.setEnabled(False) 
+        player2_piece_label = QLabel("O", self)
+        player2_piece_label.setFont(chalk_font)
+        player2_piece_label.setStyleSheet("color: white;")
+
+
+        players_layout.addWidget(player1_piece_label)
+        players_layout.addWidget(player1_name_label)
+        players_layout.addSpacing(100)  # Adjust spacing between player labels
+        players_layout.addWidget(player2_name_label)
+        players_layout.addWidget(player2_piece_label)
+        
+        self.scene = QGraphicsScene(self)
+        self.view = QGraphicsView(self.scene)
+        main_layout.addLayout(players_layout)
+        main_layout.addWidget(self.view)
+
+        self.view.setFont(chalk_font)
+
+        self.cell_size = 50
+        for row in range(m):
+            for col in range(n):
+                rect_item = QGraphicsRectItem(col * self.cell_size, row * self.cell_size, self.cell_size, self.cell_size)
+                rect_item.setPen(QColor("white"))
+                self.scene.addItem(rect_item)
+
+                # Draw player moves using chalk_font
+                text_item = QGraphicsTextItem("", rect_item)
+                text_item.setFont(chalk_font)
+                text_item.setDefaultTextColor(QColor("white"))
+                text_item.setPos(col * self.cell_size + self.cell_size / 4, row * self.cell_size + self.cell_size / 4)
+
+        # Highlight current player's turn
+        self.highlight_current_player()
+        
+        self.setWindowTitle("Game Board")
+        self.setGeometry(200, 200, n * self.cell_size + 80, m * self.cell_size + 80)
         
     def highlight_current_player(self):
         current_player = self.game.get_current_player()
@@ -371,23 +343,6 @@ class GameBoardWindow(QMainWindow):
                 elif current_player == 2 and item.toPlainText() == "O":
                     item.setDefaultTextColor(QColor("yellow"))
 
-    def display_winner(self, player):
-        winner_message = ""
-        if player == 1:
-            winner_message = f"Congratulations, {self.game.player1.name} wins!"
-        elif player == 2:
-            winner_message = f"Congratulations, {self.game.player2.name} wins!"
-        else:
-            winner_message = "It's a draw!"
-            
-        #QMessageBox.information(self, "Game Over", winner_message)
-
-        # Use a QLabel as a simple way to show the winner or a draw
-        winner_label = QLabel(winner_message, self)
-        winner_label.setFont(QFont("Eraser", 30))
-        winner_label.setStyleSheet("color: white;")
-        winner_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.setCentralWidget(winner_label)
         
     def mousePressEvent(self, event):
         super().mousePressEvent(event)
@@ -554,9 +509,8 @@ if __name__ == "__main__":
     current_game.game_loop()
     
     # 4. Create and Show the GUI
-    game_window = GameBoardWindow(current_game)
-    game_window.show()
+    game_board_window = GameBoardWindow(5, 4, 'Dalia', 'Anton', current_game)
+    game_board_window.show()
     
     # 5. Execute the Application
     sys.exit(app.exec())
-    

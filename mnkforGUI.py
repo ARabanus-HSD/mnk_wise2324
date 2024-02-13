@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Feb 13 12:49:58 2024
+
+@author: Dalia Salih
+
+mnk_projekt aber auf GUI kompatibel
+"""
+
 import numpy as np
 import random
 import time
@@ -25,39 +34,45 @@ class Board():
 
     def display(self):
         print(self.board)
+        
+    
+    def place_move(self, row, col, player_num):
+    # First, check if the chosen position is within the bounds of the board
+        if 0 <= row < self.m and 0 <= col < self.n:
+            # Then, check if the selected cell is empty (0)
+            if self.board[row, col] == 0:
+                self.board[row, col] = player_num
+                return True
+            else:
+                print("This cell is already taken. Please choose a different cell.")
+                return False
+        else:
+            print("Invalid move. Please choose a cell within the board's bounds.")
+            return False
 
-    def has_won(self, current_player, k):
-        """_summary_
-        playerX has won when there is a k-long Pattern on the m x n board
-        start checking for winning pattern after k moves
 
-        !! checking diagonally misses
-              made by Dalia
-        """
-
-        self.current_player = current_player
-
-        # check for rows
-        for col in range(self.m):
-            count = 0
-            for row in self.board.T:
-                if row[col] == current_player:
-                    count += 1
-                    if count == k:
-                        return True
-                else:
-                    count = 0
-
-        # check the columns
-        for col in range(self.n):
-            count = 0
-            for row in self.board:
-                if row[col] == current_player:
-                    count += 1
-                    if count == k:
-                        return True
-                else:
-                    count = 0
+    def has_won(self, player):
+        # Horizontal check
+        for row in range(self.m):
+            for col in range(self.n - self.k + 1):
+                if all(self.board[row][c] == player for c in range(col, col + self.k)):
+                    return True
+        # Vertical check
+        for row in range(self.m - self.k + 1):
+            for col in range(self.n):
+                if all(self.board[r][col] == player for r in range(row, row + self.k)):
+                    return True
+        # Diagonal check (down-right)
+        for row in range(self.m - self.k + 1):
+            for col in range(self.n - self.k + 1):
+                if all(self.board[row + d][col + d] == player for d in range(self.k)):
+                    return True
+        # Diagonal check (down-left)
+        for row in range(self.m - self.k + 1):
+            for col in range(self.k - 1, self.n):
+                if all(self.board[row + d][col - d] == player for d in range(self.k)):
+                    return True
+        return False
         
         # check for diagonal k long lines - Anton
         # diagonal nach links
@@ -263,9 +278,9 @@ class Game():
                 writer.writeheader()
             
             writer.writerow({"player1_type": self.player1.player_type,
-                             "player2_type": self.player2.player_type,
-                             "starting_player": self.starting_player,
-                             "winning_player": self.winning_player})
+                              "player2_type": self.player2.player_type,
+                              "starting_player": self.starting_player,
+                              "winning_player": self.winning_player})
             f.close()
 
 
@@ -306,49 +321,94 @@ class Game():
                     return False
         return True
 
-    def game_loop(self):
-        # #made by Dalia
-      
-        current_player = random.choice([self.player1, self.player2])
-        print("Current player:", current_player)
-        # only for log file: - Anton
-        if np.all(self.board == 0):
-            print("uyoasildgjkfbhvagluihsdkjf")
-            self.starting_player = current_player
-        
-
-        while not self.full_board() and not self.board.has_won(current_player, self.k):
-            self.board.display()
-            print(f"Player {current_player.name}'s turn")
-            # gets the current move the player inputed
-            current_move = current_player.make_move()
-            
-            # puts the move on the board
-            self.board.board[current_move] = current_player.player_number
-            
-            # checks if someone has won and if the board is full
-            if self.board.has_won(current_player.player_number, self.k):
-                print(f"Player {current_player.name} wins!")
-                self.winning_player = current_player.player_number
-                break
-            elif self.full_board():
-                print('The board is full. Nobody won!')
-                self.winning_player = 0
-                break
-
-            # changes player
-            if current_player == self.player1:
-                current_player = self.player2
-            else:
-                current_player = self.player1
-
-            # time.sleep(0.5)
-
-        self.board.display()
+    def switch_player(self):
+        # Switch the current player
+        if self.current_player == 1:
+            self.current_player = 2
+        else:
+            self.current_player = 1
     
+    def place_move(self, position):
+        row, col = position
+        successful_move = self.board.place_move(row, col, self.current_player)
+        if successful_move:
+            if self.board.has_won(self.current_player):
+                return True, f"Player {self.current_player} wins!"
+            
+            #self.current_player = 1 if self.current_player == 2 else 2  # Switch player
+            return True, None  # Move was successful but no win
+    
+        return False, "Invalid move, try again."
+
+
+    def game_loop(self):
+        # Start the game with a random player
+        current_player = random.choice([self.player1, self.player2])
+        self.current_player = current_player.player_number
+
+        current_player = self.player2 if current_player == self.player1 else self.player1
+
+    # def handle_player_turn(self, player):
+    #     print("Current player:", player.name)
+
+    #     print("Current board state:")
+    #     self.board.display()
+
+    #     # Trigger player move based on GUI input
+    #     # For now, assume place_move method updates the board
+
+    #     # Check for a win or draw condition
+    #     if self.board.has_won(player.player_number, self.k):
+    #         print(f"Player {player.name} wins!")
+    #         self.winning_player = player.player_number
+    #         # Log the game result
+    #         self.game_log()
+    #         return
+    #     elif self.full_board():
+    #         print("It's a draw!")
+    #         self.winning_player = 0
+    #         # Log the game result
+    #         self.game_log()
+    #         return
+
+        # # Switch to the next player's turn
+        # next_player = self.player2 if player == self.player1 else self.player1
+        # self.handle_player_turn(next_player)   
+        
     def get_current_player(self):
         return self.current_player
     
+    # need this def to make moves in the GUI - DubDub
+    
+    # def place_move(self, move):
+    #     player = self.get_current_player()
+    #     if player.make_move(move):
+    #         if self.board.has_won(player.player_number):
+    #             return f"{player.name} wins!"
+    #         self.next_turn()
+    #         return None
+    #     return "Invalid move place_move. Please try again."
+    
+    # def place_move(self, move: tuple, player: int):
+    #     print("Received move at place_move:", move)
+    #     if move is not None:
+    #         print(self.board.board)
+    #         if self.board.board[move[0]][move[1]] == 0:
+    #             self.board.board[move[0]][move[1]] = player
+    #             return True
+    #         else:
+    #             print("Invalid move from place_move")
+        # row, col = move
+        # if self.board[row][col] != 0:
+        #     print('Cell is not empty. Please try again.')
+        #     return False
+        # self.board[row][col] = player
+        # return True
+            # if self.current_player is not None:
+            #     if self.board[row][col] == 0:
+            #         self.board[row][col] = self.current_player
+            #         return True
+            # return False
 
 if __name__ == "__main__":
     for i in range(1000):
