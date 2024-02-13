@@ -4,6 +4,7 @@ import time
 import math
 from datetime import datetime
 import csv
+from copy import deepcopy
 
 
 class Board():
@@ -159,6 +160,26 @@ class Board():
         # wie beschreibt man eine linie die k lang ist und diagonal?
         # starting point kann nur im bereich [m, m-k][n, n-k]
         return False
+    
+    def get_available_moves(self):
+        """
+        returns list of all available moves on the board, only used for Bot_MCTS
+        """
+        available_moves = []
+        # Iterate over the board to find empty spaces
+        for row_index, row in enumerate(self.board):
+            for col_index, value in enumerate(row):
+                if value == 0:  # If the space is empty
+                    available_moves.append((row_index, col_index))
+        return available_moves
+    
+    def full_board(self):
+        # goes through each row and checks if value of every cell is 0
+        for row in self.board:
+            for value in row:
+                if value == 0:
+                    return False  # Found an empty cell, so the board is not full
+        return True  # No empty cells were found, the board is full
 
 class Player():
 
@@ -326,6 +347,51 @@ class Bot_complex(Player):
 
     def make_move(self): # -> (row, col)
         pass
+
+class Bot_MCTS(Player):
+
+    def __init__(self, player_number, name, board):
+        super().__init__(player_number, name, board)
+        self.player_type = "bot_MCTS"
+
+        # Additional initialization specific to MCTS if needed
+    
+    def simulate_random_playthrough(self, board, current_player):
+        temp_board = deepcopy(board)  # Use a deep copy to avoid mutating the original
+        moves = temp_board.get_available_moves()
+        np.random.shuffle(moves)  # Randomly shuffle available moves to avoid bias
+
+        while moves:
+            move = moves.pop()
+            temp_board.board[move[0]][move[1]] = current_player
+            if temp_board.has_won(current_player, temp_board.k):
+                return 1 if current_player == self.player_number else -1
+            elif temp_board.full_board():
+                return 0
+            current_player = 3 - current_player  # Switch players
+
+        return 0
+
+    def make_move(self):
+        available_moves = self.board.get_available_moves()
+        move_scores = {move: 0 for move in available_moves}
+        
+        for move in available_moves:
+            for _ in range(100):  # Conduct 100 simulations for each available move
+                temp_board = deepcopy(self.board)
+                temp_board.board[move[0]][move[1]] = self.player_number
+                result = self.simulate_random_playthrough(temp_board, 3 - self.player_number)
+                move_scores[move] += result
+        
+        # Randomize selection among top-scoring moves if there's a tie
+        max_score = max(move_scores.values())
+        best_moves = [move for move, score in move_scores.items() if score == max_score]
+        best_move = random.choice(best_moves)  # Randomly choose among the best if there's a tie
+
+        # Apply the chosen move to the actual board
+        self.board.board[best_move[0]][best_move[1]] = self.player_number
+        return best_move
+    
 class Game():
 
 
@@ -349,7 +415,7 @@ class Game():
         | bot_simple   | bot_simple   | 1               | 2              |
         | bot_complex  | bot_complex  | 2               | 0              |
         """
-        with open("game_log_simple_vs_simple.csv", mode='a', newline="") as f:
+        with open("game_log_simple_vs_MCTS.csv", mode='a', newline="") as f:
             fieldnames = ["player1_type", "player2_type", "starting_player", "winning_player"]
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             if f.tell() == 0:
@@ -376,7 +442,7 @@ class Game():
                 player = Bot_simple(p_number, p_name, self.board)
                 return player
             elif choice == 4:
-                player = Bot_complex(p_number, p_name, self.board)
+                player = Bot_MCTS(p_number, p_name, self.board)
                 return player
             else:
                 raise ValueError("input number out of range, please retry!")
@@ -412,6 +478,7 @@ class Game():
 
         while not self.full_board() and not self.board.has_won(current_player, self.k):
             self.board.display()
+            # print(self.board.get_available_moves())
             print(f"Player {current_player.name}'s turn")
             # gets the current move the player inputed
             current_move = current_player.make_move()
@@ -440,15 +507,15 @@ class Game():
         self.board.display()
 
 if __name__ == "__main__":
-    for i in range(1):
+    for i in range(50):
         # for testing the script w/o gui and user input:
-        m = 6
+        m = 5
         n = 5
         k = 4   
 
         current_game = Game(m, n, k)
         # human : 1, bot random: 2, bot simple: 3, bot complex: 4
         current_game.start(player1_type=3, player1_name="simple_1",
-                           player2_type=3, player2_name="simple_2")
+                           player2_type=4, player2_name="monte_carlo_tree_search")
         current_game.game_loop()
         current_game.game_log() # pretty please pretty dalia add this to the gui :*.... or else >:(
