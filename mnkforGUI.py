@@ -37,6 +37,9 @@ class Board():
         
     
     def place_move(self, row, col, player_num):
+        if player_num is None or not isinstance(player_num, int):
+            print(f"Invalid player number: {player_num}")
+            return False
     # First, check if the chosen position is within the bounds of the board
         if 0 <= row < self.m and 0 <= col < self.n:
             # Then, check if the selected cell is empty (0)
@@ -311,6 +314,8 @@ class Game():
         self.player1 = self.player_choice(1, player1_name, player1_type)
         self.player2 = self.player_choice(2, player2_name, player2_type)
         
+        self.current_player = random.choice([self.player1, self.player2])
+        
 
     def full_board(self):
         # made by Dalia
@@ -322,11 +327,11 @@ class Game():
         return True
 
     def switch_player(self):
-        # Switch the current player
-        if self.current_player == 1:
-            self.current_player = 2
+        # Switch the current player by comparing object identity.
+        if self.current_player == self.player1:
+            self.current_player = self.player2
         else:
-            self.current_player = 1
+            self.current_player = self.player1
     
     def place_move(self, position):
         row, col = position
@@ -335,7 +340,7 @@ class Game():
             if self.board.has_won(self.current_player):
                 return True, f"Player {self.current_player} wins!"
             
-            #self.current_player = 1 if self.current_player == 2 else 2  # Switch player
+            self.current_player = 1 if self.current_player == 2 else 2  # Switch player
             return True, None  # Move was successful but no win
     
         return False, "Invalid move, try again."
@@ -347,68 +352,18 @@ class Game():
         self.current_player = current_player.player_number
 
         current_player = self.player2 if current_player == self.player1 else self.player1
-
-    # def handle_player_turn(self, player):
-    #     print("Current player:", player.name)
-
-    #     print("Current board state:")
-    #     self.board.display()
-
-    #     # Trigger player move based on GUI input
-    #     # For now, assume place_move method updates the board
-
-    #     # Check for a win or draw condition
-    #     if self.board.has_won(player.player_number, self.k):
-    #         print(f"Player {player.name} wins!")
-    #         self.winning_player = player.player_number
-    #         # Log the game result
-    #         self.game_log()
-    #         return
-    #     elif self.full_board():
-    #         print("It's a draw!")
-    #         self.winning_player = 0
-    #         # Log the game result
-    #         self.game_log()
-    #         return
-
-        # # Switch to the next player's turn
-        # next_player = self.player2 if player == self.player1 else self.player1
-        # self.handle_player_turn(next_player)   
         
     def get_current_player(self):
+        print(f"get_current_player: {self.current_player}, Type: {type(self.current_player)}")
+        if self.current_player == 1:
+            return self.player1
+        elif self.current_player == 2:
+            return self.player2
+        # Correctly return the current player object
         return self.current_player
     
     # need this def to make moves in the GUI - DubDub
-    
-    # def place_move(self, move):
-    #     player = self.get_current_player()
-    #     if player.make_move(move):
-    #         if self.board.has_won(player.player_number):
-    #             return f"{player.name} wins!"
-    #         self.next_turn()
-    #         return None
-    #     return "Invalid move place_move. Please try again."
-    
-    # def place_move(self, move: tuple, player: int):
-    #     print("Received move at place_move:", move)
-    #     if move is not None:
-    #         print(self.board.board)
-    #         if self.board.board[move[0]][move[1]] == 0:
-    #             self.board.board[move[0]][move[1]] = player
-    #             return True
-    #         else:
-    #             print("Invalid move from place_move")
-        # row, col = move
-        # if self.board[row][col] != 0:
-        #     print('Cell is not empty. Please try again.')
-        #     return False
-        # self.board[row][col] = player
-        # return True
-            # if self.current_player is not None:
-            #     if self.board[row][col] == 0:
-            #         self.board[row][col] = self.current_player
-            #         return True
-            # return False
+
 
 if __name__ == "__main__":
     for i in range(1000):

@@ -1,7 +1,7 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QMessageBox, QMainWindow, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QGraphicsScene, QGraphicsView, QGraphicsRectItem, QGraphicsTextItem, QGraphicsLineItem
 from PyQt6.QtGui import QPixmap, QFontDatabase, QFont, QColor, QPainter
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QTimer
 from mnkforGUI import Game, Board, Player, Bot_random, Bot_simple, Bot_complex
 
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QGridLayout, QLabel
@@ -244,12 +244,12 @@ class MainMenu(QMainWindow):
         # player1 = current_game.choose_player(1, player1_name, player1_type)
         # player2 = current_game.choose_player(2, player2_name, player2_type)
         current_game.start(player1_type, player1_name, player2_type, player2_name)
-        current_game.game_loop()
+        #current_game.game_loop()
         
-        # Show the game board window
-        game_board_window = GameBoardWindow(m, n)
-        game_board_window.show()
         self.hide()
+        # Show the game board window
+        game_board_window = GameBoardWindow(current_game)
+        game_board_window.show()
         
         
 class GameBoardWindow(QMainWindow):
@@ -259,6 +259,10 @@ class GameBoardWindow(QMainWindow):
         super().__init__()
         self.game = game
         self.initUI()
+        
+        self.move_timer = QTimer(self)  # Create a QTimer instance
+        self.move_timer.timeout.connect(self.handle_bot_move)  # Connect to the handler
+        self.move_timer.start(1000)
 
     def initUI(self):
         # Setup window
@@ -316,29 +320,91 @@ class GameBoardWindow(QMainWindow):
                 button = QPushButton()
                 button.setFont(chalk_font)
                 button.setStyleSheet("color: white; background-color: transparent;")
-                button.setFixedSize(QSize(60, 60))
+                button.setFixedSize(QSize(100, 100))
                 button.clicked.connect(lambda checked, x=i, y=j: self.on_button_clicked(x, y))
                 grid_layout.addWidget(button, i, j)
                 row_buttons.append(button)
             self.buttons.append(row_buttons)
 
     def on_button_clicked(self, i, j):
-        currentPlayer = self.game.get_current_player()
-        if self.game.place_move((i, j)):
-            self.update_ui()
+        current_player = self.game.get_current_player()
+        if not isinstance(current_player, (Bot_random, Bot_simple, Bot_complex)):
+            if self.game.place_move((i, j)):
+                self.update_ui()
 
             # This block simulates the 'game loop' logic for each move
-            if self.game.board.has_won(currentPlayer):
-                self.display_winner(currentPlayer)
-                self.disable_board()
-            elif self.game.full_board():
-                self.display_winner(None)
-                self.disable_board()
+                if self.game.board.has_won(current_player):
+                    self.display_winner(current_player)
+                    self.disable_board()
+                elif self.game.full_board():
+                    self.display_winner(None)
+                    self.disable_board()
+                else:
+                    self.game.switch_player()
+                    self.update_player_ui()
             else:
-                self.game.switch_player()
-                self.update_player_ui()
-        else:
-            print("Invalid move.")
+                print("Invalid move.")
+        
+            
+    # def handle_bot_move(self):
+    #     current_player = self.game.get_current_player()
+      
+    #     # Ensure we have a Player object
+    #     if not isinstance(current_player, Player):
+    #         print("Error: Current player is not a valid Player object.")
+    #         return  # This should not happen, verify initialization routines.
+
+    #       # Continue only if the player is a bot
+    #     if not isinstance(current_player, (Bot_random, Bot_simple, Bot_complex)):
+    #          return  # Not a bot's turn, so do nothing.
+
+    #     move = current_player.make_move()
+    #     if move:
+    #       row, col = move
+    #       if self.game.place_move((row, col)):
+    #           self.update_ui()
+
+    #           if self.game.board.has_won(current_player.player_number):
+    #               self.display_winner(current_player.player_number)
+    #               self.move_timer.stop()  # Stop timer if game is over
+    #           elif self.game.full_board():
+    #               self.display_winner(None)
+    #               self.move_timer.stop()  # Stop timer if game is over
+    #           else:
+    #               self.game.switch_player()
+    #               self.update_player_ui()
+    #       else:
+    #           print("Bot move failed: ", move)  
+              
+    def handle_bot_move(self):
+        current_player = self.game.get_current_player()
+        print(f'in handle_bot_move we get: {current_player.name}')
+        # If the current player is a bot, generate and place its move
+        if isinstance(current_player, (Bot_random, Bot_simple, Bot_complex)):
+            # self.game.place_move(move)
+            # self.update_ui()
+            move = current_player.make_move() 
+            print(f'bot move: {move}')
+            if move is not None:
+                row, col = move
+                
+                #player_num = current_player.player_number  # Ensure this is correctly assigned
+                print(f"Attempting bot move for player {current_player.player_number}: {move}")
+                successful_move = self.game.place_move((row, col))
+                if successful_move:
+                    self.update_ui()
+                    
+                    # After bot move, check for win or full board
+                    if self.game.board.has_won(current_player.player_number):
+                        self.display_winner(current_player.player_number)
+                    elif self.game.full_board():
+                        self.display_winner(None)
+                    else:
+                        self.game.switch_player()  # Switch player if the game hasn't ended
+                        self.update_player_ui() 
+                else:
+                    print('Bot move failed', move)
+                   
         
     def update_ui(self):
         for i in range(self.game.board.m):
@@ -362,14 +428,6 @@ class GameBoardWindow(QMainWindow):
             for button in row_buttons:
                 button.setEnabled(False) 
         
-    def highlight_current_player(self):
-        current_player = self.game.get_current_player()
-        for item in self.scene.items():
-            if isinstance(item, QGraphicsTextItem):
-                if current_player == 1 and item.toPlainText() == "X":
-                    item.setDefaultTextColor(QColor("yellow"))
-                elif current_player == 2 and item.toPlainText() == "O":
-                    item.setDefaultTextColor(QColor("yellow"))
 
     def display_winner(self, player):
         winner_message = ""
@@ -379,8 +437,6 @@ class GameBoardWindow(QMainWindow):
             winner_message = f"Congratulations, {self.game.player2.name} wins!"
         else:
             winner_message = "It's a draw!"
-            
-        #QMessageBox.information(self, "Game Over", winner_message)
 
         # Use a QLabel as a simple way to show the winner or a draw
         winner_label = QLabel(winner_message, self)
@@ -388,35 +444,6 @@ class GameBoardWindow(QMainWindow):
         winner_label.setStyleSheet("color: white;")
         winner_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.setCentralWidget(winner_label)
-        
-    def mousePressEvent(self, event):
-        super().mousePressEvent(event)
-        if event.button() == Qt.MouseButton.LeftButton:
-            # get coordinates
-            pos = event.pos()
-            print("Mouse position:", pos)  # Debugging print
-            # transform into scene coordinates
-            scene_pos = self.view.mapToScene(pos)
-            print("Scene position:", scene_pos)  # Debugging print
-            # check if it's on the rectangle
-            items = self.scene.items(scene_pos)
-            print("Items under mouse cursor:", items)  # Debugging print
-            for item in items:
-                if isinstance(item, QGraphicsRectItem):
-                    col = int(item.rect().x() / self.cell_size)
-                    row = int(item.rect().y() / self.cell_size)
-                    print("Clicked cell coordinates:", row, col)  # Debugging print
-                    current_player = self.game.get_current_player()
-                    print("Current player:", current_player)  # Debugging print
-                    if current_player is not None:
-                        print("Placing move...")  # Debugging print
-                        if self.game.place_move((row, col)):
-                            print('Move placed')  # Debugging print
-                            self.handle_move(row, col)
-                            print('Stone placed')  # Debugging print
-                        else:
-                            print("Invalid move from mousePressEvent")
-                    break
                 
         
     def handle_move(self, row, col):
@@ -471,92 +498,29 @@ class GameBoardWindow(QMainWindow):
         for row in self.game.board:
             print(row)
                     
-        # super().__init__()
-
-        # # Load chalk font
-        # font_path = "EraserRegular.ttf"  # path
-        # chalk_font = QFontDatabase.addApplicationFont(font_path)
-        # chalk_font = QFont("Eraser", 20)
-
-        # # Set up background
-        # chalkboard_image_path = "chalkboard4.jpg"
-        # # chalkboard_image = QPixmap(chalkboard_image_path).scaled(self.size())
-        # self.setStyleSheet(f"background-image: url({chalkboard_image_path});")
-
-        # # Set up central widget
-        # central_widget = QWidget(self)
-        # self.setCentralWidget(central_widget)
-
-        # # Set up main layout
-        # main_layout = QVBoxLayout(central_widget)
-        # main_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
-
-        # # Create QGraphicsScene and QGraphicsView for the game board
-        # scene = QGraphicsScene(self)
-        # view = QGraphicsView(scene)
-        # main_layout.addWidget(view)
-        
-
-        # # Set the font for the entire QGraphicsView
-        # view.setFont(chalk_font)
-
-        # # Draw m x n scratchboard
-        # cell_size = 50
-        # for row in range(m):
-        #     for col in range(n):
-        #         rect_item = QGraphicsRectItem(col * cell_size, row * cell_size, cell_size, cell_size)
-        #         rect_item.setPen(QColor("white"))
-        #         scene.addItem(rect_item)
-
-        #         # Draw player moves using chalk_font
-        #         text_item = QGraphicsTextItem("", rect_item)
-        #         text_item.setFont(chalk_font)
-        #         text_item.setDefaultTextColor(QColor("white"))
-        #         text_item.setPos(col * cell_size + cell_size / 4, row * cell_size + cell_size / 4)
-
-                
-        # self.setWindowTitle("Game Board")
-        # self.setGeometry(100, 100, n * cell_size + 40, m * cell_size + 40)  # Adj
-        
-    # def place_move(self, row, col, player_number):
-    #     # Get the chalk_font symbol for the player
-    #     symbol = "X" if player_number == 1 else "O"
-
-    #     # Iterate through all items in the scene and find the correct QGraphicsRectItem
-    #     for item in self.scene().items():
-    #         if isinstance(item, QGraphicsRectItem):
-    #             rect_item = item
-    #             rect_row = int(rect_item.y() / cell_size)
-    #             rect_col = int(rect_item.x() / cell_size)
-
-    #         # Check if the current item corresponds to the specified row and col
-    #         if rect_row == row and rect_col == col:
-    #             # Draw the player's move using chalk_font
-    #             text_item = QGraphicsTextItem(symbol, rect_item)
-    #             text_item.setFont(chalk_font)
-    #             text_item.setDefaultTextColor(QColor("white"))
-    #             text_item.setPos(col * cell_size + cell_size / 4, row * cell_size + cell_size / 4)
-    #             break
 
 
 if __name__ == "__main__":
+    # app = QApplication(sys.argv)
+
+    # # 1. Initialize the Game Instance
+    # current_game = Game(5, 5, 4)
+    
+    # # 2. Start the Game
+    # current_game.start(player1_type=1, player1_name="Dalia",
+    #                    player2_type=1, player2_name="Anton")
+    
+    # # 3. Run the Game Loop
+    # current_game.game_loop()
+    
+    # # 4. Create and Show the GUI
+    # game_window = GameBoardWindow(current_game)
+    # game_window.show()
+    
+    # # 5. Execute the Application
+    # sys.exit(app.exec())
     app = QApplication(sys.argv)
-   # main_menu = MainMenu()
-    #main_menu.show()
-    # 1. Initialize the Game Instance
-    current_game = Game(5, 5, 4)
-    
-    # 2. Start the Game
-    current_game.start(player1_type=1, player1_name="Dalia",
-                       player2_type=1, player2_name="Anton")
-    
-    # 3. Run the Game Loop
-    current_game.game_loop()
-    
-    # 4. Create and Show the GUI
-    game_window = GameBoardWindow(current_game)
-    game_window.show()
-    
-    # 5. Execute the Application
+    mainMenu = MainMenu()
+    mainMenu.show()
     sys.exit(app.exec())
     
