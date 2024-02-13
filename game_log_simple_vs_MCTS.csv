@@ -435,3 +435,23 @@ bot_simple,bot_MCTS,,2
 bot_simple,bot_MCTS,,2
 bot_simple,bot_MCTS,,2
 bot_simple,bot_MCTS,,1
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7ffb62ff4970>,2
+bot_simple,bot_MCTS,<__main__.Bot_MCTS object at 0x7fe38dfb49d0>,2
+bot_simple,bot_MCTS,<__main__.Bot_MCTS object at 0x7f944eff0a00>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f944eff0a30>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f944eff0a30>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f944eff0a30>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f944eff0970>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f944eff09d0>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f944eff06d0>,2
+bot_simple,bot_MCTS,<__main__.Bot_MCTS object at 0x7f944eff09d0>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f8850>,1
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f8850>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f8850>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f8910>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f8820>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f8a00>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f88b0>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f88e0>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f87f0>,2
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f8a499f8880>,2

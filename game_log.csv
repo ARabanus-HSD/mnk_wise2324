@@ -1,2440 +1,324 @@
-player1_type,player2_type,starting_player,winning_player
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,0
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,1
-bot_simple,bot_random,,2
-bot_simple,bot_random,,0
-diagonal_testing,vertical_testing,,1
-diagonal_testing,vertical_testing,,2
-diagonal_testing,vertical_testing,,2
-diagonal_testing,vertical_testing,,2
-diagonal_testing,vertical_testing,,2
-diagonal_testing,vertical_testing,,2
-diagonal_testing,vertical_testing,,2
-diagonal_testing,vertical_testing,,1
-diagonal_testing,vertical_testing,,2
-bot_random,bot_simple,,1
-bot_random,bot_simple,,0
-bot_random,bot_simple,,2
+player1_type,player2_type,starting_player,winning_player,5x5_final_board_flat
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6039a80>,2,[0 2 0 0 0 0 2 0 1 0 0 2 1 0 0 0 2 0 0 1 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da60397b0>,1,[0 0 1 0 0 0 2 1 0 0 0 2 1 0 0 0 2 1 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 1 1 0 2 2 2 2 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 0 2 0 0 0 0 0 2 1 0 0 0 1 2 0 1 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 2 2 1 2 0 2 1 0 1 0 2 1 0 0 1 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 2 0 0 1 0 2 0 0 0 1 2 0 1 0 0 2 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 2 2 2 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 0 1 0 0 0 2 1 0 0 0 2 1 0 0 0 2 1 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 2 1 0 0 0 2 0 0 0 1 2 0 0 1 0 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 0 0 0 2 1 1 1 2 1 0 0 2 0 0 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 2 2 2 2 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 0 2 1 1 1 2 1 0 0 2 0 0 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 2 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 1 0 2 2 1 0 2 1 1 1 2 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 2 2 2 2 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 1 2 2 2 2 0 0 0 1 0 0 0 2 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 0 0 0 0 2 0 0 0 0 2 1 1 1 1 2 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 2 1 0 1 0 2 1 0 0 0 2 0 1 0 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 0 0 2 0 0 0 0 1 2 0 0 1 1 0 2 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 1 0 0 0 2 2 2 2 0 2 1 1 1 2 0 1 0 0 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 2 2 2 2 0 1 2 1 0 0 0 0 1 0 0 0 1 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 0 0 2 0 0 0 0 1 2 0 0 0 1 0 2 0 1 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 2 2 2 2]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[0 0 0 0 0 0 2 0 2 2 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 1 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 1 1 0 1 2 0 1 0 0 1 2 0 0 0 0 2 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[1 0 0 0 0 0 0 0 0 0 1 1 1 2 1 2 2 2 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 2 2 2 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 0 0 2 2 0 0 1 0 2 1 0 0 0 2 0 1 1 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 2 0 0 1 0 2 0 0 0 1 2 0 1 0 0 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 2 1 0 0 1 2 1 0 0 0 2 2 0 0 0 2 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 0 1 0 0 0 2 1 0 0 0 2 1 0 0 0 2 2 0 0 0 2 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 2 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 2 2 2 2 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 1 1 0 1 0 0 0 0 0 1 0 0 2 2 2 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 0 0 2 0 0 1 1 1 2 1 0 0 0 0 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 1 0 2 0 0 0 2 1 0 0 2 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 2 0 0 1 0 2 0 0 0 1 2 0 1 0 2 2 1 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 1 0 0 2 1 0 0 0 1 2 0 0 2 2 2 2 0 0 0 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 0 0 0 0 0 2 2 2 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 2 1 0 0 0 2 2 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 2 0 2 0 0 0 0 0 2 1 1 1 0 0 2 0 0 1 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 0 0 1 0 1 1 1 2 0 0 2 2 2 2 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 1 2 2 2 2 0 0 1 0 0 0 1 1 0 0 0 2 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 2 2 2 2 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 1 0 0 1 2 0 0 0 0 0 2 1 0 2 0 1 2 0 1 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 1 2 0 0 0 2 0 0 0 2 1 0 0 2 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 1 0 0 0 0 1 0 0 0 2 1 0 0 2 0 1 0 0 0 0 2 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 1 0 0 0 2 0 0 0 1 2 0 0 1 0 2 0 0 0 1 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 0 0 1 2 2 0 1 0 2 1 0 0 0 2 0 1 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 2 2 2 2 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 2 2 2 2 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 1 0 0 0 2 1 1 0 0 2 1 0 0 0 2 2 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 2 0 1 0 0 2 1 0 0 0 2 0 0 0 1 2 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 0 0 0 0 0 1 2 0 0 1 0 1 0 0 2 2 2 2 1 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 2 1 0 0 0 2 0 0 0 1 2 0 0 1 0 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 1 0 0 1 2 0 0 1 2 0 0 0 2 0 0 1 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 1 2 0 1 0 0 2 1 0 0 0 2 0 0 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 2 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 1 2 0 0 0 0 0 2 1 0 0 0 1 2 1 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 2 2 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 1 0 0 0 2 1 0 0 0 2 1 0 0 0 2 2 0 1 0 2 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 1 2 2 2 2 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 1 0 0 1 0 0 0 2 0 1 2 1 2 0 0 1 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 1 0 0 0 2 0 0 0 1 2 0 0 1 2 2 1 2 1 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 1 2 0 0 2 0 0 2 1 0 0 0 1 2 1 1 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 2 0 0 1 0 0 2 1 1 1 0 0 2 0 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 1 1 2 0 2 0 0 0 1 2 0 0 1 0 2 0 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 2 1 0 0 0 0 1 0 0 0 2 1 0 0 0 2 1 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 0 0 0 0 1 1 1 2 1 0 2 2 2 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 0 0 0 0 0 1 0 2 0 0 0 1 2 0 0 0 0 2 0 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 2 2 2 2 1 0 2 1 1 1 0 0 0 1 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 0 0 0 1 0 0 0 2 0 0 2 1 2 0 0 1 0 2 1 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 2 2 2 2 1 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 2 1 2 2 2 2 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 2 2 2 2 1 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 2 2 2 2 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 0 2 2 2 2 0 0 0 1 2 0 0 2 1 1 0 0 1 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 1 2 1 0 0 0 0 2 1 0 0 0 0 2 1 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 2 0 0 1 2 0 0 0 2 1 0 0 2 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 2 1 2 0 0 0 2 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 2 2 2 2 0 1 1 0 0 0 0 0 1 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[1 0 0 0 0 0 1 0 0 0 0 2 1 0 0 0 0 2 1 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 1 0 0 0 2 1 1 0 0 2 1 0 0 0 2 2 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 2 0 1 0 2 1 1 0 2 2 1 0 0 1 2 1 0 0 1 0 2 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 0 0 2 2 2 2 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 1 2 2 0 0 0 2 1 0 0 0 2 1 0 0 0 2 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 0 0 2 0 1 1 1 2 1 0 2 0 2 0 0 1 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 0 0 0 0 2 0 0 0 0 1 2 0 0 0 1 0 2 0 0 1 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 1 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 1 0 2 0 0 0 0 2 0 0 0 1 2 0 0 1 0 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 0 0 0 0 1 0 0 2 1 0 2 1 1 1 0 2 2 2 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 2 0 1 0 0 2 1 0 0 0 2 0 1 0 0 2 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 0 0 0 0 0 2 1 1 1 0 2 2 2 2 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 1 0 0 0 1 2 0 1 2 2 2 2 1 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 2 2 2 2 0 1 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 2 0 0 0 0 1 2 1 1 1 0 0 2 0 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 0 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 2 0 0 0 2 2 0 1 0 1 2 0 0 0 1 2 0 0 1 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 2 2 2 2 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 2 0 0 2 1 1 0 0 2 1 0 0 0 2 0 0 0 1 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 0 2 2 2 2 0 0 1 1 2 0 0 0 0 1 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 2 0 1 0 0 2 1 0 0 0 2 0 0 0 0 2 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[0 0 0 0 0 2 1 0 0 0 0 2 1 0 0 0 0 0 1 0 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 2 2 2 2 1 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 1 2 2 1 2 0 0 1 0 2 1 1 0 0 2 2 1 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[0 2 2 2 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 0 2 2 2 2 0 0 0 1 0 0 0 2 1 0 0 0 1 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 0 2 1 0 0 0 1 0 0 2 2 2 2 0 1 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 1 1 0 0 0 1 2 0 0 0 1 2 0 0 0 2 2 0 0 0 1 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 2 2 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 1 2 2 0 1 0 2 1 0 0 0 2 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 2 2 2 2 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[1 0 0 0 0 0 1 2 2 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 2]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 0 0 2 0 0 0 0 1 2 0 0 0 1 0 2 0 0 1 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 2 2 2 2 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 0 0 0 0 0 0 1 2 0 0 0 1 2 0 0 0 1 2 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 1 0 0 0 2 2 1 0 0 2 1 0 0 0 2 0 1 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 2 0 0 2 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 2 0 0 1 2 2 2 2 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 0 0 0 2 1 1 1 1 2 0 0 0 0 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 2 0 1 0 0 2 1 0 0 0 2 0 0 0 1 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 2 2 2 2 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 2 0 0 0 2 0 0 0 2 1 1 1 2 0 0 0 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 2 0 0 0 0 2 1 1 0 0 2 0 1 0 0 2 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 1 0 1 1 1 2 1 0 2 2 2 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 2 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 1 2 2 0 0 0 0 1 2 0 0 0 0 1 2 1 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 2 0 1 0 2 2 2 2 0 2 1 0 0 0 1 2 0 1 0 1 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 1 0 2 2 2 2 2 1 1 1 2 0 0 0 0 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 2 0 0 0 2 2 1 0 0 0 2 1 0 0 0 1 2 1 0 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 1 0 2 0 0 0 1 2 0 1 0 0 2 0 1 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 2 2 2 2 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 0 2 0 0 0 1 2 1 1 1 0 2 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[0 0 0 0 0 2 1 0 0 0 2 0 1 0 0 2 0 0 1 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 2 0 0 0 2 0 0 0 2 1 0 0 2 0 1 0 0 0 0 1 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 0 0 0 0 1 1 1 2 1 2 2 2 2 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 2 2 2 2 0 1 1 0 0 0 2 1 0 0 0 0 1 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 1 0 0 2 0 0 1 0 2 1 0 0 0 2 1 0 0 0 2]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 0 0 0 0 0 2 1 0 0 0 2 1 0 0 0 2 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 1 1 0 0 0 1 2 2 0 0 1 2 0 0 0 2 0 0 0 2 1 1 2]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 2 2 2 2 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 0 1 0 2 0 0 0 1 2 0 1 0 0 2 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 1 2 0 0 1 2 0 0 0 2 0 1 1 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 1 0 0 0 2 0 0 0 1 2 0 0 1 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[0 0 0 0 0 0 0 0 0 0 1 1 1 1 2 0 0 2 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 1 0 0 0 1 2 0 0 1 1 2 0 0 0 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 2 2 2 2 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 0 0 0 2 0 0 1 1 2 1 0 0 0 2 0 1 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 1 1 0 2 0 2 2 1 1 0 1 2 2 2 2 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 0 1 0 0 0 0 1 2 0 0 0 1 2 0 0 0 1 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 1 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 1 2 0 1 0 0 2 1 0 0 0 2 0 0 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 0 0 1 0 0 0 1 2 0 0 2 2 2 2 1 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 2 1 0 0 0 2 0 0 0 1 2 0 0 1 0 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 2 2 2 2 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 1 0 0 0 0 2 2 2 2 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 2 2 2 2 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 0 2 1 2 2 1 1 1 2 1 0 0 2 0 0 0 2 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 1 0 0 0 2 2 2 2 0 0 0 1 2 0 0 0 0 1 0 0 0 1 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 1 0 2 2 2 2 0 0 2 1 0 1 0 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 0 0 2 0 2 1 1 1 1 0 0 2 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 2 2 2 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 1 2 0 0 1 2 0 0 0 2 0 0 1 2 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 2 0 0 0 0 2 0 0 0 1 2 0 0 1 0 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 1 0 2 0 0 0 1 2 0 1 0 0 2 0 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 2 2 2 2 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 1 0 2 2 2 2 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 1 0 0 0 1 1 1 2 1 2 2 2 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 0 0 1 0 2 1 0 0 0 1 2 0 0 0 0 0 2 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 1 0 0 1 0 0 1 1 0 0 0 2 1 2 0 2 2 2 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 0 2 0 0 0 0 1 0 0 0 0 1 0 0 2 0 1 2 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 0 0 2 0 0 2 2 1 0 0 2 1 0 0 1 2 0 0 0 1 2 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[1 0 0 2 0 0 1 0 2 0 0 0 1 2 0 0 0 0 2 0 0 2 0 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 0 2 2 0 0 0 2 1 1 0 0 2 1 0 0 0 1 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 2 2 1 1 1 1 2 1 0 0 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 0 0 0 2 2 1 1 1 1 0 2 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 0 0 0 0 1 1 1 2 1 2 2 2 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 0 0 0 2 2 2 2 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 1 2 2 2 1 0 2 1 1 0 0 2 0 1 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 2 2 2 2 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 0 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 0 0 1 2 0 0 0 1 2 0 0 0 2 2 0 1 0 1 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 0 1 2 0 0 0 0 0 2 1 0 0 0 1 2 0 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 0 0 2 0 0 1 1 1 2 1 0 0 0 0 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 1 2 0 1 0 0 2 1 0 0 0 2 0 0 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 0 0 0 0 0 2 2 2 2 0 0 1 2 0 0 0 0 1 0 0 1 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 1 0 0 0 2 1 0 0 0 2 1 0 0 0 2 1 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 2 2 2 2 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 2 1 0 0 0 2 0 0 0 1 2 0 0 1 0 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 0 1 2 0 0 0 1 2 0 0 0 1 2 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 0 0 0 0 2 2 2 2 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[0 0 1 0 0 0 0 1 0 0 0 0 1 2 0 0 0 1 2 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 2 0 0 0 0 0 2 1 1 1 0 0 2 0 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 0 1 2 1 0 0 0 2 0 0 2 1 2 0 0 1 2 2 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 0 2 1 1 1 2 1 0 0 2 0 0 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 1 0 0 0 2 0 0 0 0 2 1 0 1 0 2 2 1 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 2 2 2 2 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 1 2 2 2 2 1 1 1 2 1 0 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 1 1 2 0 2 0 0 0 2 1 1 1 2 0 2 0 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 0 0 2 0 0 0 2 1 1 1 2 0 0 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[1 0 0 0 0 2 2 2 2 0 0 2 1 1 1 0 0 2 0 0 0 0 0 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 0 1 2 0 0 0 1 2 0 0 0 2 2 0 0 0 1 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 0 2 0 0 1 1 1 1 2 0 0 0 0 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 1 1 0 1 0 0 0 0 2 1 0 0 2 2 2 2 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 1 0 2 2 2 2 0 0 1 0 0 0 1 0 0 1 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 2 2 2 2 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 2 1 0 0 0 2 1 0 0 0 2 1 0 0 0 2 2 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 1 2 0 1 0 0 2 1 0 0 0 2 0 0 0 1 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 1 1 0 1 0 0 0 0 2 1 0 0 2 2 2 2 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 0 0 2 1 0 0 2 1 1 1 2 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 0 0 0 0 2 1 0 0 0 0 2 1 0 0 0 2 2 2 2 0 0 1 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 2 2 2 2 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 2 2 2 2 1 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 2 2 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 2 2 2 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 1 0 0 0 2 0 0 1 1 2 0 0 1 0 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 1 0 2 2 2 2 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 2 2 2 2 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 2 2 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 2 0 0 0 0 2 0 0 0 0 2 1 0 0 0 2 0 1 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 1 1 0 0 0 2 0 0 1 1 2 0 0 1 0 2 1 0 2 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 1 0 2 0 1 0 0 1 2 0 0 0 0 1 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 2 2 2 2 0 0 0 1 1 0 0 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 2 1 0 2 2 0 0 0 2 1 0 0 2 2 1 1 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 2 0 1 2 0 0 2 1 0 0 0 0 2 1 0 0 0 1 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 2 0 0 0 0 1 0 0 0 0 0 1 0 0 0 2 2 2 2 0 0 0 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 2 1 0 0 0 0 2 1 0 0 1 0 2 2 1 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 1 0 0 2 1 0 0 0 1 0 0 0 2 2 2 2 1 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 1 0 0 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[2 2 2 2 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 0 0 1 0 0 2 1 0 0 0 2 2 2 2 1 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 0 0 0 2 2 2 2 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 1 2 2 2 2 2 0 1 0 0 0 0 0 1 0 1 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 2 2 2 2 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 2 2 2 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 0 0 2 0 1 1 1 1 2 0 0 2 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 1 1 0 1 0 2 0 0 2 1 1 1 0 2 2 2 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 0 0 0 0 0 1 0 0 2 1 0 0 0 2 2 2 2 1 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 2 2 2 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 1 0 2 0 0 0 2 0 0 0 2 1 0 0 2 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 1 2 0 1 0 0 2 1 0 0 0 2 0 0 0 0 2 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 1 1 0 1 2 0 0 0 0 1 2 0 0 0 0 0 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 1 0 2 2 2 2 0 2 1 1 0 1 1 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 2 0 0 0 2 2 0 0 2 1 0 0 2 1 1 2 1 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 2 1 0 0 0 2 1 0 0 0 2 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 0 1 0 2 0 0 0 1 2 0 1 0 0 2 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 2 2 2 2 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 2 2 2 2 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 0 1 0 0 0 2 1 0 0 1 2 2 2 2 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[2 0 0 0 0 0 1 0 0 0 0 2 1 0 1 0 2 1 1 1 1 2 2 2 2]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[1 0 0 0 0 0 2 2 2 2 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 1 1 0 1 0 2 0 0 0 1 2 0 0 0 0 2 2 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[0 0 0 0 0 0 0 2 2 0 0 1 1 1 1 0 0 0 0 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 1 2 0 0 2 0 0 0 1 2 1 0 1 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 1 2 0 0 0 0 2 1 1 1 0 2 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 1 2 0 0 0 1 2 0 0 0 1 2 0 0 0 2 2 0 0 0 1 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 1 2 2 2 2 0 0 1 0 1 0 0 0 1 0 0 2 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 1 1 0 1 0 0 1 2 0 0 2 1 0 0 2 2 2 2 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 1 0 0 0 0 1 0 0 0 2 1 0 0 0 2 2 2 2 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 0 0 2 0 0 1 1 1 2 1 0 0 0 0 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 2 0 1 0 0 2 1 0 0 0 2 0 0 0 0 2 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 2 0 1 0 0 2 1 2 0 0 2 0 0 0 1 2 0 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 2 0 0 0 0 2 0 0 0 1 2 0 0 1 0 2 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 0 2 2 0 1 0 1 2 0 0 0 1 2 0 0 1 1 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 0 1 2 2 2 2 0 0 2 1 0 0 0 1 0 0 1 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 2 0 0 1 0 0 1 1 0 0 0 2 2 2 2 1 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 1 1 0 0 0 2 0 0 0 1 2 0 0 1 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 0 0 0 0 2 2 2 2 1 2 1 0 0 0 1 0 1 0 0 1 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 2 0 0 0 0 1 0 0 0 0 1 0 0 2 0 1 2 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 0 0 0 0 0 0 1 2 0 0 0 1 2 0 0 0 1 2 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[1 0 0 0 0 0 1 0 2 0 0 1 1 2 0 0 0 2 2 0 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 1 2 2 2 2 1 0 2 1 0 0 0 1 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 1 0 0 0 0 1 0 2 0 0 1 2 0 0 0 2 0 0 0 2 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 1 1 0 2 0 2 0 0 0 1 2 0 0 1 0 2 0 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 0 2 2 0 1 1 1 1 0 0 0 0 0 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 2 0 0 1 0 2 1 0 0 0 2 0 1 0 0 2 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 2 0 1 0 0 2 1 0 0 0 2 1 0 0 1 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 1 0 2 1 2 0 0 1 2 0 0 0 0 0 2 1 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 0 0 0 0 1 1 1 2 1 1 2 2 2 2 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 2 2 2 2 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 2 0 0 0 0 2 0 1 0 0 2 1 0 0 0 2 0 0 0 1 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 1 0 2 0 1 0 2 1 0 0 2 0 2 1 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 1 1 2 2 0 0 2 1 2 0 1 0 0 2 1 1 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,1,[0 0 0 0 0 0 0 0 0 2 1 1 1 1 2 0 0 2 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 2 2 2 2 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 1 0 0 0 2 0 1 0 0 2 1 0 0 0 2 0 0 0 1 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 1 0 2 2 2 2 0 0 1 2 1 0 1 2 1 0 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 0 2 0 1 0 0 2 1 2 0 0 2 0 0 0 1 0 0 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 1 0 0 0 2 0 0 0 1 2 0 0 1 0 2 0 0 0 1 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 1 1 2 1 0 0 0 0 2 1 0 0 0 0 2 2 0 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 2 2 2 2 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 2 1 0 0 1 0 0 1 0 2 1 0 0 0 2 2 2 2 0 0 0 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[1 0 0 0 0 2 1 0 2 0 0 0 1 2 0 0 0 0 2 1 0 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 1 2 0 0 1 0 0 2 1 0 0 0 2 2 0 0 1 0 0 2 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 1 0 0 0 0 0 0 0 0 1 2 1 1 1 2 2 2 2 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 2 0 0 0 0 2 2 0 0 1 2 1 0 0 0 2 1 0 0 0 1 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 1 0 0 1 2 2 2 2 0 0 2 1 0 0 0 0 0 1 0 0 1 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[1 0 0 2 0 0 1 2 0 0 0 2 1 0 0 2 0 0 2 0 0 0 0 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 2 2 2 2 0 0 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 2 1 0 0 0 2 0 0 0 0 2 1 0 0 0 2 2 1 0 0 1 0 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 1 0 1 0 0 2 0 0 1 2 0 0 0 2 1 0 0 2 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,1,[0 2 2 2 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,1,[1 2 0 0 0 0 1 2 0 0 0 0 1 2 0 0 0 0 1 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 1 0 0 0 2 1 0 0 0 0 1 1 0 0 2 2 2 2 0 0 1 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 0 0 2 0 1 1 1 2 1 0 0 0 2 0 0 0 0 2 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 2 0 0 0 2 0 0 0 2 1 0 0 2 0 1 0 0 0 0 1 0 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[0 0 0 0 0 1 2 2 2 2 0 2 1 1 1 0 0 0 0 0 0 0 0 1 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 0 0 0 2 2 2 2 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6073f40>,2,[0 0 0 0 1 0 1 0 0 0 0 2 1 0 1 0 0 0 1 0 0 2 2 2 2]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da606fee0>,2,[1 0 0 2 2 0 1 1 2 0 0 2 1 2 0 0 0 0 2 0 0 0 0 1 1]
+bot_simple,bot_MCTS,<__main__.Bot_simple object at 0x7f5da6077f70>,2,[0 0 0 2 0 0 1 2 2 1 0 0 1 2 0 1 0 0 2 0 1 0 0 0 0]

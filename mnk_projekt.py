@@ -416,7 +416,7 @@ class Bot_MCTS(Player):
         return best_move
     
 class Game():
-
+ 
 
     def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
         self.m = m
@@ -425,21 +425,20 @@ class Game():
         self.player1 = player1
         self.player2 = player2   
         self.board = None
-        self.starting_player = None
 
     def game_log(self):
         """ # Main Game Log:
         adds entry to dp (.csv) looking like this:
 
-        | player1_type | player2_type | starting_player | winning_player |
-        |--------------|--------------|-----------------|----------------|
-        | player       | player       | 1               | 0              |
-        | bot_random   | bot_random   | 2               | 1              |
-        | bot_simple   | bot_simple   | 1               | 2              |
-        | bot_complex  | bot_complex  | 2               | 0              |
+        | player1_type | player2_type | starting_player | winning_player | {self.m}x{self.n}_final_board_flat |
+        |--------------|--------------|-----------------|----------------|------------------------------------|
+        | player       | player       | 1               | 0              | 8                                  |
+        | bot_random   | bot_random   | 2               | 1              | 9                                  |
+        | bot_simple   | bot_simple   | 1               | 2              | 12                                 |
+        | bot_complex  | bot_complex  | 2               | 0              | 16                                 |
         """
-        with open("game_log_simple_vs_MCTS.csv", mode='a', newline="") as f:
-            fieldnames = ["player1_type", "player2_type", "starting_player", "winning_player"]
+        with open("game_log.csv", mode='a', newline="") as f:
+            fieldnames = ["player1_type", "player2_type", "starting_player", "winning_player", f"{self.m}x{self.n}_final_board_flat"]
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             if f.tell() == 0:
                 writer.writeheader()
@@ -447,7 +446,8 @@ class Game():
             writer.writerow({"player1_type": self.player1.player_type,
                              "player2_type": self.player2.player_type,
                              "starting_player": self.starting_player,
-                             "winning_player": self.winning_player})
+                             "winning_player": self.winning_player,
+                             f"{self.m}x{self.n}_final_board_flat": self.board.board.flatten()})
             f.close()
 
 
@@ -488,18 +488,18 @@ class Game():
         return True
 
     def game_loop(self):
-        #made by Dalia
+        # made by Dalia
         # current_player = random.choice([self.player1, self.player2])
         # changed for diagonal testing to:
         current_player = self.player1
-        
-        # only for log file: - Anton
-        if np.all(self.board == 0):
-            print("uyoasildgjkfbhvagluihsdkjf")
-            self.starting_player = current_player
+        self.starting_player = current_player
         
 
         while not self.full_board() and not self.board.has_won(current_player):
+
+            if np.all(self.board == 0):
+                print("uyoasildgjkfbhvagluihsdkjf")
+                self.starting_player = current_player
             self.board.display()
             # print(self.board.get_available_moves())
             print(f"Player {current_player.name}'s turn")
@@ -530,15 +530,61 @@ class Game():
         self.board.display()
 
 if __name__ == "__main__":
-    for i in range(1):
-        # for testing the script w/o gui and user input:
-        m = 5
-        n = 5
-        k = 4   
 
+    m = 5
+    n = 5
+    k = 4
+
+    # simple v mcts
+    for a in range(1000):
         current_game = Game(m, n, k)
         # human : 1, bot random: 2, bot simple: 3, bot complex: 4
         current_game.start(player1_type=3, player1_name="simple_1",
                            player2_type=4, player2_name="monte_carlo_tree_search")
         current_game.game_loop()
-        current_game.game_log() # pretty please pretty dalia add this to the gui :*.... or else >:(
+        current_game.game_log()
+
+    # simple v random
+    for d in range(1000):
+        current_game = Game(m, n, k)
+        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+        current_game.start(player1_type=3, player1_name="simple_1",
+                           player2_type=2, player2_name="random")
+        current_game.game_loop()
+        current_game.game_log()
+
+    # mcts v simple
+    for b in range(1000):
+        current_game = Game(m, n, k)
+        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+        current_game.start(player2_type=3, player2_name="simple_1",
+                           player1_type=4, player1_name="monte_carlo_tree_search")
+        current_game.game_loop()
+        current_game.game_log()
+
+    # mcts v random
+    for c in range(1000):
+        current_game = Game(m, n, k)
+        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+        current_game.start(player2_type=2, player2_name="random",
+                           player1_type=4, player1_name="monte_carlo_tree_search")
+        current_game.game_loop()
+        current_game.game_log()
+
+    # random v simple
+    for d in range(1000):
+        current_game = Game(m, n, k)
+        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+        current_game.start(player1_type=2, player1_name="random",
+                           player2_type=3, player2_name="simple_1")
+        current_game.game_loop()
+        current_game.game_log()
+
+    # random v mcts
+    for d in range(1000):
+        current_game = Game(m, n, k)
+        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+        current_game.start(player1_type=2, player1_name="random",
+                           player2_type=4, player2_name="monte_carlo_tree_search")
+        current_game.game_loop()
+        current_game.game_log()
