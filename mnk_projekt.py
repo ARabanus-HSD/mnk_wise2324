@@ -27,140 +27,163 @@ class Board():
     def display(self):
         print(self.board)
 
-    def d_line_rd(self, start_position): # \
-        placements = []
-        for i in range(self.k):
-            placement = [start_position[0] + i, start_position[1] + i]
-            placements.append(placement)
-        return placements
+    # def d_line_rd(self, start_position): # \
+    #     placements = []
+    #     for i in range(self.k):
+    #         placement = [start_position[0] + i, start_position[1] + i]
+    #         placements.append(placement)
+    #     return placements
     
-    def d_line_ld(self, start_position): # /
-            placements = []
-            for i in range(self.k):
-                placement = [start_position[0] + i, start_position[1] - i]
-                placements.append(placement)
-                # print(f"{i}: {placement}")
-            return placements
+    # def d_line_ld(self, start_position): # /
+    #         placements = []
+    #         for i in range(self.k):
+    #             placement = [start_position[0] + i, start_position[1] - i]
+    #             placements.append(placement)
+    #             # print(f"{i}: {placement}")
+    #         return placements
 
-    def place_line_rd(self, bg, line_var):
-        """input, array, m, n, k, and the variable that we're searching for
-        makes a mask in the top right, k away form the far edge and bottom because only there are possible starting points
-        """
-        # print(arr)
-        temp_board = np.copy(self.board)
-        temp_board[:, -(k-1):] = 0
-        temp_board[-(k-1):, :] = 0
-        # print(arr)
-        past_moves = np.argwhere(temp_board == self.current_player)
+    # def place_line_rd(self, bg, line_var):
+    #     """input, array, m, n, k, and the variable that we're searching for
+    #     makes a mask in the top right, k away form the far edge and bottom because only there are possible starting points
+    #     """
+    #     # print(arr)
+    #     temp_board = np.copy(self.board)
+    #     temp_board[:, -(k-1):] = 0
+    #     temp_board[-(k-1):, :] = 0
+    #     # print(arr)
+    #     past_moves = np.argwhere(temp_board == self.current_player)
 
-        # place \ line
-        # only relevant starting positions are in the top left corner
-        # k distance from the right side, and the bottom
-        possible_lines = []
-        for i in range(len(past_moves)):
-            line_rd = self.d_line_rd(past_moves[i])
-            zero_mask = np.full((self.board.shape[0], self.board.shape[1]), bg, dtype=int)
-            for coord in line_rd:
-                # print(coord[0], coord[1])
-                zero_mask[(coord[0], coord[1])] = line_var
-            possible_lines.append(zero_mask)
-        return possible_lines
+    #     # place \ line
+    #     # only relevant starting positions are in the top left corner
+    #     # k distance from the right side, and the bottom
+    #     possible_lines = []
+    #     for i in range(len(past_moves)):
+    #         line_rd = self.d_line_rd(past_moves[i])
+    #         zero_mask = np.full((self.board.shape[0], self.board.shape[1]), bg, dtype=int)
+    #         for coord in line_rd:
+    #             # print(coord[0], coord[1])
+    #             zero_mask[(coord[0], coord[1])] = line_var
+    #         possible_lines.append(zero_mask)
+    #     return possible_lines
 
-    def place_line_ld(self, bg, line_var):
-        """input, array, m, n, k, and the variable that we're searching for
-        makes a mask in the top right, k away form the far edge and bottom because only there are possible starting points
-        """
-        print(self.board)
-        temp_board = np.copy(self.board)
-        temp_board[:, :(k-1)] = 0
-        temp_board[-(k-1):, :] = 0
-        print(self.board)
-        past_moves = np.argwhere(temp_board == self.current_player)
+    # def place_line_ld(self, bg, line_var):
+    #     """input, array, m, n, k, and the variable that we're searching for
+    #     makes a mask in the top right, k away form the far edge and bottom because only there are possible starting points
+    #     """
+    #     print(self.board)
+    #     temp_board = np.copy(self.board)
+    #     temp_board[:, :(k-1)] = 0
+    #     temp_board[-(k-1):, :] = 0
+    #     print(self.board)
+    #     past_moves = np.argwhere(temp_board == self.current_player)
 
-        # place \ line
-        # only relevant starting positions are in the top left corner
-        # k distance from the right side, and the bottom
-        possible_lines = []
-        for i in range(len(past_moves)):
-            line_rd = self.d_line_ld(past_moves[i])
-            zero_mask = np.full((self.board.shape[0], self.board.shape[1]), bg, dtype=int)
-            for coord in line_rd:
-                # print(coord[0], coord[1])
-                zero_mask[(coord[0], coord[1])] = line_var
-            possible_lines.append(zero_mask)
-        return possible_lines
+    #     # place \ line
+    #     # only relevant starting positions are in the top left corner
+    #     # k distance from the right side, and the bottom
+    #     possible_lines = []
+    #     for i in range(len(past_moves)):
+    #         line_rd = self.d_line_ld(past_moves[i])
+    #         zero_mask = np.full((self.board.shape[0], self.board.shape[1]), bg, dtype=int)
+    #         for coord in line_rd:
+    #             # print(coord[0], coord[1])
+    #             zero_mask[(coord[0], coord[1])] = line_var
+    #         possible_lines.append(zero_mask)
+    #     return possible_lines
 
-    def has_won(self, current_player, k):
-        """_summary_
-        playerX has won when there is a k-long Pattern on the m x n board
-        start checking for winning pattern after k moves
-        !! checking diagonally misses
-        made by Dalia
-        """
-        self.current_player = current_player
+    # def has_won(self, current_player, k):
+    #     """_summary_
+    #     playerX has won when there is a k-long Pattern on the m x n board
+    #     start checking for winning pattern after k moves
+    #     !! checking diagonally misses
+    #     made by Dalia
+    #     """
+    #     self.current_player = current_player
 
-        # check for rows
-        for row in range(self.m): # changed from n to m to check last row!
-            # also changed labels row <-> col
-            count = 0
-            for col in self.board.T:
-                if col[row] == current_player:
-                    count += 1
-                    if count == k:
-                        return True
-                else:
-                    count = 0
+    #     # check for rows
+    #     for row in range(self.m): # changed from n to m to check last row!
+    #         # also changed labels row <-> col
+    #         count = 0
+    #         for col in self.board.T:
+    #             if col[row] == current_player:
+    #                 count += 1
+    #                 if count == k:
+    #                     return True
+    #             else:
+    #                 count = 0
 
-        # check the columns
-        for col in range(self.n):
-            count = 0
-            for row in self.board:
-                if row[col] == current_player:
-                    count += 1
-                    if count == k:
-                        return True
-                else:
-                    count = 0
+    #     # check the columns
+    #     for col in range(self.n):
+    #         count = 0
+    #         for row in self.board:
+    #             if row[col] == current_player:
+    #                 count += 1
+    #                 if count == k:
+    #                     return True
+    #             else:
+    #                 count = 0
         
-        # check for diagonals
-        # The Process:
-                    # make an array filled with 0 and a k long line of ones for every player_number
-                    # multiply the game board with this mask
-                    # add this mask to an array filled with the player number an 0s where the diagonal line is
-                    # if all entries are the same, return True
-                    # else return False or None, if no line is detected
-        # \
-        list_of_lines_rd = self.place_line_rd(bg=0, line_var=1)
-        list_of_inverse_lines_w_player_number_rd = self.place_line_rd(bg=self.current_player, line_var=0)
+    #     # check for diagonals
+    #     # The Process:
+    #                 # make an array filled with 0 and a k long line of ones for every player_number
+    #                 # multiply the game board with this mask
+    #                 # add this mask to an array filled with the player number an 0s where the diagonal line is
+    #                 # if all entries are the same, return True
+    #                 # else return False or None, if no line is detected
+    #     # \
+    #     list_of_lines_rd = self.place_line_rd(bg=0, line_var=1)
+    #     list_of_inverse_lines_w_player_number_rd = self.place_line_rd(bg=self.current_player, line_var=0)
         
-        for i in range(len(list_of_lines_rd)):
-            comparison_step_1_rd = list_of_lines_rd[i] * self.board
-            comparison_step_2_rd = comparison_step_1_rd + list_of_inverse_lines_w_player_number_rd[i]
-            all_same = np.all(comparison_step_2_rd==self.current_player)
-            if all_same:
-                return True
-            else:
-                pass
+    #     for i in range(len(list_of_lines_rd)):
+    #         comparison_step_1_rd = list_of_lines_rd[i] * self.board
+    #         comparison_step_2_rd = comparison_step_1_rd + list_of_inverse_lines_w_player_number_rd[i]
+    #         all_same = np.all(comparison_step_2_rd==self.current_player)
+    #         if all_same:
+    #             return True
+    #         else:
+    #             pass
 
-        list_of_lines_ld = self.place_line_rd(bg=0, line_var=1)
-        list_of_inverse_lines_w_player_number_ld = self.place_line_rd(bg=self.current_player, line_var=0)
+    #     list_of_lines_ld = self.place_line_rd(bg=0, line_var=1)
+    #     list_of_inverse_lines_w_player_number_ld = self.place_line_rd(bg=self.current_player, line_var=0)
         
-        for i in range(len(list_of_lines_ld)):
-            comparison_step_1_ld = list_of_lines_ld[i] * self.board
-            comparison_step_2_ld = comparison_step_1_rd + list_of_inverse_lines_w_player_number_ld[i]
-            all_same = np.all(comparison_step_2_ld==self.current_player)
-            if all_same:
-                return True
-            else:
-                pass
+    #     for i in range(len(list_of_lines_ld)):
+    #         comparison_step_1_ld = list_of_lines_ld[i] * self.board
+    #         comparison_step_2_ld = comparison_step_1_rd + list_of_inverse_lines_w_player_number_ld[i]
+    #         all_same = np.all(comparison_step_2_ld==self.current_player)
+    #         if all_same:
+    #             return True
+    #         else:
+    #             pass
         
 
-        # check for diagonal k long lines - Anton
-        # diagonal nach links
-        # wie beschreibt man eine linie die k lang ist und diagonal?
-        # starting point kann nur im bereich [m, m-k][n, n-k]
+    #     # check for diagonal k long lines - Anton
+    #     # diagonal nach links
+    #     # wie beschreibt man eine linie die k lang ist und diagonal?
+    #     # starting point kann nur im bereich [m, m-k][n, n-k]
+    #     return False
+    
+    def has_won(self, player):
+        # Horizontal check
+        for row in range(self.m):
+            for col in range(self.n - self.k + 1):
+                if all(self.board[row][c] == player for c in range(col, col + self.k)):
+                    return True
+        # Vertical check
+        for row in range(self.m - self.k + 1):
+            for col in range(self.n):
+                if all(self.board[r][col] == player for r in range(row, row + self.k)):
+                    return True
+        # Diagonal check (down-right)
+        for row in range(self.m - self.k + 1):
+            for col in range(self.n - self.k + 1):
+                if all(self.board[row + d][col + d] == player for d in range(self.k)):
+                    return True
+        # Diagonal check (down-left)
+        for row in range(self.m - self.k + 1):
+            for col in range(self.k - 1, self.n):
+                if all(self.board[row + d][col - d] == player for d in range(self.k)):
+                    return True
         return False
-    
+
     def get_available_moves(self):
         """
         returns list of all available moves on the board, only used for Bot_MCTS
@@ -364,7 +387,7 @@ class Bot_MCTS(Player):
         while moves:
             move = moves.pop()
             temp_board.board[move[0]][move[1]] = current_player
-            if temp_board.has_won(current_player, temp_board.k):
+            if temp_board.has_won(current_player):
                 return 1 if current_player == self.player_number else -1
             elif temp_board.full_board():
                 return 0
@@ -476,7 +499,7 @@ class Game():
             self.starting_player = current_player
         
 
-        while not self.full_board() and not self.board.has_won(current_player, self.k):
+        while not self.full_board() and not self.board.has_won(current_player):
             self.board.display()
             # print(self.board.get_available_moves())
             print(f"Player {current_player.name}'s turn")
@@ -487,7 +510,7 @@ class Game():
             self.board.board[current_move] = current_player.player_number
             
             # checks if someone has won and if the board is full
-            if self.board.has_won(current_player.player_number, self.k):
+            if self.board.has_won(current_player.player_number):
                 print(f"Player {current_player.name} wins!")
                 self.winning_player = current_player.player_number
                 break
@@ -507,7 +530,7 @@ class Game():
         self.board.display()
 
 if __name__ == "__main__":
-    for i in range(50):
+    for i in range(1):
         # for testing the script w/o gui and user input:
         m = 5
         n = 5
