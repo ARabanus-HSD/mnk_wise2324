@@ -525,7 +525,7 @@ class Game():
             else:
                 current_player = self.player1
 
-            # time.sleep(0.5)
+            time.sleep(0.5)
 
         self.board.display()
 
@@ -536,43 +536,43 @@ if __name__ == "__main__":
     k = 4
 
     # simple v mcts
-    for a in range(1000):
-        current_game = Game(m, n, k)
-        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
-        current_game.start(player1_type=3, player1_name="simple_1",
-                           player2_type=4, player2_name="monte_carlo_tree_search")
-        current_game.game_loop()
-        current_game.game_log()
+    # for a in range(1000):
+    #     current_game = Game(m, n, k)
+    #     # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+    #     current_game.start(player1_type=3, player1_name="simple_1",
+    #                        player2_type=4, player2_name="monte_carlo_tree_search")
+    #     current_game.game_loop()
+    #     current_game.game_log()
 
-    # simple v random
-    for d in range(1000):
-        current_game = Game(m, n, k)
-        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
-        current_game.start(player1_type=3, player1_name="simple_1",
-                           player2_type=2, player2_name="random")
-        current_game.game_loop()
-        current_game.game_log()
+    # # simple v random
+    # for d in range(1000):
+    #     current_game = Game(m, n, k)
+    #     # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+    #     current_game.start(player1_type=3, player1_name="simple_1",
+    #                        player2_type=2, player2_name="random")
+    #     current_game.game_loop()
+    #     current_game.game_log()
 
-    # mcts v simple
-    for b in range(1000):
-        current_game = Game(m, n, k)
-        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
-        current_game.start(player2_type=3, player2_name="simple_1",
-                           player1_type=4, player1_name="monte_carlo_tree_search")
-        current_game.game_loop()
-        current_game.game_log()
+    # # mcts v simple  MISSINGGGGGG
+    # for b in range(998):
+    #     current_game = Game(m, n, k)
+    #     # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+    #     current_game.start(player2_type=3, player2_name="simple_1",
+    #                        player1_type=4, player1_name="monte_carlo_tree_search")
+    #     current_game.game_loop()
+    #     current_game.game_log()
 
-    # mcts v random
-    for c in range(1000):
-        current_game = Game(m, n, k)
-        # human : 1, bot random: 2, bot simple: 3, bot complex: 4
-        current_game.start(player2_type=2, player2_name="random",
-                           player1_type=4, player1_name="monte_carlo_tree_search")
-        current_game.game_loop()
-        current_game.game_log()
+    # # mcts v random
+    # for c in range(1000):
+    #     current_game = Game(m, n, k)
+    #     # human : 1, bot random: 2, bot simple: 3, bot complex: 4
+    #     current_game.start(player2_type=2, player2_name="random",
+    #                        player1_type=4, player1_name="monte_carlo_tree_search")
+    #     current_game.game_loop()
+    #     current_game.game_log()
 
     # random v simple
-    for d in range(1000):
+    for d in range(900):
         current_game = Game(m, n, k)
         # human : 1, bot random: 2, bot simple: 3, bot complex: 4
         current_game.start(player1_type=2, player1_name="random",
