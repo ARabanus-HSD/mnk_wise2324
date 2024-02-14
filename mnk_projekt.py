@@ -2,13 +2,11 @@ import numpy as np
 import random
 import time
 import math
-from datetime import datetime
 import csv
 from copy import deepcopy
 
 
-class Board():
-
+class Board:
     def __init__(self, m, n, k) -> None:
         self.m = m
         self.n = n
@@ -28,7 +26,6 @@ class Board():
         print(self.board)
         pass
 
-    
     def has_won(self, player):
         # Horizontal check
         for row in range(self.m):
@@ -63,7 +60,7 @@ class Board():
                 if value == 0:  # If the space is empty
                     available_moves.append((row_index, col_index))
         return available_moves
-    
+
     def full_board(self):
         # goes through each row and checks if value of every cell is 0
         for row in self.board:
@@ -72,22 +69,21 @@ class Board():
                     return False  # Found an empty cell, so the board is not full
         return True  # No empty cells were found, the board is full
 
-class Player():
 
-    def __init__(self, player_number, name, board) -> None: # player number 1 or 2
+class Player:
+    def __init__(self, player_number, name, board) -> None:  # player number 1 or 2
         self.name = name
         self.player_number = player_number
         self.board = board
         self.player_type = "human"
 
-
-    def is_valid(self, move:tuple):
-        '''
+    def is_valid(self, move: tuple):
+        """
         erhält ein tuple von moves
         prüft ob moves in valid raum ist
         gibt true or false wieder
 
-        '''
+        """
 
         # checks if move is in range of the size of the board
         if move[0] < self.board.m and move[1] < self.board.n:
@@ -98,24 +94,25 @@ class Player():
             return False
 
     # !! man kann nur einen value error causen, bevor das Spiel abbricht :(
-    def make_move(self): # -> (row, col)
+    def make_move(self):  # -> (row, col)
         print(f"make move between 0 and {self.board.m-1} \nand 0 and {self.board.n-1}")
-        try: move = (int(input("Please make a move: ")), int(input("")))
+        try:
+            move = (int(input("Please make a move: ")), int(input("")))
         except ValueError:
             print("Sorry please put an integer")
         move = (int(input("Please make a move: ")), int(input("")))
         while not self.is_valid(move):
-            print('Invalid move. Please try again')
+            print("Invalid move. Please try again")
             move = (int(input("Please make a move: ")), int(input("")))
-        return move    
+        return move
+
 
 class Bot_random(Player):
-
     def __init__(self, player_number, name, board) -> None:
         super().__init__(player_number, name, board)
         self.player_type = "bot_random"
 
-    def make_move(self): # -> (row, col)
+    def make_move(self):  # -> (row, col)
         """
         geht in eine schleife und wiederholt die erzeugung vom random move so lange bis es valid ist
         made by Dalia
@@ -123,24 +120,26 @@ class Bot_random(Player):
 
         realitycheck = True
         while realitycheck:
-            move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
+            move = (
+                random.randint(0, self.board.m - 1),
+                random.randint(0, self.board.n - 1),
+            )
             if self.is_valid(move):
                 realitycheck = False
                 # move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
                 self.board.board[move[0]][move[1]] = self.player_number
                 return move
             else:
-                print('Invalid move. Please try again')
+                print("Invalid move. Please try again")
+
 
 class Bot_simple(Player):
-
     def __init__(self, player_number, name, board) -> None:
         super().__init__(player_number, name, board)
         self.player_type = "bot_simple"
         pass
 
-
-    def make_move(self): # -> (row, col)
+    def make_move(self):  # -> (row, col)
         """
         goal of this bot: only try and win (be better than random bot)
         if the board is empty, place an entry k/2 away from the edges
@@ -153,23 +152,39 @@ class Bot_simple(Player):
         valid_counter = 1
         while valid_move:
             # stage one
-            if self.player_number not in self.board.board[:, :]:#not np.any(self.board.board[:, :] == self.player_number):
+            if (
+                self.player_number not in self.board.board[:, :]
+            ):  # not np.any(self.board.board[:, :] == self.player_number):
                 # print("in for loop for first placement")
-                distance_from_edge = math.floor(self.board.k/2) # halves wining length, rounds down if k/2 is a float
-                move = (random.randint(distance_from_edge - 1, self.board.m - 1 - distance_from_edge),
-                        random.randint(distance_from_edge - 1, self.board.n - 1 - distance_from_edge))
-            #stage two
-            elif self.player_number in self.board.board[:, :] and np.argwhere(self.board.board == self.player_number).shape[0] == 1: # goes here if theres 1 or more
-
-                first_move = (np.argwhere(self.board.board == self.player_number)[0, 0],
-                              np.argwhere(self.board.board == self.player_number)[0, 1])
+                distance_from_edge = math.floor(
+                    self.board.k / 2
+                )  # halves wining length, rounds down if k/2 is a float
+                move = (
+                    random.randint(
+                        distance_from_edge - 1, self.board.m - 1 - distance_from_edge
+                    ),
+                    random.randint(
+                        distance_from_edge - 1, self.board.n - 1 - distance_from_edge
+                    ),
+                )
+            # stage two
+            elif (
+                self.player_number in self.board.board[:, :]
+                and np.argwhere(self.board.board == self.player_number).shape[0] == 1
+            ):  # goes here if theres 1 or more
+                first_move = (
+                    np.argwhere(self.board.board == self.player_number)[0, 0],
+                    np.argwhere(self.board.board == self.player_number)[0, 1],
+                )
 
                 # print(first_move)
 
                 original_move = False
                 while not original_move:
-                    move = (random.randint(first_move[0] - 1, first_move[0] + 1),
-                            random.randint(first_move[1] - 1, first_move[1] + 1))
+                    move = (
+                        random.randint(first_move[0] - 1, first_move[0] + 1),
+                        random.randint(first_move[1] - 1, first_move[1] + 1),
+                    )
                     # print(move)
                     if not move == first_move:
                         original_move = True
@@ -187,38 +202,42 @@ class Bot_simple(Player):
 
                 # when valid counter is too high place a random move
                 if valid_counter > 5:
-                    move = (random.randint(0, self.board.m - 1),
-                            random.randint(0, self.board.n - 1))
-                
+                    move = (
+                        random.randint(0, self.board.m - 1),
+                        random.randint(0, self.board.n - 1),
+                    )
+
                 # find h_line
                 elif np.all(past_moves[:, 0] == past_moves[0, 0]):
                     x_next_move = past_moves[0, 0]
-                    y_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
-                                                 np.max(past_moves[:, 1]) + 1])
+                    y_next_move = random.choice(
+                        [np.min(past_moves[:, 1]) - 1, np.max(past_moves[:, 1]) + 1]
+                    )
                     move = (x_next_move, y_next_move)
 
                 # find v_line
                 elif np.all(past_moves[:, 1] == past_moves[0, 1]):
                     y_next_move = past_moves[0, 1]
-                    x_next_move = random.choice([np.min(past_moves[:, 0]) - 1,
-                                                 np.max(past_moves[:, 0]) + 1])
+                    x_next_move = random.choice(
+                        [np.min(past_moves[:, 0]) - 1, np.max(past_moves[:, 0]) + 1]
+                    )
                     move = (x_next_move, y_next_move)
                     print(move)
                 # find / line and \ line
                 # causes problem, because the bot can choose 4 positions...
-                # 
+                #
                 else:
-                    x_next_move = random.choice([np.min(past_moves[:, 1]) - 1,
-                                                 np.max(past_moves[:, 1]) + 1])
-                    y_next_move = random.choice([np.min(past_moves[:, 0]) - 1,
-                                                 np.max(past_moves[:, 0]) + 1])
+                    x_next_move = random.choice(
+                        [np.min(past_moves[:, 1]) - 1, np.max(past_moves[:, 1]) + 1]
+                    )
+                    y_next_move = random.choice(
+                        [np.min(past_moves[:, 0]) - 1, np.max(past_moves[:, 0]) + 1]
+                    )
                     move = (x_next_move, y_next_move)
-
-                
 
             if self.is_valid(move):
                 valid_move = False
-                #self.board.board[move[0]][move[1]] = self.player_number
+                # self.board.board[move[0]][move[1]] = self.player_number
                 print(move)
                 valid_counter = 0
                 return move
@@ -229,14 +248,12 @@ class Bot_simple(Player):
 
 
 class Bot_simple_v2(Player):
-
     def __init__(self, player_number, name, board) -> None:
         super().__init__(player_number, name, board)
         self.player_type = "bot_simple_2"
         pass
-    
 
-    def make_move(self): # -> (row, col)
+    def make_move(self):  # -> (row, col)
         """
         goal of this bot: try to win
         if empty, place an entry in the middle of the board
@@ -245,42 +262,70 @@ class Bot_simple_v2(Player):
         """
         valid_move = True
         while valid_move:
-            if self.board.board[(self.board.m//2, self.board.n//2)] == 0:
-                move = ((self.board.m//2, self.board.n//2))         #if middle of the board is empty, place an entry
-            elif self.board.board[(self.board.m//2, self.board.n//2)] == 1 and not self.board.board[(self.board.m//2, self.board.n//2)] == 0:
-                move = ((self.board.m//2 + 1, self.board.n//2))         #if middle of the board is empty, place an entry
+            if self.board.board[(self.board.m // 2, self.board.n // 2)] == 0:
+                move = (
+                    self.board.m // 2,
+                    self.board.n // 2,
+                )  # if middle of the board is empty, place an entry
+            elif (
+                self.board.board[(self.board.m // 2, self.board.n // 2)] == 1
+                and not self.board.board[(self.board.m // 2, self.board.n // 2)] == 0
+            ):
+                move = (
+                    self.board.m // 2 + 1,
+                    self.board.n // 2,
+                )  # if middle of the board is empty, place an entry
 
-            elif self.board.board[(self.board.m//2, self.board.n//2)] != 0:
-                entrys_so_far = np.argwhere(self.board.board == self.player_number) #create a list with all own entrys
-                position = entrys_so_far[-1]    #take position of last entry
-                if position[1]+1 < (self.board.m-1) and self.board.board[position[0], position[1]+1] == 0:
-                    move = (position[0], position[1]+1)
-                elif position[1]-1 > (self.board.m-1) and self.board.board[position[0], position[1]-1] == 0:
-                    move = (position[0], position[1]-1)                                                          #place entry next to/ above/ below last entry
-                elif position[0]+1 < (self.board.n-1) and self.board.board[position[0]+1, position[1]] == 0:
-                    move = (position[0]+1, position[1])
-                elif position[0]-1 > (self.board.n-1) and self.board.board[position[0]-1, position[1]] == 0:
-                    move = (position[0]-1, position[1])
+            elif self.board.board[(self.board.m // 2, self.board.n // 2)] != 0:
+                entrys_so_far = np.argwhere(
+                    self.board.board == self.player_number
+                )  # create a list with all own entrys
+                position = entrys_so_far[-1]  # take position of last entry
+                if (
+                    position[1] + 1 < (self.board.m - 1)
+                    and self.board.board[position[0], position[1] + 1] == 0
+                ):
+                    move = (position[0], position[1] + 1)
+                elif (
+                    position[1] - 1 > (self.board.m - 1)
+                    and self.board.board[position[0], position[1] - 1] == 0
+                ):
+                    move = (
+                        position[0],
+                        position[1] - 1,
+                    )  # place entry next to/ above/ below last entry
+                elif (
+                    position[0] + 1 < (self.board.n - 1)
+                    and self.board.board[position[0] + 1, position[1]] == 0
+                ):
+                    move = (position[0] + 1, position[1])
+                elif (
+                    position[0] - 1 > (self.board.n - 1)
+                    and self.board.board[position[0] - 1, position[1]] == 0
+                ):
+                    move = (position[0] - 1, position[1])
                 else:
-                    move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))  #place entry somewhere on the board
+                    move = (
+                        random.randint(0, self.board.m - 1),
+                        random.randint(0, self.board.n - 1),
+                    )  # place entry somewhere on the board
             # return move
-        
+
             if self.is_valid(move):
                 valid_move = False
                 return move
             else:
-                print('Invalid move. Please try again')
+                print("Invalid move. Please try again")
                 pass
 
 
 class Bot_MCTS(Player):
-
     def __init__(self, player_number, name, board):
         super().__init__(player_number, name, board)
         self.player_type = "bot_MCTS"
 
         # Additional initialization specific to MCTS if needed
-    
+
     def simulate_random_playthrough(self, board, current_player):
         temp_board = deepcopy(board)  # Use a deep copy to avoid mutating the original
         moves = temp_board.get_available_moves()
@@ -300,36 +345,39 @@ class Bot_MCTS(Player):
     def make_move(self):
         available_moves = self.board.get_available_moves()
         move_scores = {move: 0 for move in available_moves}
-        
+
         for move in available_moves:
             for _ in range(100):  # Conduct 100 simulations for each available move
                 temp_board = deepcopy(self.board)
                 temp_board.board[move[0]][move[1]] = self.player_number
-                result = self.simulate_random_playthrough(temp_board, 3 - self.player_number)
+                result = self.simulate_random_playthrough(
+                    temp_board, 3 - self.player_number
+                )
                 move_scores[move] += result
-        
+
         # Randomize selection among top-scoring moves if there's a tie
         max_score = max(move_scores.values())
         best_moves = [move for move, score in move_scores.items() if score == max_score]
-        best_move = random.choice(best_moves)  # Randomly choose among the best if there's a tie
+        best_move = random.choice(
+            best_moves
+        )  # Randomly choose among the best if there's a tie
 
         # Apply the chosen move to the actual board
         self.board.board[best_move[0]][best_move[1]] = self.player_number
         return best_move
-    
-class Game():
- 
 
+
+class Game:
     def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
         self.m = m
         self.n = n
         self.k = k
         self.player1 = player1
-        self.player2 = player2   
+        self.player2 = player2
         self.board = None
 
     def game_log(self):
-        """ # Main Game Log:
+        """Main Game Log:
         adds entry to dp (.csv) looking like this:
 
         | player1_type | player2_type | starting_player | winning_player | {self.m}x{self.n}_final_board_flat |
@@ -339,22 +387,31 @@ class Game():
         | bot_simple   | bot_simple   | 1               | 2              | 12                                 |
         | bot_complex  | bot_complex  | 2               | 0              | 16                                 |
         """
-        with open("game_log.csv", mode='a', newline="") as f:
-            fieldnames = ["player1_type", "player2_type", "starting_player", "winning_player", f"{self.m}x{self.n}_final_board_flat"]
+        with open("game_log.csv", mode="a", newline="") as f:
+            fieldnames = [
+                "player1_type",
+                "player2_type",
+                "starting_player",
+                "winning_player",
+                f"{self.m}x{self.n}_final_board_flat",
+            ]
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             if f.tell() == 0:
                 writer.writeheader()
-            
-            writer.writerow({"player1_type": self.player1.player_type,
-                             "player2_type": self.player2.player_type,
-                             "starting_player": self.starting_player,
-                             "winning_player": self.winning_player,
-                             f"{self.m}x{self.n}_final_board_flat": self.board.board.flatten()})
+
+            writer.writerow(
+                {
+                    "player1_type": self.player1.player_type,
+                    "player2_type": self.player2.player_type,
+                    "starting_player": self.starting_player,
+                    "winning_player": self.winning_player,
+                    f"{self.m}x{self.n}_final_board_flat": self.board.board.flatten(),
+                }
+            )
             f.close()
 
-
-    def player_choice(self, p_number:int, p_name:str, choice:int):
-        valid_choices = [1, 2, 3, 4, 5] 
+    def player_choice(self, p_number: int, p_name: str, choice: int):
+        valid_choices = [1, 2, 3, 4, 5]
 
         if choice in valid_choices:
             if choice == 1:
@@ -375,10 +432,8 @@ class Game():
             else:
                 raise ValueError("input number out of range, please retry!")
 
-    
-    def start(self, player1_type, player1_name, player2_type, player2_name):    
+    def start(self, player1_type, player1_name, player2_type, player2_name):
         self.board = Board(self.m, self.n, self.k)
-
 
         self.player1 = self.player_choice(1, player1_name, player1_type)
         self.player2 = self.player_choice(2, player2_name, player2_type)
@@ -393,15 +448,10 @@ class Game():
         return True
 
     def game_loop(self):
-        # made by Dalia
-        # current_player = random.choice([self.player1, self.player2])
-        # changed for diagonal testing to:
-        current_player = self.player1
+        current_player = random.choice([self.player1, self.player2])
         self.starting_player = current_player
-        
 
         while not self.full_board() and not self.board.has_won(current_player):
-
             if np.all(self.board == 0):
                 print("uyoasildgjkfbhvagluihsdkjf")
                 self.starting_player = current_player
@@ -410,17 +460,17 @@ class Game():
             print(f"Player {current_player.name}'s turn")
             # gets the current move the player inputed
             current_move = current_player.make_move()
-            
+
             # puts the move on the board
             self.board.board[current_move] = current_player.player_number
-            
+
             # checks if someone has won and if the board is full
             if self.board.has_won(current_player.player_number):
                 print(f"Player {current_player.name} wins!")
                 self.winning_player = current_player.player_number
                 break
             elif self.full_board():
-                print('The board is full. Nobody won!')
+                print("The board is full. Nobody won!")
                 self.winning_player = 0
                 break
 
@@ -434,72 +484,20 @@ class Game():
 
         self.board.display()
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     m = 5
     n = 5
     k = 4
 
-    # for b in range(303):
-    #     current_game = Game(m, n, k)
-    #     # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-    #     current_game.start(player2_type=3, player2_name="simple_1",
-    #                        player1_type=5, player1_name="monte_carlo_tree_search")
-    #     current_game.game_loop()
-    #     current_game.game_log()
-
-    # # simple 2 vs random
-    # for a in range(1000):
-    #     current_game = Game(m, n, k)
-    #     # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-    #     current_game.start(player1_type=4, player1_name="simple_2",
-    #                        player2_type=2, player2_name="random")
-    #     current_game.game_loop()
-    #     current_game.game_log()
-
-    # # simple 2 vs simple 1
-    # for a in range(1000):
-    #     current_game = Game(m, n, k)
-    #     # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-    #     current_game.start(player1_type=4, player1_name="simple_2",
-    #                        player2_type=3, player2_name="simple_1")
-    #     current_game.game_loop()
-    #     current_game.game_log()
-
-    # # simple 2 vs simple 2
-    # for a in range(1000):
-    #     current_game = Game(m, n, k)
-    #     human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-    #     current_game.start(player1_type=4, player1_name="simple_2",
-    #                        player2_type=4, player2_name="simple_2")
-    #     current_game.game_loop()
-    #     current_game.game_log() 
-    
-    # simple 2 vs mcts
-    
-
-    # # random vs random
-    # for a in range(1000):
-    #     current_game = Game(m, n, k)
-    #     # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-    #     current_game.start(player1_type=2, player1_name="random",
-    #                        player2_type=4, player2_name="simple_2")
-    #     current_game.game_loop()
-    #     current_game.game_log()
-    
-    # # simple 1 vs simple 1
-    # for a in range(1000):
-    #     current_game = Game(m, n, k)
-    #     human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-    #     current_game.start(player1_type=3, player1_name="simple_1",
-    #                        player2_type=4, player2_name="simple_2")
-    #     current_game.game_loop()
-    #     current_game.game_log()
-
-for a in range(500):
+    for a in range(1):
         current_game = Game(m, n, k)
         # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-        current_game.start(player1_type=3, player1_name="simple_1",
-                           player2_type=4, player2_name="simple_2")
+        current_game.start(
+            player1_type=3,
+            player1_name="simple_1",
+            player2_type=4,
+            player2_name="simple_2",
+        )
         current_game.game_loop()
         current_game.game_log()

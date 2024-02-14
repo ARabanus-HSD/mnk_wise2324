@@ -13490,3 +13490,4 @@ bot_simple,bot_simple_2,<__main__.Bot_simple object at 0x7f55828422c0>,0,[1 2 2 
 bot_simple,bot_simple_2,<__main__.Bot_simple object at 0x7f2f8d9ae620>,1,[0 0 0 0 0 0 1 1 1 1 0 0 2 2 0 0 0 0 2 0 0 0 0 0 0]
 bot_simple,bot_simple_2,<__main__.Bot_simple object at 0x7f2f8d9ae590>,1,[0 0 0 0 0 1 1 1 1 0 0 0 2 2 0 0 0 0 2 0 0 0 0 0 0]
 bot_simple,bot_simple_2,<__main__.Bot_simple object at 0x7f3336bee800>,1,[0 0 0 0 0 1 1 0 0 1 1 0 2 2 0 1 0 0 2 2 1 0 0 0 2]
+bot_simple,bot_simple_2,<__main__.Bot_simple object at 0x7f8089a3e7a0>,1,[0 1 1 1 1 0 2 1 0 1 0 0 2 2 0 0 0 0 2 1 2 1 2 2 0]
