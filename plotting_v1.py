@@ -12,6 +12,10 @@ adds entry to dp (.csv) looking like this
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# plt.style.use('seaborn-v0_8-pastel')
+plt.style.use('bmh')
+plt.style.use('ggplot')
+
 df = pd.read_csv("game_log.csv")
 
 # print(df)
@@ -85,23 +89,25 @@ titles_as_list = ["mcts_vs_random", "mcts_vs_simple_1", "mcts_vs_simple_2", "mct
 n_rows = 4
 n_cols = 4
 
-fig, axes = plt.subplots(figsize=(30, 40), dpi=80, nrows=n_rows, ncols=n_cols)
+fig, axes = plt.subplots(figsize=(15, 40), dpi=80, nrows=n_rows, ncols=n_cols)
 
 counter = 0
 for row in range(n_rows):
     for col in range(n_cols):
         sort_winners(dfs_as_list[counter]).plot(ax=axes[row, col],
                                                       kind='bar',
-                                                      title=titles_as_list[counter])
+                                                      title=titles_as_list[counter],
+                                                      xticks=[])
         counter += 1
+
 
 # sort_winners(sort_by_match_type(df, "bot_MCTS", "bot_simple_2")).plot(ax=axes[0, 2],
 #                                         kind='bar',
 #                                         title=titles_as_list[2])
 
-print(mcts_vs_simple_2)
-print(simple_2_vs_simple_2)
-print(simple_2_vs_simple_1)
-print(simple_1_vs_random)
+# print(mcts_vs_simple_2)
+# print(simple_2_vs_simple_2)
+# print(simple_2_vs_simple_1)
+# print(simple_1_vs_random)
 
 plt.show()

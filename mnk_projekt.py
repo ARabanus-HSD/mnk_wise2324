@@ -245,8 +245,8 @@ class Bot_simple_v2(Player):
         """
         valid_move = True
         while valid_move:
-            if self.board.board[m//2, n//2] == 0:
-                move = ((m//2), (n//2))         #if middle of the board is empty, place an entry
+            if self.board.board[(self.board.m//2, self.board.n//2)] == 0:
+                move = ((self.board.m//2, self.board.n//2))         #if middle of the board is empty, place an entry
             elif self.board.board[(self.board.m//2, self.board.n//2)] != 0:
                 entrys_so_far = np.argwhere(self.board.board == self.player_number) #create a list with all own entrys
                 position = entrys_so_far[-1]    #take position of last entry
@@ -496,7 +496,7 @@ if __name__ == "__main__":
 for a in range(500):
         current_game = Game(m, n, k)
         # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-        current_game.start(player1_type=5, player1_name="monte_carlo_tree_search",
+        current_game.start(player1_type=3, player1_name="simple_1",
                            player2_type=4, player2_name="simple_2")
         current_game.game_loop()
         current_game.game_log()
