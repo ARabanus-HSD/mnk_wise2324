@@ -7,51 +7,79 @@ from copy import deepcopy
 
 
 class Board:
+    """_summary_
+    """
     def __init__(self, m, n, k) -> None:
+        """Initialize instance of the game board usind row and col
+
+        Args:
+            m (int): number of rows in the game board
+            n (int): number of cols in the game board
+            k (int): winning lenth required for a player to win
+
+        Raises:
+            ValueError: if k > m, would cause overflow later
+            ValueError: if k > n, would cause overflow later
+            
+        Creates:
+            numpy array
+        """
         self.m = m
         self.n = n
         self.k = k
 
         # check if zielgerade is larger than gameboard
         if self.m < self.k:
-            raise ValueError("k can't be larger than n or m")
+            raise ValueError("k can't be larger than m")
         elif self.n < self.k:
-            raise ValueError("k can't be larger than n or m")
+            raise ValueError("k can't be larger than n")
         else:
             self.board = np.zeros(shape=(self.m, self.n), dtype=int)
 
         return
 
     def display(self):
+        """Print game board numpy array to the console
+        """
         print(self.board)
         pass
 
-    def has_won(self, player):
+    def has_won(self, player_number):
+        """Check if the player completed a k-long line of entries on the game board
+
+        Args:
+            player_number (int): number representing the player in question
+
+        Returns:
+            bool: True or False, depending on presence of k-long row of entries horizontally, vertically or diagonally
+        """
         # Horizontal check
         for row in range(self.m):
             for col in range(self.n - self.k + 1):
-                if all(self.board[row][c] == player for c in range(col, col + self.k)):
+                if all(self.board[row][c] == player_number for c in range(col, col + self.k)):
                     return True
         # Vertical check
         for row in range(self.m - self.k + 1):
             for col in range(self.n):
-                if all(self.board[r][col] == player for r in range(row, row + self.k)):
+                if all(self.board[r][col] == player_number for r in range(row, row + self.k)):
                     return True
         # Diagonal check (down-right)
         for row in range(self.m - self.k + 1):
             for col in range(self.n - self.k + 1):
-                if all(self.board[row + d][col + d] == player for d in range(self.k)):
+                if all(self.board[row + d][col + d] == player_number for d in range(self.k)):
                     return True
         # Diagonal check (down-left)
         for row in range(self.m - self.k + 1):
             for col in range(self.k - 1, self.n):
-                if all(self.board[row + d][col - d] == player for d in range(self.k)):
+                if all(self.board[row + d][col - d] == player_number for d in range(self.k)):
                     return True
         return False
 
     def get_available_moves(self):
-        """
-        returns list of all available moves on the board, only used for Bot_MCTS
+        """Iterates through game board, extracting position coordinates of each entry that is equal to 0
+
+        Returns:
+            list: list of tuples of all entries in the game board that are 0 
         """
         available_moves = []
         # Iterate over the board to find empty spaces
@@ -62,6 +90,11 @@ class Board:
         return available_moves
 
     def full_board(self):
+        """Checks if there are possible moves to be made, used for decrlaring draw
+
+        Returns:
+            bool: False or True, if there are 0s on the game board or not
+        """
         # goes through each row and checks if value of every cell is 0
         for row in self.board:
             for value in row:
@@ -71,20 +104,31 @@ class Board:
 
 
 class Player:
+    """Human controlled player in the mnk-game
+    """
     def __init__(self, player_number, name, board) -> None:  # player number 1 or 2
+        """Initialize instance of human player in the game
+
+        Args:
+            player_number (int): 1 or 2
+            name (string): player name
+            board (numpy.ndarray): numpy array created using class Board
+        """
         self.name = name
         self.player_number = player_number
         self.board = board
         self.player_type = "human"
 
     def is_valid(self, move: tuple):
-        """
-        erhält ein tuple von moves
-        prüft ob moves in valid raum ist
-        gibt true or false wieder
+        """Checks for collisions between the desired move and the game board.
+        Game board must have a 0 at the desired move position to return True
 
-        """
+        Args:
+            move (tuple): _description_
 
+        Returns:
+            bool: True or False, if move is valid or not
+        """
         # checks if move is in range of the size of the board
         if move[0] < self.board.m and move[1] < self.board.n:
             # checks the cell that is to be changed is == 0
@@ -95,6 +139,11 @@ class Player:
 
     # !! man kann nur einen value error causen, bevor das Spiel abbricht :(
     def make_move(self):  # -> (row, col)
+        """uses terminal user input and the is_valid() function to place the next move on the game board.
+
+        Returns:
+            tuple: (row, col) of next move, starts at 0
+        """
         print(f"make move between 0 and {self.board.m-1} \nand 0 and {self.board.n-1}")
         try:
             move = (int(input("Please make a move: ")), int(input("")))
@@ -108,16 +157,28 @@ class Player:
 
 
 class Bot_random(Player):
+    """Bot that places randomly on the game board
+    """
     def __init__(self, player_number, name, board) -> None:
+        """Initialize instance of a Bot.
+        Parent class Player passes along player_number, name, and the board
+
+        Args:
+            player_number (int): 1 or 2
+            name (string): player name
+            board (numpy.ndarray): numpy array created using class Board
+        """
         super().__init__(player_number, name, board)
         self.player_type = "bot_random"
 
     def make_move(self):  # -> (row, col)
-        """
-        geht in eine schleife und wiederholt die erzeugung vom random move so lange bis es valid ist
+        """geht in eine schleife und wiederholt die erzeugung vom random move so lange bis es valid ist
         made by Dalia
-        """
+        
 
+        Returns:
+            _type_: _description_
+        """
         realitycheck = True
         while realitycheck:
             move = (
@@ -134,19 +195,33 @@ class Bot_random(Player):
 
 
 class Bot_simple(Player):
+    """_summary_
+
+    Args:
+        Player (_type_): _description_
+    """
     def __init__(self, player_number, name, board) -> None:
+        """_summary_
+
+        Args:
+            player_number (int): 1 or 2
+            name (string): player name
+            board (numpy.ndarray): numpy array created using class Board
+        """
         super().__init__(player_number, name, board)
         self.player_type = "bot_simple"
         pass
 
     def make_move(self):  # -> (row, col)
-        """
-        goal of this bot: only try and win (be better than random bot)
+        """goal of this bot: only try and win (be better than random bot)
         if the board is empty, place an entry k/2 away from the edges
             placed @ (m_i, n_i)
         if there is one placed entry, pick a random neighboring entry to fill
             placed @ (m_i+-1, n_i+-1)
         if there are two in line, continue along that line
+
+        Returns:
+            _type_: _description_
         """
         valid_move = True
         valid_counter = 1
@@ -248,17 +323,31 @@ class Bot_simple(Player):
 
 
 class Bot_simple_v2(Player):
+    """_summary_
+
+    Args:
+        Player (_type_): _description_
+    """
     def __init__(self, player_number, name, board) -> None:
+        """_summary_
+
+        Args:
+            player_number (int): 1 or 2
+            name (string): player name
+            board (numpy.ndarray): numpy array created using class Board
+        """
         super().__init__(player_number, name, board)
         self.player_type = "bot_simple_2"
         pass
 
     def make_move(self):  # -> (row, col)
-        """
-        goal of this bot: try to win
+        """goal of this bot: try to win
         if empty, place an entry in the middle of the board
         if there is an entry already, bot will find position of its own entry and place an entry next to/ above/ below it
         else place an entry randomly
+
+        Returns:
+            _type_: _description_
         """
         valid_move = True
         while valid_move:
@@ -320,13 +409,34 @@ class Bot_simple_v2(Player):
 
 
 class Bot_MCTS(Player):
+    """_summary_
+
+    Args:
+        Player (_type_): _description_
+    """
     def __init__(self, player_number, name, board):
+        """_summary_
+
+        Args:
+            player_number (int): 1 or 2
+            name (string): player name
+            board (numpy.ndarray): numpy array created using class Board
+        """
         super().__init__(player_number, name, board)
         self.player_type = "bot_MCTS"
 
         # Additional initialization specific to MCTS if needed
 
     def simulate_random_playthrough(self, board, current_player):
+        """_summary_
+
+        Args:
+            board (_type_): _description_
+            current_player (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         temp_board = deepcopy(board)  # Use a deep copy to avoid mutating the original
         moves = temp_board.get_available_moves()
         np.random.shuffle(moves)  # Randomly shuffle available moves to avoid bias
@@ -343,6 +453,11 @@ class Bot_MCTS(Player):
         return 0
 
     def make_move(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         available_moves = self.board.get_available_moves()
         move_scores = {move: 0 for move in available_moves}
 
@@ -368,7 +483,18 @@ class Bot_MCTS(Player):
 
 
 class Game:
+    """_summary_
+    """
     def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
+        """_summary_
+
+        Args:
+            m (int, optional): _description_. Defaults to 6.
+            n (int, optional): _description_. Defaults to 7.
+            k (int, optional): _description_. Defaults to 4.
+            player1 (_type_, optional): _description_. Defaults to None.
+            player2 (_type_, optional): _description_. Defaults to None.
+        """
         self.m = m
         self.n = n
         self.k = k
@@ -386,6 +512,7 @@ class Game:
         | bot_random   | bot_random   | 2               | 1              | 9                                  |
         | bot_simple   | bot_simple   | 1               | 2              | 12                                 |
         | bot_complex  | bot_complex  | 2               | 0              | 16                                 |
+        
         """
         with open("game_log.csv", mode="a", newline="") as f:
             fieldnames = [
@@ -411,6 +538,19 @@ class Game:
             f.close()
 
     def player_choice(self, p_number: int, p_name: str, choice: int):
+        """_summary_
+
+        Args:
+            p_number (int): _description_
+            p_name (str): _description_
+            choice (int): _description_
+
+        Raises:
+            ValueError: _description_
+
+        Returns:
+            _type_: _description_
+        """
         valid_choices = [1, 2, 3, 4, 5]
 
         if choice in valid_choices:
@@ -433,12 +573,25 @@ class Game:
                 raise ValueError("input number out of range, please retry!")
 
     def start(self, player1_type, player1_name, player2_type, player2_name):
+        """_summary_
+
+        Args:
+            player1_type (_type_): _description_
+            player1_name (_type_): _description_
+            player2_type (_type_): _description_
+            player2_name (_type_): _description_
+        """
         self.board = Board(self.m, self.n, self.k)
 
         self.player1 = self.player_choice(1, player1_name, player1_type)
         self.player2 = self.player_choice(2, player2_name, player2_type)
 
     def full_board(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         # made by Dalia
         # goes through row and checks if value of every cell is 0
         for row in self.board.board:
@@ -448,6 +601,8 @@ class Game:
         return True
 
     def game_loop(self):
+        """_summary_
+        """
         current_player = random.choice([self.player1, self.player2])
         self.starting_player = current_player
 
