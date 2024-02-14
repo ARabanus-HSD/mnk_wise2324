@@ -49,7 +49,7 @@ def sort_winners(df):
 
         # counter_dict = [{'labels': ["player1_win", "player2_win", "draw"],
         #                 "values":[win_counter_player_1, win_counter_player_2, draw_count]}]
-    counter_dict = [{"player_1": win_counter_player_1, "player_2": win_counter_player_2, "draw": draw_count}]
+    counter_dict = [{"win p1": win_counter_player_1, "win p2": win_counter_player_2, "draw": draw_count}]
         
     df_counter = pd.DataFrame.from_dict(counter_dict)
     return df_counter
@@ -76,14 +76,15 @@ random_vs_simple_2 = sort_by_match_type(df, "bot_random", "bot_simple_2")
 random_vs_mcts = sort_by_match_type(df, "bot_random", "bot_MCTS")
 
 dfs_as_list = [mcts_vs_random, mcts_vs_simple_1, mcts_vs_simple_2, mcts_vs_mcts,
-                simple_1_vs_random, simple_1_vs_simple_1, simple_1_vs_simple_2, simple_1_vs_mcts,
                 simple_2_vs_random, simple_2_vs_simple_1, simple_2_vs_simple_2, simple_2_vs_mcts,
+                simple_1_vs_random, simple_1_vs_simple_1, simple_1_vs_simple_2, simple_1_vs_mcts,
                 random_vs_random, random_vs_simple_1, random_vs_simple_2, random_vs_mcts]
 
-titles_as_list = ["mcts_vs_random", "mcts_vs_simple_1", "mcts_vs_simple_2", "mcts_vs_mcts",
-                  "simple_1_vs_random", "simple_1_vs_simple_1", "simple_1_vs_simple_2", "simple_1_vs_mcts",
-                  "simple_2_vs_random", "simple_2_vs_simple_1", "simple_2_vs_simple_2", "simple_2_vs_mcts",
-                  "random_vs_random", "random_vs_simple_1", "random_vs_simple_2", "random_vs_mcts"]
+titles_as_list = ["MCTS vs Random", "MCTS vs Simple 1", "MCTS vs Simple 2", "MCTS vs MCTS",
+                  "Simple 2 vs Random", "Simple 2 vs Simple 1", "Simple 2 vs Simple 2", "Simple 2 vs MCTS",
+                  "Simple 1 vs Random", "Simple 1 vs Simple 1", "Simple 1 vs Simple 2", "Simple 1 vs MCTS",
+
+                  "Random vs Random", "Random vs Simple 1", "Random vs Simple 2", "Random vs MCTS"]
 
 
 n_rows = 4
