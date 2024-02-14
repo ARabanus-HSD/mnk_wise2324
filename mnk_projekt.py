@@ -260,14 +260,14 @@ class Bot_simple_v2(Player):
                     move = (position[0]-1, position[1])
                 else:
                     move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))  #place entry somewhere on the board
-            return move
+            # return move
         
-        if self.is_valid(move):
-            valid_move = False
-            return move
-        else:
-            print('Invalid move. Please try again')
-            pass
+            if self.is_valid(move):
+                valid_move = False
+                return move
+            else:
+                print('Invalid move. Please try again')
+                pass
 
 
 class Bot_MCTS(Player):
