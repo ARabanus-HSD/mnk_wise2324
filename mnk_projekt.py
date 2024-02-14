@@ -247,6 +247,9 @@ class Bot_simple_v2(Player):
         while valid_move:
             if self.board.board[(self.board.m//2, self.board.n//2)] == 0:
                 move = ((self.board.m//2, self.board.n//2))         #if middle of the board is empty, place an entry
+            elif self.board.board[(self.board.m//2, self.board.n//2)] == 1 and not self.board.board[(self.board.m//2, self.board.n//2)] == 0:
+                move = ((self.board.m//2 + 1, self.board.n//2))         #if middle of the board is empty, place an entry
+
             elif self.board.board[(self.board.m//2, self.board.n//2)] != 0:
                 entrys_so_far = np.argwhere(self.board.board == self.player_number) #create a list with all own entrys
                 position = entrys_so_far[-1]    #take position of last entry
