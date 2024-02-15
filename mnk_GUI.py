@@ -9,16 +9,38 @@ from copy import deepcopy
 
 
 class ChalkboardButton(QPushButton):
+    """
+    A custom QPushButton with a predefined style and value attribute.
+    """
     def __init__(self, text, value):
+        """
+        Initializes the ChalkboardButton with a text label and a custom value.
+        """
         super(ChalkboardButton, self).__init__(text)
         self.value = value
         self.setStyleSheet("color: white; font: bold 16px;")
 
 
 class MainMenu(QMainWindow):
-    def __init__(self):
+    """
+    The main menu window of the application, 
+    allowing users to input game settings and start the game.
+    """
+    
+    # Initialization and UI setup
+    
+    def __init__(self):    
+        """
+        Initializes the main menu with UI components for game configuration.
+        """
         super().__init__()
-
+        self.setupUI()
+        
+        
+    def setupUI(self):
+        """
+        Sets up the user interface components and layout for the main menu.
+        """
         # chalk font
         font_path = "EraserRegular.ttf"
         chalk_font = QFontDatabase.addApplicationFont(font_path)
@@ -154,7 +176,7 @@ class MainMenu(QMainWindow):
         start_button = ChalkboardButton("Start Game", 0)
         start_button.setFont(chalk_font)
         start_button.setStyleSheet("color: white;")
-        start_button.clicked.connect(self.on_start_button_click)
+        start_button.clicked.connect(self.start_button_click)
 
         # Player 2
         main_layout.addWidget(player2_label)
@@ -176,35 +198,22 @@ class MainMenu(QMainWindow):
 
         self.setWindowTitle("Main Menu")
         self.setGeometry(100, 100, 800, 600)
+        
+    # Event Jandlers     
 
     def on_player1_button_click(self):
+        """ Handles clicks on Player 1 type selection buttons."""
         self.handle_player_button_click(self.player1_buttons)
 
     def on_player2_button_click(self):
+        """ Handles clicks on Player 2 type selection buttons."""
         self.handle_player_button_click(self.player2_buttons)
-
-    def handle_player_button_click(self, buttons):
-        font_path = "EraserRegular.ttf"  # path
-        chalk_font = QFontDatabase.addApplicationFont(font_path)
-        chalk_font = QFont("Eraser", 20)
-
-        # Clear any previous selection
-        for button in buttons:
-            button.setFont(chalk_font)
-            button.setStyleSheet("background-color: transparent; color: white;")
-
-        # Highlight the clicked button
-        sender_button = self.sender()
-        sender_button.setFont(chalk_font)
-        sender_button.setStyleSheet("background-color: blue; color: white;")
-
-    def get_selected_button_value(self, buttons):
-        for button in buttons:
-            if "background-color: blue;" in button.styleSheet():
-                return button.value
-        return None
-
-    def on_start_button_click(self):
+        
+    def start_button_click(self):
+        """
+        Validates input and starts the game with the selected settings.
+        Displays an error message if the input is invalid.
+        """
         # Get the chosen options
         try:
             m = int(self.m_input.text())
@@ -229,12 +238,59 @@ class MainMenu(QMainWindow):
         current_game.start(player1_type, player1_name, player2_type, player2_name)
         game_board_window = GameBoardWindow(current_game)
         game_board_window.show()
-        self.hide()
+        self.hide()    
+
+    # Utility Methods
+
+    def handle_player_button_click(self, buttons):
+        """
+        Highlights the selected player type button 
+        and clears previous selections for a group of buttons.
+        Parameters:
+        - buttons: A list of QPushButton instances representing the player type selection buttons.
+        """
+        font_path = "EraserRegular.ttf"  # path
+        chalk_font = QFontDatabase.addApplicationFont(font_path)
+        chalk_font = QFont("Eraser", 20)
+
+        # Clear any previous selection
+        for button in buttons:
+            button.setFont(chalk_font)
+            button.setStyleSheet("background-color: transparent; color: white;")
+
+        # Highlight the clicked button
+        sender_button = self.sender()
+        sender_button.setFont(chalk_font)
+        sender_button.setStyleSheet("background-color: blue; color: white;")
+
+    def get_selected_button_value(self, buttons):
+        """
+        Returns the value of the currently selected button in a button group.
+        Parameters:
+        - buttons: A list of QPushButton instances from which to find the selected button.
+        Returns:
+        - The value attribute of the selected QPushButton instance, 
+        or None if no button is selected.
+        """
+        for button in buttons:
+            if "background-color: blue;" in button.styleSheet():
+                return button.value
+        return None
+
 
 class GameBoardWindow(QMainWindow):
-    # def __init__(self, m, n):
-
+    """
+    The main game window, displaying the game board and handling game interactions.
+    """
+    
+    # Initialization and Setup
+    
     def __init__(self, game):
+        """
+        Initializes the game board window with the game logic and UI.
+        Parameters:
+       - game: An instance of the Game class containing the current game state and logic.
+        """
         super().__init__()
         self.game = game
         self.mainMenu = mainMenu
@@ -245,6 +301,9 @@ class GameBoardWindow(QMainWindow):
         self.move_timer.start(1000)
 
     def initUI(self):
+        """
+        Sets up the user interface components and layout for the game board.
+        """
         # Setup window
         self.setWindowTitle("MNK Game")
         self.setGeometry(100, 100, 800, 600)
@@ -308,70 +367,13 @@ class GameBoardWindow(QMainWindow):
                 grid_layout.addWidget(button, i, j)
                 row_buttons.append(button)
             self.buttons.append(row_buttons)
-
-    def clearBoardUI(self):
-        for row in self.buttons:
-            for button in row:
-                button.setText("")
-                button.setEnabled(True)
-
-    def game_loop(self):
-        current_player = self.game.get_current_player()
-
-        if self.game.board.has_won(current_player.player_number):
-            self.display_winner(current_player.player_number)
-            self.disable_board()
-            return
-
-        if self.game.board.full_board():
-            self.display_winner(None)
-            self.disable_board()
-            return
-
-        self.game.switch_player()
-        self.update_ui()
-
-    def on_button_clicked(self, i, j):
-        current_player = self.game.get_current_player()
-        if not isinstance(
-            current_player, (Bot_random, Bot_simple, Bot_simple_v2, Bot_complex)
-        ):
-            if self.game.place_move((i, j)):
-                self.game_loop()
-                self.update_ui()
-            else:
-                print("Invalid move.")
-
-    def handle_bot_move(self):
-        current_player = self.game.get_current_player()
-        # if the current player is a bot, generate and place its move
-        if isinstance(
-            current_player, (Bot_random, Bot_simple, Bot_simple_v2, Bot_complex)
-        ):
-            move = current_player.make_move()
-            if move:
-                row, col = move
-                if self.game.place_move((row, col)):
-                    self.update_ui()
-                    self.game_loop()
-                else:
-                    print("Bot move failed", move)
-
-    def display_winner(self, player_number=None):
-        if player_number == 1:
-            winner_message = f"Congratulations, {self.game.player1.name} wins!"
-        elif player_number == 2:
-            winner_message = f"Congratulations, {self.game.player2.name} wins!"
-        elif player_number == None:
-            # If player_number is None, it's a draw
-            winner_message = "It's a draw!"
-
-        dialog = GameOverDialog(winner=winner_message, parent=self)
-        dialog.mainMenuRequested.connect(self.open_main_menu)
-        dialog.restartGameRequested.connect(self.restart_game)
-        dialog.exec()
-
+            
+    # UI Update Methods      
+    
     def update_ui(self):
+        """
+        Updates the game board UI to reflect the current game state.
+        """
         current_player = self.game.get_current_player()
         for i, row in enumerate(self.game.board.board):
             for j, cell in enumerate(row):
@@ -388,25 +390,123 @@ class GameBoardWindow(QMainWindow):
                     button.setText("O")
                     button.setEnabled(False)
         self.update_player_ui()
-
+        
     def update_player_ui(self):
+        """
+        Updates the UI to highlight the current player.
+        """
         if self.game.current_player == self.game.player1:
             self.player1_label.setStyleSheet("color: red;")
             self.player2_label.setStyleSheet("color: white;")
         else:
             self.player1_label.setStyleSheet("color: white;")
             self.player2_label.setStyleSheet("color: red;")
+    
+    def clearBoardUI(self):
+        """
+        Clears the game board UI for a new game, resetting all buttons.
+        """
+        for row in self.buttons:
+            for button in row:
+                button.setText("")
+                button.setEnabled(True)
 
     def disable_board(self):
+        """
+        Disables all buttons on the game board, preventing further actions.
+        """
         for row_buttons in self.buttons:
             for button in row_buttons:
                 button.setEnabled(False)
 
+    # Game Logic Handlers
+
+    def game_loop(self):
+        """
+        The main game loop, handling turn switching and win/draw detection.
+        """
+        current_player = self.game.get_current_player()
+
+        if self.game.board.has_won(current_player.player_number):
+            self.display_winner(current_player.player_number)
+            self.disable_board()
+            return
+
+        if self.game.board.full_board():
+            self.display_winner(None)
+            self.disable_board()
+            return
+
+        self.game.switch_player()
+        self.update_ui()
+
+    def on_button_clicked(self, i, j):
+        """
+        Handles clicks on the game board buttons, placing a move at the clicked position.
+        Parameters:
+        - i: The row index of the clicked button.
+        - j: The column index of the clicked button.
+        """
+        current_player = self.game.get_current_player()
+        if not isinstance(
+            current_player, (Bot_random, Bot_simple, Bot_simple_v2, Bot_complex)
+        ):
+            if self.game.place_move((i, j)):
+                self.game_loop()
+                self.update_ui()
+            else:
+                print("Invalid move.")
+
+    def handle_bot_move(self):
+        """ Handles automated moves by bot players."""
+        current_player = self.game.get_current_player()
+        # if the current player is a bot, generate and place its move
+        if isinstance(
+            current_player, (Bot_random, Bot_simple, Bot_simple_v2, Bot_complex)
+        ):
+            move = current_player.make_move()
+            if move:
+                row, col = move
+                if self.game.place_move((row, col)):
+                    self.update_ui()
+                    self.game_loop()
+                else:
+                    print("Bot move failed", move)
+                    
+    # Game Outcome Display
+
+    def display_winner(self, player_number=None):
+        """
+        Displays the game over dialog with the winner or draw message.
+        Parameters:
+        - player_number: The number of the winning player (1 or 2). If None, indicates a draw.
+        """
+        if player_number == 1:
+            winner_message = f"Congratulations, {self.game.player1.name} wins!"
+        elif player_number == 2:
+            winner_message = f"Congratulations, {self.game.player2.name} wins!"
+        elif player_number == None:
+            # If player_number is None, it's a draw
+            winner_message = "It's a draw!"
+
+        dialog = GameOverDialog(winner=winner_message, parent=self)
+        dialog.mainMenuRequested.connect(self.open_main_menu)
+        dialog.restartGameRequested.connect(self.restart_game)
+        dialog.exec()
+        
+    # Navigation and Game Restart    
+
     def open_main_menu(self):
+        """
+        Opens the main menu and closes the current game window.
+        """
         self.close() 
         self.mainMenu.show()
 
     def restart_game(self):
+        """
+        Restarts the game with the same settings, resetting game board and UI.
+        """
         self.game.restart_game()
         self.clearBoardUI()
         self.initUI()
@@ -414,15 +514,35 @@ class GameBoardWindow(QMainWindow):
 
 
 class GameOverDialog(QDialog):
+    """
+    A dialog shown at the end of a game, displaying the result and offering next steps.
+    """
     mainMenuRequested = pyqtSignal()
     restartGameRequested = pyqtSignal()
+    
+    # Initialization and UI Setup
 
     def __init__(self, winner, parent=None):
+        """
+        Initializes the GameOverDialog with the winner's name and an optional parent widget.
+
+        Parameters:
+        - winner: A string indicating the winner of the game or a message indicating a draw.
+        - parent: An optional parent widget.
+        """
         super().__init__(parent=parent)
         self.setWindowTitle("Game Over")
         self.setStyleSheet("background-image: url('chalkboard4.jpg');")
         self.setFixedSize(400, 200)
+        self.setupUI(winner)
 
+    def setupUI(self, winner):
+        """
+        Sets up the user interface elements of the GameOverDialog.
+
+        Parameters:
+        - winner: A string indicating the winner of the game or a message indicating a draw.
+        """
         layout = QVBoxLayout()
 
         self.label = QLabel(winner)
@@ -451,21 +571,28 @@ class GameOverDialog(QDialog):
 
         self.setLayout(layout)
 
-    def display_winner(self, player_name=None):
-        dialog = GameOverDialog(winner=player_name, parent=self)
-        dialog.mainMenuRequested.connect(self.open_main_menu)
-        dialog.restartGameRequested.connect(self.restart_game)
-        dialog.exec()
+    # Event Handlers
 
     def onMainMenuClicked(self):
+        """
+        Emits the mainMenuRequested signal and 
+        closes the dialog when the "Main Menu" button is clicked.
+        """
         self.mainMenuRequested.emit()
         self.close()
 
     def onRestartClicked(self):
+        """
+        Emits the restartGameRequested signal 
+        and closes the dialog when the "Restart" button is clicked.
+        """
         self.restartGameRequested.emit()
         self.close()
 
     def onCloseClicked(self):
+        """
+        Closes the application when the "Close" button is clicked.
+        """
         QApplication.quit()
 
 
