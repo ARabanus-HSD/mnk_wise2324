@@ -124,6 +124,41 @@ class Bot_random(Player):
             else:
                 print('Invalid move. Please try again')
 
+
+class Bot_simple_v2(Player):
+
+    def __init__(self, player_number, name, board) -> None:
+        super().__init__(player_number, name, board)
+        pass
+    
+
+    def make_move(self): # -> (row, col)
+        """
+        goal of this bot: try to win
+        if empty, place an entry in the middle of the board
+        if there is an entry already, bot will find position of its own entry and place an entry next to it
+        if there is no own entry, place an entry in the somewhere random on the board
+        returns move (tuple with the coordinates of the move)
+        """
+        if self.board.board[(m//2), (n//2)] == 0:
+             move = ((m//2), (n//2))         #if middle of the board is empty, place an entry
+             print(move)
+        #elif self.board.board[(m//2), (n//2)] != 0:  #create a list with all own entrys
+            #entrys_so_far = (np.argwhere(self.board.board == self.player_number)[-1, -1])
+            #print(entrys_so_far)
+            #move = ((entrys_so_far+random.randint(m, n)), (entrys_so_far+random.randint(m, n))) #place entry next to last entry
+            #print(move)
+        else:
+            move = ((random.randint(m, n)), random.randint(m//2, n//2))  #place entry somewhere random on the board
+            print(move)
+        if self.is_valid(move):
+            print(move)
+            return move
+        else:
+            return print('Invalid move. Please try again')
+        
+
+
 class Bot_simple(Player):
 
     def __init__(self, player_number, name, board) -> None:
@@ -234,7 +269,7 @@ class Game():
         self.board = None
 
     def player_choice(self, p_number:int, p_name:str, choice:int):
-        valid_choices = [1, 2, 3, 4]
+        valid_choices = [1, 2, 3, 4, 5]
 
         if choice in valid_choices:
             if choice == 1:
@@ -248,11 +283,16 @@ class Game():
                 # print(20*"-")
                 return player
             elif choice == 3:
-                player = Bot_simple(p_number, p_name, self.board)
+                player = Bot_simple_v2(p_number, p_name, self.board)
                 # print("player is a simple bot")
                 # print(20*"-")
                 return player
             elif choice == 4:
+                player = Bot_simple(p_number, p_name, self.board)
+                # print("player is a simple bot")
+                # print(20*"-")
+                return player
+            elif choice == 5:
                 player = Bot_complex(p_number, p_name, self.board)
                 # print("player is a complex bot")
                 # print(20*"-")
@@ -315,6 +355,7 @@ class Game():
 
         self.board.display()
 
+
 if __name__ == "__main__":
     # for testing the script w/o gui and user input:
     m = 6
@@ -326,8 +367,8 @@ if __name__ == "__main__":
     # bot simple: 3
     # bot complex: 4
     current_game = Game(m, n, k)
-    # human : 1, bot random: 2, bot simple: 3, bot complex: 4
-    current_game.start(player1_type=3, player1_name="simple",
+    # human : 1, bot random: 2, bot simple_v2: 3, bot simple: 4, bot complex: 5
+    current_game.start(player1_type=3, player1_name="simple_v2",
                        player2_type=2, player2_name="random")
     # human : 1, bot random: 2, bot simple: 3, bot complex: 4
     current_game.game_loop()
