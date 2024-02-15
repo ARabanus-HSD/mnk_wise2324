@@ -17,8 +17,28 @@ from copy import deepcopy
 
 
 class Board():
+<<<<<<< Updated upstream
 
     def __init__(self, m, n, k) -> None:
+=======
+    """
+    Represents the game board for an m*n*k game, 
+    where m*n is the dimension of the board and k is the winning sequence length.
+    """
+    def __init__(self, m, n, k) -> None:
+        """
+        Initialize the game board with the specified dimensions and winning sequence length.
+
+        Parameters:
+        - m (int): Number of rows in the game board.
+        - n (int): Number of columns in the game board.
+        - k (int): Length of the sequence needed to win the game.
+
+        Raises:
+        - ValueError: If k is larger than either dimension of the board, 
+        throwing an error due to game logic constraints.
+        """
+>>>>>>> Stashed changes
         self.m = m
         self.n = n
         self.k = k
@@ -34,10 +54,30 @@ class Board():
         return
 
     def display(self):
+<<<<<<< Updated upstream
+=======
+        """
+        Prints the current state of the game board to the console.
+        """
+>>>>>>> Stashed changes
         print(self.board)
         
     
     def place_move(self, row, col, current_player):
+<<<<<<< Updated upstream
+=======
+        """
+        Attempts to place a move on the board for the current player.
+
+        Parameters:
+        - row (int): The row index for the move.
+        - col (int): The column index for the move.
+        - current_player (Player): The player making the move.
+
+        Returns:
+        - bool: True if the move was successfully placed, False otherwise.
+        """
+>>>>>>> Stashed changes
         if current_player is None or not isinstance(current_player, (Player)):
             print(f"Invalid player number: {current_player}")
             return False
@@ -55,8 +95,17 @@ class Board():
             return False
 
     def full_board(self):
+<<<<<<< Updated upstream
         # made by Dalia
         # goes through row and checks if value of every cell is 0
+=======
+        """
+        Checks if the board is completely filled with no empty spaces.
+
+        Returns:
+        - bool: True if the board is full, False otherwise.
+        """
+>>>>>>> Stashed changes
         for row in self.board:
             for value in row:
                 if value == 0:
@@ -64,6 +113,18 @@ class Board():
         return True
 
     def has_won(self, player):
+<<<<<<< Updated upstream
+=======
+        """
+        Checks if the specified player has won the game.
+
+        Parameters:
+        - player (int): The player number to check for a win condition.
+
+        Returns:
+        - bool: True if the player has won, False otherwise.
+        """
+>>>>>>> Stashed changes
         # Horizontal check
         for row in range(self.m):
             for col in range(self.n - self.k + 1):
@@ -88,7 +149,14 @@ class Board():
     
     def get_available_moves(self):
         """
+<<<<<<< Updated upstream
         returns list of all available moves on the board, only used for Bot_MCTS
+=======
+        Retrieves a list of all available moves on the board.
+
+        Returns:
+        - list of tuples: Each tuple represents an available move as (row, col).
+>>>>>>> Stashed changes
         """
         available_moves = []
         # Iterate over the board to find empty spaces
@@ -99,8 +167,24 @@ class Board():
         return available_moves
 
 class Player():
+<<<<<<< Updated upstream
 
     def __init__(self, player_number, name, board) -> None: # player number 1 or 2
+=======
+    """
+    Represents a human player in the mnk-game.
+    """
+
+    def __init__(self, player_number, name, board) -> None: # player number 1 or 2
+        """
+        Initialize a human player with a specific name and player number.
+
+        Parameters:
+        - player_number (int): The number identifying the player (1 or 2).
+        - name (str): The name of the player.
+        - board (Board): The game board instance.
+        """
+>>>>>>> Stashed changes
         self.name = name
         self.player_number = player_number
         self.board = board
@@ -108,6 +192,7 @@ class Player():
 
 
     def is_valid(self, move:tuple):
+<<<<<<< Updated upstream
         '''
         erhält ein tuple von moves
         prüft ob moves in valid raum ist
@@ -115,6 +200,17 @@ class Player():
 
         '''
 
+=======
+        """
+        Determines if the chosen move is valid (i.e., within the bounds of the board and on an empty cell).
+
+        Parameters:
+        - move (tuple): The desired move location (row, col).
+
+        Returns:
+        bool: True if the move is valid, False otherwise.
+        """
+>>>>>>> Stashed changes
         # checks if move is in range of the size of the board
         if move[0] < self.board.m and move[1] < self.board.n:
             print(self.board)
@@ -124,8 +220,19 @@ class Player():
         else:
             return False
 
+<<<<<<< Updated upstream
     # !! man kann nur einen value error causen, bevor das Spiel abbricht :(
     def make_move(self): # -> (row, col)
+=======
+
+    def make_move(self): # -> (row, col)
+        """
+        Handles receiving a player's move via input and validating it.
+
+        Returns:
+        tuple: The coordinates (row, col) of the player's move.
+        """
+>>>>>>> Stashed changes
         print(f"make move between 0 and {self.board.m-1} \nand 0 and {self.board.n-1}")
         try: move = (int(input("Please make a move: ")), int(input("")))
         except ValueError:
@@ -137,17 +244,36 @@ class Player():
         return move    
 
 class Bot_random(Player):
+<<<<<<< Updated upstream
 
     def __init__(self, player_number, name, board) -> None:
+=======
+    """
+    A bot player that selects moves randomly. Inherits behavior from Player.
+    """
+
+    def __init__(self, player_number, name, board) -> None:
+        """
+        Initialize a bot player that moves randomly.
+        Parameters are inherited from Player class.
+        """
+>>>>>>> Stashed changes
         super().__init__(player_number, name, board)
         self.player_type = "bot_random"
 
     def make_move(self): # -> (row, col)
         """
+<<<<<<< Updated upstream
         geht in eine schleife und wiederholt die erzeugung vom random move so lange bis es valid ist
         made by Dalia
         """
 
+=======
+        Generates and validates a random move until a legal move is found.
+        Returns:
+        tuple: The coordinates (row, col) of the chosen move.
+        """
+>>>>>>> Stashed changes
         realitycheck = True
         while realitycheck:
             move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
@@ -160,8 +286,20 @@ class Bot_random(Player):
                 print('Invalid move. Please try again')
 
 class Bot_simple(Player):
+<<<<<<< Updated upstream
     
     def __init__(self, player_number, name, board) -> None:
+=======
+    """
+    A bot player that attempts to place its markers strategically with a simple set of rules.
+    Inherits behavior from Player.
+    """
+    def __init__(self, player_number, name, board) -> None:
+        """
+        Initialize a simple strategy bot player.
+        Parameters are inherited from Player class.
+        """
+>>>>>>> Stashed changes
         super().__init__(player_number, name, board)
         self.player_type = "bot_simple"
         pass
@@ -169,12 +307,18 @@ class Bot_simple(Player):
 
     def make_move(self): # -> (row, col)
         """
+<<<<<<< Updated upstream
         goal of this bot: only try and win (be better than random bot)
         if the board is empty, place an entry k/2 away from the edges
             placed @ (m_i, n_i)
         if there is one placed entry, pick a random neighboring entry to fill
             placed @ (m_i+-1, n_i+-1)
         if there are two in line, continue along that line
+=======
+        Implements a simple strategy for choosing moves with the goal of winning or improving its position.
+        Returns:
+        tuple: The coordinates (row, col) of the chosen move.
+>>>>>>> Stashed changes
         """
         valid_move = True
         valid_counter = 1
@@ -255,18 +399,37 @@ class Bot_simple(Player):
 
 
 class Bot_simple_v2(Player):
+<<<<<<< Updated upstream
 
     def __init__(self, player_number, name, board) -> None:
+=======
+    """
+    An enhanced version of Bot_simple with a different set of strategies for choosing moves.
+    Inherits behavior from Player.
+    """
+    def __init__(self, player_number, name, board) -> None:
+        """
+        Initialize an enhanced simple strategy bot player.
+        Parameters are inherited from Player class.
+        """
+>>>>>>> Stashed changes
         super().__init__(player_number, name, board)
         self.player_type = "bot_simple_2"
         pass
     
     def make_move(self): # -> (row, col)
         """
+<<<<<<< Updated upstream
         goal of this bot: try to win
         if empty, place an entry in the middle of the board
         if there is an entry already, bot will find position of its own entry and place an entry next to/ above/ below it
         else place an entry randomly
+=======
+        Implements an enhanced strategy over Bot_simple for choosing moves, 
+        including center placement and adjacency strategies.
+        Returns:
+        tuple: The coordinates (row, col) of the chosen move.
+>>>>>>> Stashed changes
         """
         valid_move = True
         while valid_move:
@@ -296,14 +459,40 @@ class Bot_simple_v2(Player):
 
 
 class Bot_complex(Player):
+<<<<<<< Updated upstream
 
     def __init__(self, player_number, name, board) -> None:
+=======
+    """
+    Implements a bot player that uses Monte Carlo Tree Search (MCTS) for decision-making.
+    Inherits behavior from Player.
+    """
+
+    def __init__(self, player_number, name, board) -> None:
+        """
+        Initialize a MCTS bot player.
+        Parameters are inherited from Player class.
+        """
+>>>>>>> Stashed changes
         super().__init__(player_number, name, board)
         self.player_type = "bot_complex"
 
         # Additional initialization specific to MCTS if needed
     
     def simulate_random_playthrough(self, board, current_player):
+<<<<<<< Updated upstream
+=======
+        """
+        Simulates a random playthrough from the current state to determine the potential outcome of a move.
+
+        Parameters:
+        - board (Board): The current state of the game board.
+        - current_player (int): The player number of the current player.
+
+        Returns:
+        int: The outcome of the simulation (1 for win, -1 for loss, 0 for draw).
+        """
+>>>>>>> Stashed changes
         temp_board = deepcopy(board)  # Use a deep copy to avoid mutating the original
         moves = temp_board.get_available_moves()
         np.random.shuffle(moves)  # Randomly shuffle available moves to avoid bias
@@ -320,6 +509,15 @@ class Bot_complex(Player):
         return 0
 
     def make_move(self):
+<<<<<<< Updated upstream
+=======
+        """
+        Uses MCTS to choose the most promising move based on simulations of possible outcomes.
+
+        Returns:
+        tuple: The coordinates (row, col) of the chosen move.
+        """
+>>>>>>> Stashed changes
         available_moves = self.board.get_available_moves()
         move_scores = {move: 0 for move in available_moves}
         
@@ -341,9 +539,27 @@ class Bot_complex(Player):
 
 
 class Game():
+<<<<<<< Updated upstream
 
 
     def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
+=======
+    """
+    Manages the gameplay and interactions between two players in the mnk-game.
+    """
+
+    def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
+        """
+        Initialize the game with specified dimensions and players.
+
+        Parameters:
+        - m (int): Number of rows on the game board.
+        - n (int): Number of columns on the game board.
+        - k (int): Consecutive symbols needed to win.
+        - player1 (Player): The first player.
+        - player2 (Player): The second player.
+        """
+>>>>>>> Stashed changes
         self.m = m
         self.n = n
         self.k = k
@@ -361,8 +577,12 @@ class Game():
         
     def game_log(self):
         """ # Main Game Log:
+<<<<<<< Updated upstream
         adds entry to dp (.csv) looking like this:
 
+=======
+        Records the outcomes and key game information to a .csv file for historical analysis.
+>>>>>>> Stashed changes
         | player1_type | player2_type | starting_player | winning_player |
         |--------------|--------------|-----------------|----------------|
         | player       | player       | 1               | 0              |
@@ -383,6 +603,20 @@ class Game():
             f.close()
 
     def player_choice(self, p_number:int, p_name:str, choice:int):
+<<<<<<< Updated upstream
+=======
+        """
+        Initializes and returns a player object based on the choice provided.
+
+        Parameters:
+        - p_number (int): The player's number (1 or 2).
+        - p_name (str): The player's name.
+        - choice (int): The numeral choice that corresponds to the type of player (e.g., human, bot).
+
+        Returns:
+        Player: An instantiated player of the chosen type.
+        """
+>>>>>>> Stashed changes
         valid_choices = [1, 2, 3, 4, 5] 
         if choice in valid_choices:
             if choice == 1:
@@ -404,7 +638,20 @@ class Game():
                 print(f"Invalid player type: {choice}")
                 raise ValueError(f"Invalid player type: {choice}")
     
+<<<<<<< Updated upstream
     def start(self, player1_type, player1_name, player2_type, player2_name):    
+=======
+    def start(self, player1_type, player1_name, player2_type, player2_name):   
+        """
+        Starts a new game session with the specified player types and names.
+
+        Parameters:
+        - player1_type (int): The type of player 1.
+        - player1_name (str): The name of player 1.
+        - player2_type (int): The type of player 2.
+        - player2_name (str): The name of player 2.
+        """
+>>>>>>> Stashed changes
         self.board = Board(self.m, self.n, self.k)
 
         self.player1 = self.player_choice(1, player1_name, player1_type)
@@ -415,7 +662,13 @@ class Game():
         self.save_game_details(player1_type, player1_name, player2_type, player2_name)
 
     def restart_game(self):
+<<<<<<< Updated upstream
         """Restart the game using saved player details and board dimensions."""
+=======
+        """
+        Restarts the game using saved player details and board dimensions.
+        """
+>>>>>>> Stashed changes
         if self.saved_player1_type is not None and self.saved_player2_type is not None:
             self.start(self.saved_player1_type, self.saved_player1_name, 
                        self.saved_player2_type, self.saved_player2_name)
@@ -423,7 +676,19 @@ class Game():
             print("Game details not found. Cannot restart.")
             
     def save_game_details(self, player1_type, player1_name, player2_type, player2_name):
+<<<<<<< Updated upstream
         """Save player types, names, and board dimensions for game restart."""
+=======
+        """
+        Saves the current game's player types and names for potential restart.
+
+        Parameters:
+        - player1_type (int): The type of player 1.
+        - player1_name (str): The name of player 1.
+        - player2_type (int): The type of player 2.
+        - player2_name (str): The name of player 2.
+        """
+>>>>>>> Stashed changes
         self.saved_player1_type = player1_type
         self.saved_player1_name = player1_name
         self.saved_player2_type = player2_type
@@ -438,6 +703,18 @@ class Game():
         print(f"New current player is {self.current_player}")
     
     def place_move(self, position):
+<<<<<<< Updated upstream
+=======
+        """
+        Attempts to place a move on the board for the current player.
+
+        Parameters:
+        - position (tuple): The desired move position as (row, col).
+
+        Returns:
+        - tuple: A tuple containing a boolean indicating if the move was successful, and a message string.
+        """
+>>>>>>> Stashed changes
         row, col = position
         successful_move = self.board.place_move(row, col, self.current_player)
         if successful_move:
@@ -449,6 +726,15 @@ class Game():
         return False, "Invalid move, try again."
         
     def get_current_player(self):
+<<<<<<< Updated upstream
+=======
+        """
+        Retrieves the current player object.
+
+        Returns:
+        - Player: The current player object.
+        """
+>>>>>>> Stashed changes
         print(f"get_current_player: {self.current_player}, Type: {type(self.current_player)}")
         if self.current_player == 1:
             return self.player1
