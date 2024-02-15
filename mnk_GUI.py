@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import (QApplication, QDialog, QMessageBox, QMainWindow, QW
     QGraphicsView, QGraphicsRectItem, QGraphicsTextItem, QGraphicsLineItem)
 from PyQt6.QtGui import QPixmap, QFontDatabase, QFont, QColor, QPainter
 from PyQt6.QtCore import Qt, QTimer, QSize, pyqtSignal
-from mnkforGUI import Game, Board, Player, Bot_random, Bot_simple, Bot_simple_v2, Bot_complex
+from Game_logic import Game, Board, Player, Bot_random, Bot_simple, Bot_simple_v2, Bot_complex
 from copy import deepcopy
 
 
