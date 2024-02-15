@@ -11,9 +11,10 @@ class Board:
     Represents the game board for an m*n*k game, where m*n is the dimension of the board and k is the winning sequence length.
 
     """
+
     def __init__(self, m, n, k) -> None:
         """
-        Initialize instance of the game board usind row and col. 
+        Initialize instance of the game board usind row and col.
         Game board is a numpy array
 
         Args:
@@ -57,22 +58,32 @@ class Board:
         # Horizontal check
         for row in range(self.m):
             for col in range(self.n - self.k + 1):
-                if all(self.board[row][c] == player_number for c in range(col, col + self.k)):
+                if all(
+                    self.board[row][c] == player_number
+                    for c in range(col, col + self.k)
+                ):
                     return True
         # Vertical check
         for row in range(self.m - self.k + 1):
             for col in range(self.n):
-                if all(self.board[r][col] == player_number for r in range(row, row + self.k)):
+                if all(
+                    self.board[r][col] == player_number
+                    for r in range(row, row + self.k)
+                ):
                     return True
         # Diagonal check (down-right)
         for row in range(self.m - self.k + 1):
             for col in range(self.n - self.k + 1):
-                if all(self.board[row + d][col + d] == player_number for d in range(self.k)):
+                if all(
+                    self.board[row + d][col + d] == player_number for d in range(self.k)
+                ):
                     return True
         # Diagonal check (down-left)
         for row in range(self.m - self.k + 1):
             for col in range(self.k - 1, self.n):
-                if all(self.board[row + d][col - d] == player_number for d in range(self.k)):
+                if all(
+                    self.board[row + d][col - d] == player_number for d in range(self.k)
+                ):
                     return True
         return False
 
@@ -110,6 +121,7 @@ class Player:
     Represents a human player in the mnk-game.
 
     """
+
     def __init__(self, player_number, name, board) -> None:  # player number 1 or 2
         """
         Initialize instance of human player in the game
@@ -167,6 +179,7 @@ class Bot_random(Player):
     """
     A bot player that selects moves randomly. Inherits behavior from Player.
     """
+
     def __init__(self, player_number, name, board) -> None:
         """Initialize instance of a bot player that moves randomly
         Parameters are inherited from Player class.
@@ -201,6 +214,7 @@ class Bot_simple(Player):
     A bot player that attempts to place its markers strategically with a simple set of rules.
     Inherits behavior from Player.
     """
+
     def __init__(self, player_number, name, board) -> None:
         """
         Initialize a simple strategy bot player.
@@ -219,7 +233,7 @@ class Bot_simple(Player):
         if there is one placed entry, pick a random neighboring entry to fill
         > placed @ (m_i+-1, n_i+-1)
         if there are two in line, continue along that line
-        
+
         If no valid move is found within 5 tries, place randomly.
         At this point, the bot turns into a random bot
 
@@ -330,6 +344,7 @@ class Bot_simple_v2(Player):
     An alterate version of Bot_simple with a different set of strategies for choosing moves.
     Inherits behavior from Player.
     """
+
     def __init__(self, player_number, name, board) -> None:
         """
         Initialize an alternate simple strategy bot player.
@@ -350,63 +365,81 @@ class Bot_simple_v2(Player):
         Returns:
         tuple: The coordinates (row, col) of the chosen move.
         """
+        opponent = 1 if self.player_number == 2 else 2  # find player number of opponent
         valid_move = True
         while valid_move:
-            if self.board.board[(self.board.m // 2, self.board.n // 2)] == 0:
+            if self.board.board[m // 2, n // 2] == 0:
                 move = (
-                    self.board.m // 2,
-                    self.board.n // 2,
+                    (m // 2),
+                    (n // 2),
                 )  # if middle of the board is empty, place an entry
+                return move
             elif (
-                self.board.board[(self.board.m // 2, self.board.n // 2)] == 1
-                and not self.board.board[(self.board.m // 2, self.board.n // 2)] == 0
+                self.board.board[(self.board.m // 2, self.board.n // 2)] != 0
+                or self.board.board[(self.board.m // 2, self.board.n // 2)] == opponent
             ):
-                move = (
-                    self.board.m // 2 + 1,
-                    self.board.n // 2,
-                )  # if middle of the board is empty, place an entry
-
-            elif self.board.board[(self.board.m // 2, self.board.n // 2)] != 0:
                 entrys_so_far = np.argwhere(
                     self.board.board == self.player_number
-                )  # create a list with all own entrys
-                position = entrys_so_far[-1]  # take position of last entry
-                if (
-                    position[1] + 1 < (self.board.m - 1)
-                    and self.board.board[position[0], position[1] + 1] == 0
-                ):
-                    move = (position[0], position[1] + 1)
-                elif (
-                    position[1] - 1 > (self.board.m - 1)
-                    and self.board.board[position[0], position[1] - 1] == 0
-                ):
-                    move = (
-                        position[0],
-                        position[1] - 1,
-                    )  # place entry next to/ above/ below last entry
-                elif (
-                    position[0] + 1 < (self.board.n - 1)
-                    and self.board.board[position[0] + 1, position[1]] == 0
-                ):
-                    move = (position[0] + 1, position[1])
-                elif (
-                    position[0] - 1 > (self.board.n - 1)
-                    and self.board.board[position[0] - 1, position[1]] == 0
-                ):
-                    move = (position[0] - 1, position[1])
-                else:
+                )  # if middle of the board is occupied by sel.player or opponent, create a list of own entrys
+                if entrys_so_far.size == 0:
                     move = (
                         random.randint(0, self.board.m - 1),
                         random.randint(0, self.board.n - 1),
-                    )  # place entry somewhere on the board
-            # return move
+                    )
+                    return move  # if no entrys are placed yet (list empty), place an entry randomly
+                else:
+                    position = entrys_so_far[
+                        -1
+                    ]  # if there are entrys placed, find position of last entry
+                    if position[1] + 1 < (self.board.m - 1) and (
+                        self.board.board[position[0], position[1] + 1] == 0
+                        or self.board.board[position[0], position[1] + 1] != opponent
+                    ):
+                        move = (
+                            position[0],
+                            position[1] + 1,
+                        )  # place an entry next to last entry if possible
+                        return move
+                    elif position[1] - 1 > (self.board.m - 1) and (
+                        self.board.board[position[0], position[1] - 1] == 0
+                        or self.board.board[position[0], position[1] - 1] != opponent
+                    ):
+                        move = (
+                            position[0],
+                            position[1] - 1,
+                        )  # place an entry next to last entry if possible
+                        return move
+                    elif position[0] + 1 < (self.board.n - 1) and (
+                        self.board.board[position[0] + 1, position[1]] == 0
+                        or self.board.board[position[0] + 1, position[1]] != opponent
+                    ):
+                        move = (
+                            position[0] + 1,
+                            position[1],
+                        )  # place an entry above last entry if possible
+                        return move
+                    elif position[0] - 1 > (self.board.n - 1) and (
+                        self.board.board[position[0] - 1, position[1]] == 0
+                        or self.board.board[position[0] - 1, position[1]] != opponent
+                    ):
+                        move = (
+                            position[0] - 1,
+                            position[1],
+                        )  # place an entry below last entry if possible
+                        return move
+                    else:
+                        move = (
+                            random.randint(0, self.board.m - 1),
+                            random.randint(0, self.board.n - 1),
+                        )
+                        return move  # if no entry near last entry is possible, place an entry randomly
 
-            if self.is_valid(move):
-                valid_move = False
-                return move
-            else:
-                print("Invalid move. Please try again")
-                pass
+        if self.is_valid(move):
+            valid_move = False
+            return move
+        else:
+            print("Invalid move. Please try again")
+            pass
 
 
 class Bot_MCTS(Player):
@@ -415,6 +448,7 @@ class Bot_MCTS(Player):
     Inherits behavior from Player.
 
     """
+
     def __init__(self, player_number, name, board):
         """
         Initialize a MCTS bot player.
@@ -487,6 +521,7 @@ class Game:
     """
     Manages the gameplay and interactions between two players in the mnk-game.
     """
+
     def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
         """
         Initialize the game with specified dimensions and players.
@@ -508,7 +543,7 @@ class Game:
     def game_log(self):
         """
         Records the outcomes and key game information to a .csv file for historical analysis.
-        
+
         adds entry to dp (.csv) looking like this:
 
         | player1_type | player2_type | starting_player | winning_player | {self.m}x{self.n}_final_board_flat |
@@ -517,9 +552,9 @@ class Game:
         | bot_random   | bot_random   | 2               | 1              | 9                                  |
         | bot_simple   | bot_simple   | 1               | 2              | 12                                 |
         | bot_complex  | bot_complex  | 2               | 0              | 16                                 |
-        
+
         """
-        with open("game_log.csv", mode="a", newline="") as f:
+        with open("game_log_doku.csv", mode="a", newline="") as f:
             fieldnames = [
                 "player1_type",
                 "player2_type",
@@ -555,7 +590,7 @@ class Game:
         Raises:
         - ValueError: If choice is larger than number in valid_choice list.
 
-        
+
         Returns:
         Player: An instantiated player of the chosen type.
         """
@@ -593,22 +628,20 @@ class Game:
         self.player1 = self.player_choice(1, player1_name, player1_type)
         self.player2 = self.player_choice(2, player2_name, player2_type)
 
-
     def game_loop(self):
         """
         Executes the main gameplay loop, managing turns between two players until the game ends.
-        
+
         This method facilitates alternating turns between the two players, checks for a win or draw condition after each move, and announces the game outcome (win, loss, or draw) when appropriate. The board state is also displayed after each move to provide a visual update to the players.
         """
-        current_player = self.player1 # random.choice([self.player1, self.player2])
+        current_player = self.player1  # random.choice([self.player1, self.player2])
         self.starting_player = current_player
 
         while not self.board.full_board() and not self.board.has_won(current_player):
             if np.all(self.board == 0):
                 print("uyoasildgjkfbhvagluihsdkjf")
                 self.starting_player = current_player
-            self.board.display()
-            # print(self.board.get_available_moves())
+            # self.board.display()
             print(f"Player {current_player.name}'s turn")
             # gets the current move the player inputed
             current_move = current_player.make_move()
@@ -636,32 +669,25 @@ class Game:
 
         self.board.display()
 
-    
+
 if __name__ == "__main__":
     m = 5
     n = 5
     k = 4
 
-    for a in range(500):
-        current_game = Game(m, n, k)
-        # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-        current_game.start(
-            player1_type=5,
-            player1_name="monte_carlo_tree_search",
-            player2_type=5,
-            player2_name="monte_carlo_tree_search",
-        )
-        current_game.game_loop()
-        current_game.game_log()
-        
-    for a in range(500):
-        current_game = Game(m, n, k)
-        # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
-        current_game.start(
-            player1_type=5,
-            player1_name="monte_carlo_tree_search",
-            player2_type=4,
-            player2_name="simple_2",
-        )
-        current_game.game_loop()
-        current_game.game_log()
+    list_of_bots = [2, 3, 4, 5]
+    num_of_games = 100
+
+    for i in range(num_of_games):
+        print(f"currently playing game instance {i}")
+        for player_1 in list_of_bots:
+            for player_2 in list_of_bots:
+                current_game = Game(m, n, k)
+                current_game.start(
+                    player1_type=player_1,
+                    player1_name="player_1",
+                    player2_type=player_2,
+                    player2_name="player_2",
+                )
+                current_game.game_loop()
+                current_game.game_log()
