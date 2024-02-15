@@ -1,33 +1,10 @@
 import sys
-from PyQt6.QtWidgets import (
-    QApplication,
-    QDialog,
-    QMessageBox,
-    QMainWindow,
-    QWidget,
-    QGridLayout,
-    QLabel,
-    QLineEdit,
-    QPushButton,
-    QVBoxLayout,
-    QHBoxLayout,
-    QGraphicsScene,
-    QGraphicsView,
-    QGraphicsRectItem,
-    QGraphicsTextItem,
-    QGraphicsLineItem,
-)
+from PyQt6.QtWidgets import (QApplication, QDialog, QMessageBox, QMainWindow, QWidget,
+    QGridLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QGraphicsScene,
+    QGraphicsView, QGraphicsRectItem, QGraphicsTextItem, QGraphicsLineItem)
 from PyQt6.QtGui import QPixmap, QFontDatabase, QFont, QColor, QPainter
 from PyQt6.QtCore import Qt, QTimer, QSize, pyqtSignal
-from mnkforGUI import (
-    Game,
-    Board,
-    Player,
-    Bot_random,
-    Bot_simple,
-    Bot_simple_v2,
-    Bot_complex,
-)
+from mnkforGUI import Game, Board, Player, Bot_random, Bot_simple, Bot_simple_v2, Bot_complex
 from copy import deepcopy
 
 
@@ -250,12 +227,9 @@ class MainMenu(QMainWindow):
 
         current_game = Game(m, n, k)
         current_game.start(player1_type, player1_name, player2_type, player2_name)
-        # current_game.game_loop()
-
-        self.hide()
         game_board_window = GameBoardWindow(current_game)
         game_board_window.show()
-
+        self.hide()
 
 class GameBoardWindow(QMainWindow):
     # def __init__(self, m, n):
@@ -263,6 +237,7 @@ class GameBoardWindow(QMainWindow):
     def __init__(self, game):
         super().__init__()
         self.game = game
+        self.mainMenu = mainMenu
         self.initUI()
 
         self.move_timer = QTimer(self)  # Create a QTimer instance
@@ -428,9 +403,8 @@ class GameBoardWindow(QMainWindow):
                 button.setEnabled(False)
 
     def open_main_menu(self):
-        self.main_menu = MainMenu()
-        self.main_menu.show()
-        self.close()
+        self.close() 
+        self.mainMenu.show()
 
     def restart_game(self):
         self.game.restart_game()
