@@ -7,22 +7,22 @@ from copy import deepcopy
 
 
 class Board:
-    """_summary_
+    """
+    Represents the game board for an m*n*k game, where m*n is the dimension of the board and k is the winning sequence length.
+
     """
     def __init__(self, m, n, k) -> None:
-        """Initialize instance of the game board usind row and col
+        """
+        Initialize instance of the game board usind row and col. 
+        Game board is a numpy array
 
         Args:
-            m (int): number of rows in the game board
-            n (int): number of cols in the game board
-            k (int): winning lenth required for a player to win
+        - m (int): number of rows in the game board
+        - n (int): number of cols in the game board
+        - k (int): winning lenth required for a player to win
 
         Raises:
-            ValueError: if k > m, would cause overflow later
-            ValueError: if k > n, would cause overflow later
-            
-        Creates:
-            numpy array
+        - ValueError: If k is larger than either dimension of the board, throwing an error due to game logic constraints.
         """
         self.m = m
         self.n = n
@@ -39,7 +39,8 @@ class Board:
         return
 
     def display(self):
-        """Print game board numpy array to the console
+        """
+        Print current game board numpy array to the console
         """
         print(self.board)
         pass
@@ -48,10 +49,10 @@ class Board:
         """Check if the player completed a k-long line of entries on the game board
 
         Args:
-            player_number (int): number representing the player in question
+        - player_number (int): The player number to check for a winning sequence (1 or 2).
 
         Returns:
-            bool: True or False, depending on presence of k-long row of entries horizontally, vertically or diagonally
+        bool: True if the specified player has won, False otherwise.
         """
         # Horizontal check
         for row in range(self.m):
@@ -79,7 +80,7 @@ class Board:
         """Iterates through game board, extracting position coordinates of each entry that is equal to 0
 
         Returns:
-            list: list of tuples of all entries in the game board that are 0 
+        list of tuples: A list containing the coordinates (row, col) of all empty cells.
         """
         available_moves = []
         # Iterate over the board to find empty spaces
@@ -90,10 +91,11 @@ class Board:
         return available_moves
 
     def full_board(self):
-        """Checks if there are possible moves to be made, used for decrlaring draw
+        """
+        Determines if the game board is full, when no empty cells remain.
 
         Returns:
-            bool: False or True, if there are 0s on the game board or not
+        bool: True if the board is full, False otherwise.
         """
         # goes through each row and checks if value of every cell is 0
         for row in self.board:
@@ -104,10 +106,13 @@ class Board:
 
 
 class Player:
-    """Human controlled player in the mnk-game
+    """
+    Represents a human player in the mnk-game.
+
     """
     def __init__(self, player_number, name, board) -> None:  # player number 1 or 2
-        """Initialize instance of human player in the game
+        """
+        Initialize instance of human player in the game
 
         Args:
             player_number (int): 1 or 2
@@ -121,13 +126,14 @@ class Player:
 
     def is_valid(self, move: tuple):
         """Checks for collisions between the desired move and the game board.
-        Game board must have a 0 at the desired move position to return True
+        Within the bounds of the board and on an empty cell.
+
 
         Args:
-            move (tuple): _description_
+        - move (tuple): The desired move location (row, col).
 
         Returns:
-            bool: True or False, if move is valid or not
+        bool: True if the move is valid, False otherwise.
         """
         # checks if move is in range of the size of the board
         if move[0] < self.board.m and move[1] < self.board.n:
@@ -139,10 +145,11 @@ class Player:
 
     # !! man kann nur einen value error causen, bevor das Spiel abbricht :(
     def make_move(self):  # -> (row, col)
-        """uses terminal user input and the is_valid() function to place the next move on the game board.
+        """
+        Handles receiving a player's move via input and validating it.
 
         Returns:
-            tuple: (row, col) of next move, starts at 0
+        tuple: The coordinates (row, col) of the player's move.
         """
         print(f"make move between 0 and {self.board.m-1} \nand 0 and {self.board.n-1}")
         try:
@@ -157,27 +164,22 @@ class Player:
 
 
 class Bot_random(Player):
-    """Bot that places randomly on the game board
+    """
+    A bot player that selects moves randomly. Inherits behavior from Player.
     """
     def __init__(self, player_number, name, board) -> None:
-        """Initialize instance of a Bot.
-        Parent class Player passes along player_number, name, and the board
-
-        Args:
-            player_number (int): 1 or 2
-            name (string): player name
-            board (numpy.ndarray): numpy array created using class Board
+        """Initialize instance of a bot player that moves randomly
+        Parameters are inherited from Player class.
         """
         super().__init__(player_number, name, board)
         self.player_type = "bot_random"
 
     def make_move(self):  # -> (row, col)
-        """geht in eine schleife und wiederholt die erzeugung vom random move so lange bis es valid ist
-        made by Dalia
-        
+        """
+        Generates and validates a random move until a legal move is found.
 
         Returns:
-            _type_: _description_
+        tuple: The coordinates (row, col) of the chosen move.
         """
         realitycheck = True
         while realitycheck:
@@ -195,33 +197,34 @@ class Bot_random(Player):
 
 
 class Bot_simple(Player):
-    """_summary_
-
-    Args:
-        Player (_type_): _description_
+    """
+    A bot player that attempts to place its markers strategically with a simple set of rules.
+    Inherits behavior from Player.
     """
     def __init__(self, player_number, name, board) -> None:
-        """_summary_
-
-        Args:
-            player_number (int): 1 or 2
-            name (string): player name
-            board (numpy.ndarray): numpy array created using class Board
+        """
+        Initialize a simple strategy bot player.
+        Parameters are inherited from Player class.
         """
         super().__init__(player_number, name, board)
         self.player_type = "bot_simple"
         pass
 
     def make_move(self):  # -> (row, col)
-        """goal of this bot: only try and win (be better than random bot)
+        """
+        Implements a simple strategy for choosing moves with the goal of winning or improving its position.
+
         if the board is empty, place an entry k/2 away from the edges
-            placed @ (m_i, n_i)
+        > placed @ (m_i, n_i)
         if there is one placed entry, pick a random neighboring entry to fill
-            placed @ (m_i+-1, n_i+-1)
+        > placed @ (m_i+-1, n_i+-1)
         if there are two in line, continue along that line
+        
+        If no valid move is found within 5 tries, place randomly.
+        At this point, the bot turns into a random bot
 
         Returns:
-            _type_: _description_
+        tuple: The coordinates (row, col) of the chosen move.
         """
         valid_move = True
         valid_counter = 1
@@ -323,31 +326,29 @@ class Bot_simple(Player):
 
 
 class Bot_simple_v2(Player):
-    """_summary_
-
-    Args:
-        Player (_type_): _description_
+    """
+    An alterate version of Bot_simple with a different set of strategies for choosing moves.
+    Inherits behavior from Player.
     """
     def __init__(self, player_number, name, board) -> None:
-        """_summary_
-
-        Args:
-            player_number (int): 1 or 2
-            name (string): player name
-            board (numpy.ndarray): numpy array created using class Board
+        """
+        Initialize an alternate simple strategy bot player.
+        Parameters are inherited from Player class.
         """
         super().__init__(player_number, name, board)
         self.player_type = "bot_simple_2"
         pass
 
     def make_move(self):  # -> (row, col)
-        """goal of this bot: try to win
+        """
+        Implements an different strategy over Bot_simple for choosing moves, including center placement and adjacency strategies.
+
         if empty, place an entry in the middle of the board
         if there is an entry already, bot will find position of its own entry and place an entry next to/ above/ below it
         else place an entry randomly
 
         Returns:
-            _type_: _description_
+        tuple: The coordinates (row, col) of the chosen move.
         """
         valid_move = True
         while valid_move:
@@ -409,18 +410,16 @@ class Bot_simple_v2(Player):
 
 
 class Bot_MCTS(Player):
-    """_summary_
+    """
+    Implements a bot player that uses Monte Carlo Tree Search (MCTS) for decision-making.
+    Inherits behavior from Player.
 
-    Args:
-        Player (_type_): _description_
     """
     def __init__(self, player_number, name, board):
-        """_summary_
+        """
+        Initialize a MCTS bot player.
 
-        Args:
-            player_number (int): 1 or 2
-            name (string): player name
-            board (numpy.ndarray): numpy array created using class Board
+        Parameters are inherited from Player class.
         """
         super().__init__(player_number, name, board)
         self.player_type = "bot_MCTS"
@@ -428,14 +427,15 @@ class Bot_MCTS(Player):
         # Additional initialization specific to MCTS if needed
 
     def simulate_random_playthrough(self, board, current_player):
-        """_summary_
+        """
+        Simulates a random playthrough from the current state to determine the potential outcome of a move.
 
-        Args:
-            board (_type_): _description_
-            current_player (_type_): _description_
+        Parameters:
+        - board (Board): The current state of the game board.
+        - current_player (int): The player number of the current player.
 
         Returns:
-            _type_: _description_
+        int: The outcome of the simulation (1 for win, -1 for loss, 0 for draw).
         """
         temp_board = deepcopy(board)  # Use a deep copy to avoid mutating the original
         moves = temp_board.get_available_moves()
@@ -453,10 +453,11 @@ class Bot_MCTS(Player):
         return 0
 
     def make_move(self):
-        """_summary_
+        """
+        Uses MCTS to choose the most promising move based on simulations of possible outcomes.
 
         Returns:
-            _type_: _description_
+        tuple: The coordinates (row, col) of the chosen move.
         """
         available_moves = self.board.get_available_moves()
         move_scores = {move: 0 for move in available_moves}
@@ -483,17 +484,19 @@ class Bot_MCTS(Player):
 
 
 class Game:
-    """_summary_
+    """
+    Manages the gameplay and interactions between two players in the mnk-game.
     """
     def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
-        """_summary_
+        """
+        Initialize the game with specified dimensions and players.
 
-        Args:
-            m (int, optional): _description_. Defaults to 6.
-            n (int, optional): _description_. Defaults to 7.
-            k (int, optional): _description_. Defaults to 4.
-            player1 (_type_, optional): _description_. Defaults to None.
-            player2 (_type_, optional): _description_. Defaults to None.
+        Parameters:
+        - m (int): Number of rows on the game board.
+        - n (int): Number of columns on the game board.
+        - k (int): Consecutive symbols needed to win.
+        - player1 (Player): The first player.
+        - player2 (Player): The second player.
         """
         self.m = m
         self.n = n
@@ -503,7 +506,9 @@ class Game:
         self.board = None
 
     def game_log(self):
-        """Main Game Log:
+        """
+        Records the outcomes and key game information to a .csv file for historical analysis.
+        
         adds entry to dp (.csv) looking like this:
 
         | player1_type | player2_type | starting_player | winning_player | {self.m}x{self.n}_final_board_flat |
@@ -538,18 +543,21 @@ class Game:
             f.close()
 
     def player_choice(self, p_number: int, p_name: str, choice: int):
-        """_summary_
+        """
+        Initializes and returns a player object based on the choice provided.
 
-        Args:
-            p_number (int): _description_
-            p_name (str): _description_
-            choice (int): _description_
+
+        Parameters:
+        - p_number (int): The player's number (1 or 2).
+        - p_name (str): The player's name.
+        - choice (int): The numeral choice that corresponds to the type of player (e.g., human, bot).
 
         Raises:
-            ValueError: _description_
+        - ValueError: If choice is larger than number in valid_choice list.
 
+        
         Returns:
-            _type_: _description_
+        Player: An instantiated player of the chosen type.
         """
         valid_choices = [1, 2, 3, 4, 5]
 
@@ -573,40 +581,29 @@ class Game:
                 raise ValueError("input number out of range, please retry!")
 
     def start(self, player1_type, player1_name, player2_type, player2_name):
-        """_summary_
+        """
+        Initializes the board and player objects based on provided specifications.
 
-        Args:
-            player1_type (_type_): _description_
-            player1_name (_type_): _description_
-            player2_type (_type_): _description_
-            player2_name (_type_): _description_
+        Parameters:
+        - player1_type, player2_type (int): Numerical choices specifying the types of the first and second players.
+        - player1_name, player2_name (str): Names of the first and second players.
         """
         self.board = Board(self.m, self.n, self.k)
 
         self.player1 = self.player_choice(1, player1_name, player1_type)
         self.player2 = self.player_choice(2, player2_name, player2_type)
 
-    def full_board(self):
-        """_summary_
-
-        Returns:
-            _type_: _description_
-        """
-        # made by Dalia
-        # goes through row and checks if value of every cell is 0
-        for row in self.board.board:
-            for value in row:
-                if value == 0:
-                    return False
-        return True
 
     def game_loop(self):
-        """_summary_
         """
-        current_player = random.choice([self.player1, self.player2])
+        Executes the main gameplay loop, managing turns between two players until the game ends.
+        
+        This method facilitates alternating turns between the two players, checks for a win or draw condition after each move, and announces the game outcome (win, loss, or draw) when appropriate. The board state is also displayed after each move to provide a visual update to the players.
+        """
+        current_player = self.player1 # random.choice([self.player1, self.player2])
         self.starting_player = current_player
 
-        while not self.full_board() and not self.board.has_won(current_player):
+        while not self.board.full_board() and not self.board.has_won(current_player):
             if np.all(self.board == 0):
                 print("uyoasildgjkfbhvagluihsdkjf")
                 self.starting_player = current_player
@@ -624,7 +621,7 @@ class Game:
                 print(f"Player {current_player.name} wins!")
                 self.winning_player = current_player.player_number
                 break
-            elif self.full_board():
+            elif self.board.full_board():
                 print("The board is full. Nobody won!")
                 self.winning_player = 0
                 break
@@ -639,18 +636,30 @@ class Game:
 
         self.board.display()
 
-
+    
 if __name__ == "__main__":
     m = 5
     n = 5
     k = 4
 
-    for a in range(1):
+    for a in range(500):
         current_game = Game(m, n, k)
         # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
         current_game.start(
-            player1_type=3,
-            player1_name="simple_1",
+            player1_type=5,
+            player1_name="monte_carlo_tree_search",
+            player2_type=5,
+            player2_name="monte_carlo_tree_search",
+        )
+        current_game.game_loop()
+        current_game.game_log()
+        
+    for a in range(500):
+        current_game = Game(m, n, k)
+        # human : 1, bot random: 2, bot simple: 3, bot simple 2: 4, bot mcts:4
+        current_game.start(
+            player1_type=5,
+            player1_name="monte_carlo_tree_search",
             player2_type=4,
             player2_name="simple_2",
         )

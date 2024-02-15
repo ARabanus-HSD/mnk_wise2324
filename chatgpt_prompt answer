@@ -553,3 +553,282 @@ In both versions, check_potential_win is a hypothetical method that should be im
 
 These methods offer a starting point for creating strategic bots capable of identifying and creating forks. The effectiveness and efficiency of these methods can vary based on the game's complexity and the board size.
 """
+
+
+
+
+
+class Board:
+    """
+    Represents the game board for an m*n*k game, where m*n is the dimension of the board and k is the winning sequence length.
+    """
+    def __init__(self, m, n, k) -> None:
+        """
+        Initialize the game board with the specified dimensions and winning sequence length.
+
+        Parameters:
+        - m (int): Number of rows in the game board.
+        - n (int): Number of columns in the game board.
+        - k (int): Length of the sequence needed to win the game.
+
+        Raises:
+        - ValueError: If k is larger than either dimension of the board, throwing an error due to game logic constraints.
+        """
+        # The constructor method initializes the game board with zeros (empty cells).
+
+    def display(self):
+        """
+        Prints the current state of the game board to the console.
+        """
+        # This method simply visualizes the board for the players.
+
+    def has_won(self, player_number):
+        """
+        Checks if the specified player has a winning sequence on the board.
+
+        Parameters:
+        - player_number (int): The player number to check for a winning sequence (1 or 2).
+
+        Returns:
+        bool: True if the specified player has won, False otherwise.
+        """
+        # This method checks all possible directions (horizontal, vertical, diagonal) for a winning sequence.
+
+    def get_available_moves(self):
+        """
+        Finds all empty cells on the game board.
+
+        Returns:
+        list of tuples: A list containing the coordinates (row, col) of all empty cells.
+        """
+        # Identifies all positions (coordinates) on the board that are still available for a move.
+
+    def full_board(self):
+        """
+        Determines if the game board is full (i.e., no empty cells remain).
+
+        Returns:
+        bool: True if the board is full, False otherwise.
+        """
+        # Checks whether the game has reached a draw due to the board being completely filled without a winner.
+
+
+class Player:
+    """
+    Represents a human player in the mnk-game.
+    """
+    def __init__(self, player_number, name, board) -> None:
+        """
+        Initialize a human player with a specific name and player number.
+
+        Parameters:
+        - player_number (int): The number identifying the player (1 or 2).
+        - name (str): The name of the player.
+        - board (Board): The game board instance.
+        """
+        # This constructor stores basic information about the player and provides access to the board.
+
+    def is_valid(self, move: tuple):
+        """
+        Determines if the chosen move is valid (i.e., within the bounds of the board and on an empty cell).
+
+        Parameters:
+        - move (tuple): The desired move location (row, col).
+
+        Returns:
+        bool: True if the move is valid, False otherwise.
+        """
+        # Checks whether a move can be legally made at the specified coordinates.
+
+    def make_move(self):
+        """
+        Handles receiving a player's move via input and validating it.
+
+        Returns:
+        tuple: The coordinates (row, col) of the player's move.
+        """
+        # Gathers user input for making a move and ensures the move is valid before returning the move's coordinates.
+
+
+class Bot_random(Player):
+    """
+    A bot player that selects moves randomly. Inherits behavior from Player.
+    """
+    def __init__(self, player_number, name, board) -> None:
+        """
+        Initialize a bot player that moves randomly.
+
+        Parameters are inherited from Player class.
+        """
+        # Sets up a bot player that makes random moves on the board.
+
+    def make_move(self):
+        """
+        Generates and validates a random move until a legal move is found.
+
+        Returns:
+        tuple: The coordinates (row, col) of the chosen move.
+        """
+        # Overrides the `make_move` method to select a move randomly rather than through user input.
+
+
+# Further comments and docstrings follow the same pattern as above, adapting to each class's specific behavior and functionality.
+
+# Note: For brevity, the detailed comments and docstrings for the subsequent classes (Bot_simple, Bot_simple_v2, Bot_MCTS, and Game) are not fully written out here. The structure and content should follow the established pattern: a brief class/function overview, detailed parameter descriptions, and clear, informative return values descriptions, adapting to the specifics of each class's logic and functionality.
+
+
+
+class Bot_simple(Player):
+    """
+    A bot player that attempts to place its markers strategically with a simple set of rules.
+    Inherits behavior from Player.
+    """
+    def __init__(self, player_number, name, board) -> None:
+        """
+        Initialize a simple strategy bot player.
+
+        Parameters are inherited from Player class.
+        """
+        # Additional implementation details specific to Bot_simple can be initialized here.
+
+    def make_move(self):
+        """
+        Implements a simple strategy for choosing moves with the goal of winning or improving its position.
+
+        Returns:
+        tuple: The coordinates (row, col) of the chosen move.
+        """
+        # Detailed strategy logic based on the game state is implemented here.
+
+
+class Bot_simple_v2(Player):
+    """
+    An enhanced version of Bot_simple with a different set of strategies for choosing moves.
+    Inherits behavior from Player.
+    """
+    def __init__(self, player_number, name, board) -> None:
+        """
+        Initialize an enhanced simple strategy bot player.
+
+        Parameters are inherited from Player class.
+        """
+        # Additional implementation details specific to Bot_simple_v2 can be initialized here.
+
+    def make_move(self):
+        """
+        Implements an enhanced strategy over Bot_simple for choosing moves, including center placement and adjacency strategies.
+
+        Returns:
+        tuple: The coordinates (row, col) of the chosen move.
+        """
+        # Enhanced strategy logic for move selection is implemented here.
+
+
+class Bot_MCTS(Player):
+    """
+    Implements a bot player that uses Monte Carlo Tree Search (MCTS) for decision-making.
+    Inherits behavior from Player.
+    """
+    def __init__(self, player_number, name, board):
+        """
+        Initialize a MCTS bot player.
+
+        Parameters are inherited from Player class.
+        """
+        # MCTS-specific initialization can be added here, if necessary.
+
+    def simulate_random_playthrough(self, board, current_player):
+        """
+        Simulates a random playthrough from the current state to determine the potential outcome of a move.
+
+        Parameters:
+        - board (Board): The current state of the game board.
+        - current_player (int): The player number of the current player.
+
+        Returns:
+        int: The outcome of the simulation (1 for win, -1 for loss, 0 for draw).
+        """
+        # The simulation logic is implemented here.
+
+    def make_move(self):
+        """
+        Uses MCTS to choose the most promising move based on simulations of possible outcomes.
+
+        Returns:
+        tuple: The coordinates (row, col) of the chosen move.
+        """
+        # The MCTS move selection logic is implemented here.
+
+
+class Game:
+    """
+    Manages the gameplay and interactions between two players in the mnk-game.
+    """
+    def __init__(self, m=6, n=7, k=4, player1=None, player2=None):
+        """
+        Initialize the game with specified dimensions and players.
+
+        Parameters:
+        - m (int): Number of rows on the game board.
+        - n (int): Number of columns on the game board.
+        - k (int): Consecutive symbols needed to win.
+        - player1 (Player): The first player.
+        - player2 (Player): The second player.
+        """
+        # Game setup and initialization logic.
+
+    def game_log(self):
+        """
+        Records the outcomes and key game information to a .csv file for historical analysis.
+        """
+        # CSV-writing logic for game outcomes.
+
+    def player_choice(self, p_number: int, p_name: str, choice: int):
+        """
+        Initializes and returns a player object based on the choice provided.
+
+        Parameters:
+        - p_number (int): The player's number (1 or 2).
+        - p_name (str): The player's name.
+        - choice (int): The numeral choice that corresponds to the type of player (e.g., human, bot).
+
+        Returns:
+        Player: An instantiated player of the chosen type.
+        """
+        # Decision logic based on user choice for player types.
+    
+    def start(self, player1_type, player1_name, player2_type, player2_name):
+        """
+        Initializes the board and player objects based on provided specifications.
+
+        Parameters:
+        - player1_type, player2_type (int): Numerical choices specifying the types of the first and second players.
+        - player1_name, player2_name (str): Names of the first and second players.
+        """
+        # Initializes the game with selected players and board setup.
+
+    def full_board(self):
+        """
+        Checks if the game board is full (no more moves can be made).
+
+        Returns:
+        bool: True if the board is full, otherwise False.
+        """
+        # Verification of a full board.
+
+    def game_loop(self):
+        """
+        Executes the main gameplay loop, managing turns between two players until the game ends.
+
+        This method facilitates alternating turns between the two players, checks for a win or draw condition after each move, and announces the game outcome (win, loss, or draw) when appropriate. The board state is also displayed after each move to provide a visual update to the players.
+        """
+        # Detailed explanation of the loop:
+        # 1. Randomly selects a player to start the game.
+        # 2. Enters a loop where it alternates turns between the two players until the game is over.
+        #    - On each player's turn:
+        #        - The current game board is displayed.
+        #        - The current player is prompted to make a move.
+        #        - After the move, the board is updated, and a check is made for a win or draw.
+        #        - If the game has ended (win or draw), the loop is exited.
+        #        - Otherwise, turns alternate.
+        # 3. Upon exiting the loop, the final state of the game board is displayed along with the game outcome.
