@@ -11,6 +11,7 @@ adds entry to dp (.csv) looking like this
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 plt.style.use("bmh")
 plt.style.use("ggplot")
@@ -58,6 +59,13 @@ def sort_winners(df):
     df_counter = pd.DataFrame.from_dict(counter_dict)
     return df_counter
 
+
+def w_l_ratio(df):
+    win = (df["winning_player"] == 1).sum()
+    loss = (df["winning_player"] == 2).sum()
+    draw = (df["winning_player"] == 0).sum()
+    preformance_percentage = round((win / (win + loss + draw)) * 100, 1)
+    return [f"{win}/{loss}/{draw}", f"{preformance_percentage}%"]
 
 # splitting dataframes into matches
 mcts_vs_random = sort_by_match_type(df, "bot_MCTS", "bot_random")
@@ -118,18 +126,26 @@ titles_as_list = [
     "Random vs MCTS",
 ]
 
+print(w_l_ratio(dfs_as_list[1]))
 
 n_rows = 4
 n_cols = 4
 
-fig, axes = plt.subplots(figsize=(15, 40), dpi=80, nrows=n_rows, ncols=n_cols)
+fig, axes = plt.subplots(figsize=(20, 50), dpi=60, nrows=n_rows, ncols=n_cols)
 
 counter = 0
 for row in range(n_rows):
     for col in range(n_cols):
+        plot_title = f"{titles_as_list[counter]} - {w_l_ratio(dfs_as_list[counter])[0]} - {w_l_ratio(dfs_as_list[counter])[1]}"
         sort_winners(dfs_as_list[counter]).plot(
-            ax=axes[row, col], kind="bar", title=titles_as_list[counter], xticks=[]
+            ax=axes[row, col],
+            kind="bar",
+            title=plot_title,
+            xticks=[],
+            fontsize=5
         )
+        print(titles_as_list[counter], w_l_ratio(dfs_as_list[counter])[1])
+        
         counter += 1
 
 plt.show()

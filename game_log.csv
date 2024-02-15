@@ -13992,3 +13992,4 @@ bot_MCTS,bot_MCTS,<__main__.Bot_MCTS object at 0x7fbc1971e680>,1,[0 0 0 0 1 2 0 
 bot_MCTS,bot_MCTS,<__main__.Bot_MCTS object at 0x7fbc1971e680>,2,[0 2 0 0 0 0 2 2 1 0 0 2 1 1 0 1 2 0 1 0 0 0 0 0 0]
 bot_MCTS,bot_MCTS,<__main__.Bot_MCTS object at 0x7fbc1971e680>,1,[0 0 0 0 2 1 0 0 0 0 0 1 2 2 0 0 2 1 1 0 0 0 0 1 0]
 bot_MCTS,bot_MCTS,<__main__.Bot_MCTS object at 0x7fbc1971e680>,1,[0 0 0 2 2 0 0 1 1 0 0 0 1 2 0 0 1 2 2 0 1 0 0 1 0]
+bot_simple_2,bot_simple_2,<__main__.Bot_simple object at 0x7f1385a3a470>,0,[0 2 2 2 2 0 1 1 0 1 1 0 2 2 2 1 1 0 2 1 0 1 2 1 2]
