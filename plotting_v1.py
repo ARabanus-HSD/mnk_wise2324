@@ -16,7 +16,7 @@ import numpy as np
 plt.style.use("bmh")
 plt.style.use("ggplot")
 
-df = pd.read_csv("game_log.csv")
+df = pd.read_csv("game_log_doku.csv")
 
 
 def sort_by_match_type(df, player1, player2):
@@ -185,8 +185,8 @@ df_game_stats_first_player = pd.concat([analyze_final_board(first_move_count_to_
                                         analyze_final_board(first_move_count_to_win(random_vs_random)).rename_axis('Statistics').reset_index().iloc[:, 1],
                                         analyze_final_board(first_move_count_to_win(random_vs_simple_1)).rename_axis('Statistics').reset_index().iloc[:, 1],
                                         analyze_final_board(first_move_count_to_win(random_vs_simple_2)).rename_axis('Statistics').reset_index().iloc[:, 1],
-                                        analyze_final_board(first_move_count_to_win(random_vs_mcts)).rename_axis('Statistics').reset_index().iloc[:, 1]],
-                                        axis=1)
+                                        #analyze_final_board(first_move_count_to_win(random_vs_mcts)).rename_axis('Statistics').reset_index().iloc[:, 1],
+                                        ], axis=1)
 
 first_move_col_labels = [
     "Statistics",
@@ -205,13 +205,15 @@ first_move_col_labels = [
     "Random vs Random",
     "Random vs Simple 1",
     "Random vs Simple 2",
-    "Random vs MCTS",
+    #"Random vs MCTS",
 ]
 
 df_game_stats_first_player.columns = first_move_col_labels
 # df_game_stats_first_player.drop_duplicates(keep='first', inplace=True)
 
-df_game_stats_second_player = pd.concat([analyze_final_board(second_move_count_to_win(mcts_vs_simple_1)).rename_axis('Statistics').reset_index(),
+df_game_stats_second_player = pd.concat([#analyze_final_board(second_move_count_to_win(mcts_vs_random)).rename_axis('Statistics').reset_index(),
+                                         #analyze_final_board(second_move_count_to_win(mcts_vs_simple_1)).rename_axis('Statistics').reset_index(), #.iloc[:, 1],
+                                         analyze_final_board(second_move_count_to_win(mcts_vs_simple_2)).rename_axis('Statistics').reset_index(),#.iloc[:, 1],
                                          analyze_final_board(second_move_count_to_win(mcts_vs_mcts)).rename_axis('Statistics').reset_index().iloc[:, 1],
                                          analyze_final_board(second_move_count_to_win(simple_1_vs_random)).rename_axis('Statistics').reset_index().iloc[:, 1],
                                          analyze_final_board(second_move_count_to_win(simple_1_vs_simple_1)).rename_axis('Statistics').reset_index().iloc[:, 1],

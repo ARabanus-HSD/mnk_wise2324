@@ -676,7 +676,7 @@ if __name__ == "__main__":
     k = 4
 
     list_of_bots = [2, 3, 4, 5]
-    num_of_games = 100
+    num_of_games = 900
 
     for i in range(num_of_games):
         print(f"currently playing game instance {i}")
