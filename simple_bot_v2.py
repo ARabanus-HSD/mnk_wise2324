@@ -227,25 +227,34 @@ class Bot_simple_v2(Player):
         if there is an entry already, bot will find position of its own entry and place an entry next to/ above/ below it
         else place an entry randomly
         """
-        opponent = 1 if self.player_number == 2 else 2
+        opponent = 1 if self.player_number == 2 else 2 #find player number of opponent
         valid_move = True
         while valid_move:
             if self.board.board[m//2, n//2] == 0:
                 move = ((m//2), (n//2))         #if middle of the board is empty, place an entry
-            elif self.board.board[(self.board.m//2, self.board.n//2)] != 0:
-                entrys_so_far = np.argwhere(self.board.board == self.player_number) #create a list with all own entrys
-                position = entrys_so_far[-1]    #take position of last entry
-                if position[1]+1 < (self.board.m-1) and (self.board.board[position[0], position[1]+1] == 0 or self.board.board[position[0], position[1]+1] != opponent):
-                    move = (position[0], position[1]+1)
-                elif position[1]-1 > (self.board.m-1) and (self.board.board[position[0], position[1]-1] == 0 or self.board.board[position[0], position[1]-1] != opponent):
-                    move = (position[0], position[1]-1)                                                          #place entry next to/ above/ below last entry
-                elif position[0]+1 < (self.board.n-1) and (self.board.board[position[0]+1, position[1]] == 0 or self.board.board[position[0]+1, position[1]] != opponent):
-                    move = (position[0]+1, position[1])
-                elif position[0]-1 > (self.board.n-1) and (self.board.board[position[0]-1, position[1]] == 0 or self.board.board[position[0]-1, position[1]] != opponent):
-                    move = (position[0]-1, position[1])
+                return move
+            elif self.board.board[(self.board.m//2, self.board.n//2)] != 0 or self.board.board[(self.board.m//2, self.board.n//2)] == opponent:
+                entrys_so_far = np.argwhere(self.board.board == self.player_number) #if middle of the board is occupied by sel.player or opponent, create a list of own entrys
+                if entrys_so_far.size == 0: 
+                    move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
+                    return move   #if no entrys are placed yet (list empty), place an entry randomly
                 else:
-                    move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))  #place entry somewhere on the board
-            return move
+                    position = entrys_so_far[-1]    #if there are entrys placed, find position of last entry
+                    if position[1]+1 < (self.board.m-1) and (self.board.board[position[0], position[1]+1] == 0 or self.board.board[position[0], position[1]+1] != opponent):
+                        move = (position[0], position[1]+1) #place an entry next to last entry if possible
+                        return move
+                    elif position[1]-1 > (self.board.m-1) and (self.board.board[position[0], position[1]-1] == 0 or self.board.board[position[0], position[1]-1] != opponent):
+                        move = (position[0], position[1]-1)  #place an entry next to last entry if possible
+                        return move                                                        
+                    elif position[0]+1 < (self.board.n-1) and (self.board.board[position[0]+1, position[1]] == 0 or self.board.board[position[0]+1, position[1]] != opponent):
+                        move = (position[0]+1, position[1]) #place an entry above last entry if possible
+                        return move
+                    elif position[0]-1 > (self.board.n-1) and (self.board.board[position[0]-1, position[1]] == 0 or self.board.board[position[0]-1, position[1]] != opponent):
+                        move = (position[0]-1, position[1]) #place an entry below last entry if possible
+                        return move
+                    else:
+                        move = (random.randint(0, self.board.m - 1), random.randint(0, self.board.n - 1))
+                        return move  #if no entry near last entry is possible, place an entry randomly
         
         if self.is_valid(move):
             valid_move = False
@@ -373,6 +382,6 @@ if __name__ == "__main__":
     current_game = Game(m, n, k)
     # human : 1, bot random: 2, bot simple: 3, bot simple v2: 4, bot complex: 5
     current_game.start(player1_type=4, player1_name="bot simple v2",
-                       player2_type=2, player2_name="bot random")
+                       player2_type=1, player2_name="me")
     # human : 1, bot random: 2, bot simple: 3, bot complex: 4
     current_game.game_loop()
