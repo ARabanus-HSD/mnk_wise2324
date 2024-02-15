@@ -161,6 +161,7 @@ class MainMenu(QMainWindow):
         
         # player type buttons 
         for button in self.player2_buttons:
+            button.setFont(chalk_font)
             player2_buttons_layout.addWidget(button)
             button.clicked.connect(self.on_player2_button_click)
         main_layout.addLayout(player2_buttons_layout)
@@ -399,41 +400,16 @@ class GameBoardWindow(QMainWindow):
         self.close()
 
     def restart_game(self):
-        # self.clearBoardUI()
-        # # Create a new game instance with the same parameters
-        # new_game = Game(self.game.m, self.game.n, self.game.k)
-        # new_game.start(self.game.player1.player_type, self.game.player1.name,
-        #                self.game.player2.player_type, self.game.player2.name)
-        # self.game = new_game
-        # self.initUI()
-        # self.update_ui()
-        # self.close()
+        self.game.restart_game()
         self.clearBoardUI()
-        new_game = Game(self.game.m, self.game.n, self.game.k)
-        player1_type = self.game.player1.player_type
-        
-        player2_type = self.game.player2.player_type
-        player1_name = self.game.player1.name
-        player2_name = self.game.player2.name
-        new_game.start(player1_type, player1_name, player2_type, player2_name)
-
-        # Update the current game instance
-        self.game = new_game
-
-        # Clear the UI and reinitialize it
         self.initUI()
         self.update_ui()
-        self.close()
 
-    def close_game(self):
-        QApplication.instance().quit()   
-            
 
 class GameOverDialog(QDialog):
     
     mainMenuRequested = pyqtSignal()
     restartGameRequested = pyqtSignal()
-    closeGameRequested = pyqtSignal()
     
     def __init__(self, winner, parent=None):
         super().__init__(parent=parent)
@@ -484,8 +460,7 @@ class GameOverDialog(QDialog):
         self.close()      
         
     def onCloseClicked(self):
-        self.closeGameRequested.emit()
-        self.close
+        QApplication.quit()
 
 
 if __name__ == "__main__":

@@ -85,13 +85,6 @@ class Board():
                 if all(self.board[row + d][col - d] == player for d in range(self.k)):
                     return True
         return False
-        
-        # check for diagonal k long lines - Anton
-        # diagonal nach links
-        # wie beschreibt man eine linie die k lang ist und diagonal?
-        # starting point kann nur im bereich [m, m-k][n, n-k]
-
-
     
     def get_available_moves(self):
         """
@@ -247,9 +240,7 @@ class Bot_simple(Player):
                                                  np.max(past_moves[:, 1]) + 1])
                     y_next_move = random.choice([np.min(past_moves[:, 0]) - 1,
                                                  np.max(past_moves[:, 0]) + 1])
-                    move = (x_next_move, y_next_move)
-
-                
+                    move = (x_next_move, y_next_move)           
 
             if self.is_valid(move):
                 valid_move = False
@@ -270,7 +261,6 @@ class Bot_simple_v2(Player):
         self.player_type = "bot_simple_2"
         pass
     
-
     def make_move(self): # -> (row, col)
         """
         goal of this bot: try to win
@@ -363,7 +353,12 @@ class Game():
         self.starting_player = None
         self.current_player = None
         
-
+        self.saved_player1_type = None
+        self.saved_player1_name = None
+        self.saved_player2_type = None
+        self.saved_player2_name = None
+        
+        
     def game_log(self):
         """ # Main Game Log:
         adds entry to dp (.csv) looking like this:
@@ -387,10 +382,8 @@ class Game():
                               "winning_player": self.winning_player})
             f.close()
 
-
     def player_choice(self, p_number:int, p_name:str, choice:int):
         valid_choices = [1, 2, 3, 4, 5] 
-
         if choice in valid_choices:
             if choice == 1:
                 player = Player(p_number, p_name, self.board)
@@ -408,18 +401,33 @@ class Game():
                 player = Bot_complex(p_number, p_name, self.board)
                 return player
             else:
-                raise ValueError("input number out of range, please retry!")
-
+                print(f"Invalid player type: {choice}")
+                raise ValueError(f"Invalid player type: {choice}")
     
     def start(self, player1_type, player1_name, player2_type, player2_name):    
         self.board = Board(self.m, self.n, self.k)
 
-
         self.player1 = self.player_choice(1, player1_name, player1_type)
         self.player2 = self.player_choice(2, player2_name, player2_type)
+        print(f'player1: {self.player1}, player2: {self.player2}')
+        self.current_player = random.choice([self.player1, self.player2]) 
         
-        self.current_player = random.choice([self.player1, self.player2])
-        
+        self.save_game_details(player1_type, player1_name, player2_type, player2_name)
+
+    def restart_game(self):
+        """Restart the game using saved player details and board dimensions."""
+        if self.saved_player1_type is not None and self.saved_player2_type is not None:
+            self.start(self.saved_player1_type, self.saved_player1_name, 
+                       self.saved_player2_type, self.saved_player2_name)
+        else:
+            print("Game details not found. Cannot restart.")
+            
+    def save_game_details(self, player1_type, player1_name, player2_type, player2_name):
+        """Save player types, names, and board dimensions for game restart."""
+        self.saved_player1_type = player1_type
+        self.saved_player1_name = player1_name
+        self.saved_player2_type = player2_type
+        self.saved_player2_name = player2_name
 
     def switch_player(self):
         print(f"Switching player from {self.current_player}")
@@ -439,14 +447,6 @@ class Game():
             return True, None  # Move was successful but no win
     
         return False, "Invalid move, try again."
-
-
-    def game_loop(self):
-        # Start the game with a random player
-        current_player = random.choice([self.player1, self.player2])
-        self.current_player = current_player.player_number
-
-        current_player = self.player2 if current_player == self.player1 else self.player1
         
     def get_current_player(self):
         print(f"get_current_player: {self.current_player}, Type: {type(self.current_player)}")
@@ -456,8 +456,6 @@ class Game():
             return self.player2
         # Correctly return the current player object
         return self.current_player
-    
-    # need this def to make moves in the GUI - DubDub
 
 
 if __name__ == "__main__":
