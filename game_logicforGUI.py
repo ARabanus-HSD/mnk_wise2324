@@ -580,12 +580,9 @@ class Game():
         row, col = position
         successful_move = self.board.place_move(row, col, self.current_player)
         if successful_move:
-            if self.board.has_won(self.current_player):
-                return True, f"Player {self.current_player} wins!"
-            
-            return True, None  # Move was successful but no win
-    
-        return False, "Invalid move, try again."
+            return True, "Move successful."
+        else:
+            return False, "Invalid move, try again."
         
     def get_current_player(self):
         """
@@ -612,5 +609,4 @@ if __name__ == "__main__":
         # human : 1, bot random: 2, bot simple: 3, bot complex: 4
         current_game.start(player1_type=3, player1_name="simple",
                            player2_type=2, player2_name="random")
-        current_game.game_loop()
         current_game.game_log() 

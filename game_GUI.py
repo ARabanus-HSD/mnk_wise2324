@@ -8,7 +8,7 @@ Created on Fri Feb 16 00:16:05 2024
 import sys
 from PyQt6.QtWidgets import (QApplication, QDialog, QMessageBox, QMainWindow, QWidget,
     QGridLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout)
-from PyQt6.QtGui import QPixmap, QFontDatabase, QFont
+from PyQt6.QtGui import QFontDatabase, QFont
 from PyQt6.QtCore import Qt, QTimer, QSize, pyqtSignal
 from game_logicforGUI import Game, Bot_random, Bot_simple, Bot_simple_v2, Bot_complex
 
